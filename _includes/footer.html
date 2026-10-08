@@ -1,0 +1,20 @@
+{%- assign apps = site.apps | sort: "order" -%}
+<footer class="site-footer">
+  <div class="container footer">
+    <div class="footer__brand">
+      <a class="brand brand--footer" href="{{ '/' | relative_url }}">
+        {% include marks/enso.html id="footer" %}
+        <span>{{ site.title }}</span>
+      </a>
+      <div class="footer__tagline">{{ site.tagline }}</div>
+    </div>
+    <div class="footer__links">
+      {%- for app in apps %}
+      <a href="{{ '/' | relative_url }}#{{ app.slug }}">{{ app.name }}</a>
+      {%- endfor %}
+      <a href="{{ '/' | relative_url }}#about">About</a>
+      <a href="mailto:{{ site.contact_email }}">Contact</a>
+    </div>
+    <div>© {{ site.time | date: "%Y" }} {{ site.title }}</div>
+  </div>
+</footer>

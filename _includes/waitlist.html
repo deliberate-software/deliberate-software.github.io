@@ -1,0 +1,29 @@
+{%- assign apps = site.apps | sort: "order" -%}
+<section class="waitlist" id="waitlist" aria-labelledby="waitlist-heading">
+  <div class="container waitlist__inner">
+    <div class="waitlist__intro">
+      <h2 id="waitlist-heading" class="waitlist__heading">Join the waitlist.</h2>
+      <p>Be first in line for the beta. We'll write when there's something to try, and rarely otherwise.</p>
+    </div>
+    <form class="waitlist__form" action="{{ site.kit.form_action }}" method="post">
+      <fieldset class="interests">
+        <legend>I'm interested in</legend>
+        <div class="interests__options">
+          {%- for app in apps %}
+          <label class="interest">
+            <input type="checkbox" name="tags[]" value="{{ app.kit_tag_id }}" id="interest-{{ app.slug }}" checked>
+            {{ app.waitlist_label }}
+          </label>
+          {%- endfor %}
+        </div>
+      </fieldset>
+      <div class="field">
+        <label for="email">Email address</label>
+        <div class="field__row">
+          <input id="email" name="email_address" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <button class="button button--inverse" type="submit">Join the waitlist</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

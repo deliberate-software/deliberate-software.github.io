@@ -1,0 +1,16 @@
+{%- assign apps = site.apps | sort: "order" -%}
+<header class="site-header">
+  <nav class="container nav" aria-label="Main">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      {% include marks/enso.html id="nav" %}
+      <span>{{ site.title }}</span>
+    </a>
+    <div class="nav__links">
+      {%- for app in apps %}
+      <a class="nav__link" href="{{ '/' | relative_url }}#{{ app.slug }}">{{ app.name }}</a>
+      {%- endfor %}
+      <a class="nav__link" href="{{ '/' | relative_url }}#about">About</a>
+      <a class="button button--small" href="{{ '/' | relative_url }}#waitlist">Join the waitlist</a>
+    </div>
+  </nav>
+</header>

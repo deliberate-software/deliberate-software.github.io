@@ -1,0 +1,62 @@
+# deliberate.software
+
+The Deliberate Software website: a Jekyll site hosted on GitHub Pages, with the waitlist handled by Kit.
+
+## Run it locally
+
+```sh
+bundle install
+bundle exec jekyll serve
+```
+
+Then open http://localhost:4000. The `github-pages` gem matches the Jekyll version GitHub uses, so what you see locally is what ships.
+
+## Project layout
+
+| Path | What it is |
+| --- | --- |
+| `_apps/*.md` | One file per app. Front matter holds the name, byline, headline, platform and Kit tag; the body is the card's paragraph. |
+| `_includes/app-card.html` | The card every app shares. |
+| `_includes/marks/` | The logos: `enso.html` (company), `journey.html`, `graphite.html`. |
+| `_includes/extras/` | Optional per-app extras (Journey's example reflection, Graphite's graph). |
+| `_includes/waitlist.html` | The Kit signup form. Its checkboxes come from `_apps/`. |
+| `_data/principles.yml` | The three principles. |
+| `assets/css/site.css` | All styles. Light and dark mode follow the visitor's system setting. |
+| `assets/js/marks.js` | Plays a logo's animation when it scrolls into view and on hover; preselects an app when someone clicks its waitlist button. |
+| `thanks.html` | Where Kit sends people after they sign up. |
+
+### Adding an app
+
+1. Add `_apps/<name>.md`, copying an existing one. Set `order` to place it.
+2. Add its logo as `_includes/marks/<name>.html` and set `mark: <name>`. Give the logo the `js-mark` class if it animates.
+3. Create a Kit tag for it and put the tag's ID in `kit_tag_id`.
+
+It appears in the nav, the apps section, the waitlist checkboxes and the footer automatically.
+
+## Kit setup
+
+1. **Create a form.** In Kit, go to Grow → Landing Pages & Forms → Create new → Form → Inline. The site supplies its own design, so the template doesn't matter.
+2. **Copy the form's action URL.** Open the form → Publish → HTML. Find the `action="…"` URL on the `<form>` tag and paste it into `kit.form_action` in `_config.yml`.
+3. **Turn on confirmation.** In the form's settings, under Incentive, keep "Send incentive email" on. Kit then asks new subscribers to confirm their address.
+4. **Send people back here.** In the form's settings, under "After subscribing," choose "Redirect to an external page" and enter `https://deliberate.software/thanks/`.
+5. **Create one tag per app.** For example "Journey waitlist" and "Graphite waitlist". Click a tag in Kit; its ID is the number in the page's URL. Put each ID in that app's `kit_tag_id`.
+6. **Test it.** Sign up with your own address, confirm, and check in Kit that the subscriber has the right tags. If tags don't apply, compare the form's field names with the HTML Kit generates (step 2) and match them.
+
+## Publish on GitHub Pages
+
+1. Create a repository in your organization and push this folder to it.
+2. In the repository, go to Settings → Pages. Under "Build and deployment," choose "Deploy from a branch," select `main` and `/ (root)`, and save.
+3. Under "Custom domain," enter `deliberate.software` (the `CNAME` file already contains it). Turn on "Enforce HTTPS" once it becomes available.
+4. At your domain registrar, add DNS records:
+   - `A` records for `@` pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - `AAAA` records for `@` pointing to `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
+   - A `CNAME` record for `www` pointing to `<your-org>.github.io`
+
+   DNS changes can take a few hours to take effect. GitHub's "Managing a custom domain for your GitHub Pages site" guide has the current values if these ever change.
+5. Optionally, verify the domain for your organization (organization Settings → Pages) so no one else can claim it on GitHub.
+
+## Before launch
+
+- Set `contact_email` in `_config.yml` to an address that works.
+- Replace the Kit placeholders: `kit.form_action` and each app's `kit_tag_id`.
+- Add a short privacy note if you'd like one; you're collecting email addresses.

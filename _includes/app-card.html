@@ -1,0 +1,19 @@
+{%- assign app = include.app -%}
+<article class="card" id="{{ app.slug }}">
+  <div class="card__brand">
+    {% include marks/{{ app.mark }}.html id=app.slug %}
+    <div class="card__name">{{ app.name }}</div>
+    <div class="byline">{{ app.byline }}</div>
+  </div>
+  <div class="card__copy">
+    <h3 class="card__headline">{{ app.headline }}</h3>
+    <div class="card__body">{{ app.content | markdownify }}</div>
+  </div>
+  {%- if app.extra %}
+  {% include {{ app.extra }} %}
+  {%- endif %}
+  <div class="card__actions">
+    <a class="button" href="#waitlist" data-interest="{{ app.slug }}">Join the {{ app.name }} waitlist</a>
+    <span class="eyebrow eyebrow--status">{{ app.platform }} · {{ app.status }}</span>
+  </div>
+</article>

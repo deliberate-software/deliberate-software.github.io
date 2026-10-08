@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{%- assign apps = site.apps | sort: "order" -%}
+<section class="hero container" id="top">
+  <p class="eyebrow">Software made on purpose</p>
+  <h1 class="hero__title">Live your life <em>deliberately.</em></h1>
+  <p class="hero__lead">Two quiet apps in the making: one to help you find what you value, one to help you find the valuable context in your notes. Both designed to help you live your best, most connected life. Join the waitlist and be first to try them.</p>
+  <div class="hero__actions">
+    <a class="button" href="#waitlist">Join the waitlist</a>
+    <a class="button button--outline" href="#apps">Meet the apps</a>
+  </div>
+</section>
+
+<section class="section" id="apps" aria-labelledby="apps-heading">
+  <div class="container">
+    <h2 id="apps-heading" class="section__title">The apps</h2>
+    <div class="cards">
+      {%- for app in apps %}
+      {% include app-card.html app=app %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <h2 id="about-heading" class="section__title section__title--large">Every feature has to earn its place.</h2>
+    <div class="principles">
+      {%- for principle in site.data.principles %}
+      <div class="principle">
+        <div class="eyebrow eyebrow--number">{{ forloop.index | prepend: "0" }}</div>
+        <h3>{{ principle.title }}</h3>
+        <p>{{ principle.body }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% include waitlist.html %}
