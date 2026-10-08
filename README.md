@@ -23,7 +23,8 @@ Then open http://localhost:4000. The `github-pages` gem matches the Jekyll versi
 | `_data/principles.yml` | The three principles. |
 | `assets/css/site.css` | All styles. Light and dark mode follow the visitor's system setting. |
 | `assets/js/marks.js` | Plays a logo's animation when it scrolls into view and on hover; preselects an app when someone clicks its waitlist button. |
-| `thanks.html` | Where Kit sends people after they sign up. |
+| `confirm.html` | Where Kit sends people right after they sign up, asking them to confirm their email. |
+| `thanks.html` | Where Kit sends people after they click the confirmation link. |
 
 ### Adding an app
 
@@ -36,11 +37,15 @@ It appears in the nav, the apps section, the waitlist checkboxes and the footer 
 ## Kit setup
 
 1. **Create a form.** In Kit, go to Grow → Landing Pages & Forms → Create new → Form → Inline. The site supplies its own design, so the template doesn't matter.
-2. **Copy the form's action URL.** Open the form → Publish → HTML. Find the `action="…"` URL on the `<form>` tag and paste it into `kit.form_action` in `_config.yml`.
-3. **Turn on confirmation.** In the form's settings, under Incentive, keep "Send incentive email" on. Kit then asks new subscribers to confirm their address.
-4. **Send people back here.** In the form's settings, under "After subscribing," choose "Redirect to an external page" and enter `https://deliberate.software/thanks/`.
-5. **Create one tag per app.** For example "Journey waitlist" and "Graphite waitlist". Click a tag in Kit; its ID is the number in the page's URL. Put each ID in that app's `kit_tag_id`.
-6. **Test it.** Sign up with your own address, confirm, and check in Kit that the subscriber has the right tags. If tags don't apply, compare the form's field names with the HTML Kit generates (step 2) and match them.
+2. **Copy the form's action URL.** Click **Save & Publish** first. Then click **Embed** at the top right of the form builder and choose the **HTML** tab. In that code, find `action="…"` on the `<form>` tag and paste the URL into `kit.form_action` in `_config.yml`.
+
+   If you don't see Embed, use the form's ID instead. It's the number in the browser's address bar while you're editing the form (for example `…/forms/designers/1234567/edit`). Then set `kit.form_action` to `https://app.kit.com/forms/1234567/subscriptions`, with your number in place of `1234567`.
+3. **Turn on confirmation.** In the form's settings, under Incentive, keep "Send incentive email" on. Kit then emails new subscribers a link to confirm their address. In the same Incentive settings, set the page people land on after they click that link to a redirect URL: `https://deliberate.software/thanks/`.
+4. **Send people to the confirm page.** In the form's settings, under "After subscribing," choose "Redirect to an external page" and enter `https://deliberate.software/confirm/`.
+5. **Create one tag per app.** Go to **Grow → Subscribers**. In the right sidebar, below the charts, find the Tags section (the **All Tags** dropdown) and click the **+** next to it. Name the tag, for example "Journey waitlist," and save. Repeat for "Graphite waitlist."
+
+   To find a tag's ID, click the tag in that sidebar. The page shows only that tag's subscribers, and the address bar ends with something like `?tag=1234567`. That number is the ID. Put each ID in that app's `kit_tag_id` in `_apps/`.
+6. **Test it.** Sign up with your own address, confirm, and check in Kit that the subscriber has the right tags. If tags don't apply, compare the form's field names with the HTML on the form's Embed → HTML tab and match them.
 
 ## Publish on GitHub Pages
 
