@@ -62,6 +62,5 @@ It appears in the nav, the apps section, the waitlist checkboxes and the footer 
 
 ## Before launch
 
-- Set `contact_email` in `_config.yml` to an address that works.
 - Replace the Kit placeholders: `kit.form_action` and each app's `kit_tag_id`.
 - Add a short privacy note if you'd like one; you're collecting email addresses.

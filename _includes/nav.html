@@ -5,7 +5,11 @@
       {% include marks/enso.html id="nav" %}
       <span>{{ site.title }}</span>
     </a>
-    <div class="nav__links">
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+    </button>
+    <div class="nav__links" id="nav-links">
       {%- for app in apps %}
       <a class="nav__link" href="{{ '/' | relative_url }}#{{ app.slug }}">{{ app.name }}</a>
       {%- endfor %}

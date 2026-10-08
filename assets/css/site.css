@@ -149,6 +149,32 @@ img, svg { max-width: 100%; }
 .nav__links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
 .nav__link { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; }
 
+/* Hamburger: phones only, and only when JavaScript can open it.
+   Without JavaScript the links simply show. */
+.nav__toggle { display: none; }
+@media (max-width: 720px) {
+  .js .nav__toggle {
+    display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px;
+    width: 44px; height: 44px; margin-right: -10px;
+    padding: 0; border: 0; background: none; color: var(--ink); cursor: pointer;
+  }
+  .nav__toggle-bar {
+    display: block; width: 22px; height: 1.5px; border-radius: 1px; background: currentColor;
+    transition: transform 200ms ease;
+  }
+  .nav.is-open .nav__toggle-bar:first-child { transform: translateY(4.25px) rotate(45deg); }
+  .nav.is-open .nav__toggle-bar:last-child  { transform: translateY(-4.25px) rotate(-45deg); }
+
+  .js .nav__links { display: none; }
+  .js .nav.is-open .nav__links {
+    display: flex; flex-direction: column; align-items: stretch; gap: 0;
+    flex-basis: 100%; padding: 8px 0 4px;
+  }
+  .js .nav.is-open .nav__link { padding: 0; min-height: 52px; border-bottom: 1px solid var(--line); font-size: 18px; }
+  .js .nav.is-open .nav__links .button { margin-top: 20px; min-height: 48px; }
+}
+@media (prefers-reduced-motion: reduce) { .nav__toggle-bar { transition: none; } }
+
 /* ---------- hero ---------- */
 
 .hero { padding-top: 120px; padding-bottom: 112px; display: flex; flex-direction: column; gap: 32px; }

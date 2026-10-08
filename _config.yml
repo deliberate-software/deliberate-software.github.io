@@ -1,19 +1,18 @@
 # Deliberate Software — site settings
 title: Deliberate Software
-tagline: Software made on purpose
+tagline: Made on purpose
 description: >-
   Two quiet apps in the making: Journey, to help you find what you value,
   and Graphite, to help you find the valuable context in your notes.
 url: "https://deliberate.software"
 baseurl: ""
 lang: en
-contact_email: "hello@deliberate.software"   # change if you use a different address
 
 # Kit (kit.com) waitlist form.
-# In Kit: Grow → Landing Pages & Forms → your form → Publish → HTML.
-# Copy the form's `action` URL here exactly as Kit shows it.
+# In Kit: open the form → Save & Publish → Embed → HTML tab.
+# Copy the `action` URL from the <form> tag here exactly as Kit shows it.
 kit:
-  form_action: "https://app.kit.com/forms/10018273/subscriptions"
+  form_action: "https://app.kit.com/forms/YOUR_FORM_ID/subscriptions"
 
 # Each app is one file in _apps/. Add a file to add an app.
 collections:
