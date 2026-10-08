@@ -13,7 +13,7 @@ contact_email: "hello@deliberate.software"   # change if you use a different add
 # In Kit: Grow → Landing Pages & Forms → your form → Publish → HTML.
 # Copy the form's `action` URL here exactly as Kit shows it.
 kit:
-  form_action: "https://app.kit.com/forms/YOUR_FORM_ID/subscriptions"
+  form_action: "https://app.kit.com/forms/10018273/subscriptions"
 
 # Each app is one file in _apps/. Add a file to add an app.
 collections:
