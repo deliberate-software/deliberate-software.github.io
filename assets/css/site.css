@@ -146,6 +146,7 @@ img, svg { max-width: 100%; }
   position: relative; top: -3px;  /* the name has no descenders: center on the caps */
   box-shadow: 0 0 0 1px rgba(39, 40, 43, 0.22), 0 0 6px 1px rgba(39, 40, 43, 0.18);
 }
+.nav .brand { position: relative; top: 3px; }  /* centers the name's capitals on the menu */
 .nav__links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
 .nav__link { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; }
 
