@@ -37,19 +37,6 @@
   marks.forEach(function (mark) { observer.observe(mark); });
 })();
 
-// "Join the … waitlist" buttons pre-select just that app in the form.
-(function () {
-  "use strict";
-  document.querySelectorAll("[data-interest]").forEach(function (link) {
-    link.addEventListener("click", function () {
-      var chosen = link.getAttribute("data-interest");
-      document.querySelectorAll(".interest input").forEach(function (box) {
-        box.checked = box.id === "interest-" + chosen;
-      });
-    });
-  });
-})();
-
 // Phone menu: the hamburger opens and closes the header links.
 (function () {
   "use strict";

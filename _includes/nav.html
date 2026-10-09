@@ -1,4 +1,3 @@
-{%- assign apps = site.apps | sort: "order" -%}
 <header class="site-header">
   <nav class="container nav" aria-label="Main">
     <a class="brand" href="{{ '/' | relative_url }}">
@@ -10,9 +9,8 @@
       <span class="nav__toggle-bar"></span>
     </button>
     <div class="nav__links" id="nav-links">
-      {%- for app in apps %}
-      <a class="nav__link" href="{{ '/' | relative_url }}#{{ app.slug }}">{{ app.name }}</a>
-      {%- endfor %}
+      <a class="nav__link" href="{{ '/' | relative_url }}#how">How it works</a>
+      <a class="nav__link" href="{{ '/' | relative_url }}#roadmap">Roadmap</a>
       <a class="nav__link" href="{{ '/' | relative_url }}#about">About</a>
       <a class="button button--small" href="{{ '/' | relative_url }}#waitlist">Join the waitlist</a>
     </div>

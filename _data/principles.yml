@@ -1,6 +1,6 @@
-- title: Chosen deliberately
-  body: We'd rather ship one thing that's right than five that are almost right.
+- title: Fast first
+  body: Opening a note and typing should never mean waiting on anything.
+- title: Plain text, yours to keep
+  body: Your notes are Markdown files. Keep them where you like, and open them in any editor you like, even Obsidian.
 - title: Calm by default
-  body: Warm paper, graphite ink, and nothing designed to keep you scrolling.
-- title: Context aware
-  body: Apps that reflect back what you need to know, when you need to know it.
+  body: Nothing designed to keep you scrolling. Help appears beside your work, not on top of it.

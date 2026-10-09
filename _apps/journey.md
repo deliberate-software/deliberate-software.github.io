@@ -1,5 +1,6 @@
 ---
 name: Journey
+published: false       # parked until Journey is close to shipping
 order: 1
 mark: journey            # _includes/marks/journey.html
 byline: Deliberately     # small caps line under the name

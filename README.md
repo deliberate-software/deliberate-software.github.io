@@ -15,14 +15,15 @@ Then open http://localhost:4000. The `github-pages` gem matches the Jekyll versi
 
 | Path | What it is |
 | --- | --- |
-| `_apps/*.md` | One file per app. Front matter holds the name, byline, headline, platform and Kit tag; the body is the card's paragraph. |
-| `_includes/app-card.html` | The card every app shares. |
+| `_apps/*.md` | One file per app. Front matter holds the name, platform, status and Kit tag. The home page is built around Graphite; Journey is parked with `published: false`. |
+| `_includes/app-card.html` | The app card from the two-app layout. Unused while the site focuses on Graphite. |
 | `_includes/marks/` | The logos: `enso.html` (company), `journey.html`, `graphite.html`. |
 | `_includes/extras/` | Optional per-app extras (Journey's example reflection, Graphite's graph). |
-| `_includes/waitlist.html` | The Kit signup form. Its checkboxes come from `_apps/`. |
+| `_includes/waitlist.html` | The Kit signup form: one email field, tagged for Graphite with a hidden `tags[]` input. |
 | `_data/principles.yml` | The three principles. |
+| `privacy.html` | The plain-language privacy page. Update it whenever what the site or list collects changes. |
 | `assets/css/site.css` | All styles. Light and dark mode follow the visitor's system setting. |
-| `assets/js/marks.js` | Plays a logo's animation when it scrolls into view and on hover; preselects an app when someone clicks its waitlist button. |
+| `assets/js/marks.js` | Plays a logo's animation when it scrolls into view and on hover; opens the phone menu. |
 | `confirm.html` | Where Kit sends people right after they sign up, asking them to confirm their email. |
 | `thanks.html` | Where Kit sends people after they click the confirmation link. |
 
@@ -32,7 +33,7 @@ Then open http://localhost:4000. The `github-pages` gem matches the Jekyll versi
 2. Add its logo as `_includes/marks/<name>.html` and set `mark: <name>`. Give the logo the `js-mark` class if it animates.
 3. Create a Kit tag for it and put the tag's ID in `kit_tag_id`.
 
-It appears in the nav, the apps section, the waitlist checkboxes and the footer automatically.
+The home page is currently written for Graphite alone, so a new app needs its own section in `index.html` and its own Kit tag in the waitlist form.
 
 ## Kit setup
 

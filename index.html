@@ -1,31 +1,53 @@
 ---
 layout: default
 ---
-{%- assign apps = site.apps | sort: "order" -%}
+{%- assign app = site.apps | where: "name", "Graphite" | first -%}
 <section class="hero container" id="top">
-  <p class="eyebrow">Software made on purpose</p>
-  <h1 class="hero__title">Live your life <em>deliberately.</em></h1>
-  <p class="hero__lead">Two quiet apps in the making: one to help you find what you value, one to help you find the valuable context in your notes. Both designed to help you live your best, most connected life. Join the waitlist and be first to try them.</p>
-  <div class="hero__actions">
-    <a class="button" href="#waitlist">Join the waitlist</a>
-    <a class="button button--outline" href="#apps">Meet the apps</a>
-  </div>
-</section>
-
-<section class="section" id="apps" aria-labelledby="apps-heading">
-  <div class="container">
-    <h2 id="apps-heading" class="section__title">The apps</h2>
-    <div class="cards">
-      {%- for app in apps %}
-      {% include app-card.html app=app %}
-      {%- endfor %}
+  <div class="product">
+    {% include marks/graphite.html id="hero" %}
+    <div>
+      <div class="product__name">{{ app.name }}</div>
+      <div class="eyebrow eyebrow--status">For {{ app.platform }} · {{ app.status }}</div>
     </div>
   </div>
+  <h1 class="hero__title">Notes that bring their own <em>context.</em></h1>
+  <p class="hero__lead">You write it all down: the call with Tom, the budget thread, the year-end checklist. Then the meeting starts, and the notes you need are three searches away. Graphite is a fast, plain-text notes app for Mac that gathers everything connected to the note in front of you, so you walk in prepared.</p>
+  <div class="hero__actions">
+    <a class="button" href="#waitlist">Join the Graphite waitlist</a>
+    <a class="button button--outline" href="#how">How it works</a>
+  </div>
 </section>
 
-<section class="section" id="about" aria-labelledby="about-heading">
+<section class="section" id="how" aria-labelledby="how-heading">
   <div class="container">
-    <h2 id="about-heading" class="section__title section__title--large">Every feature has to earn its place.</h2>
+    <h2 id="how-heading" class="section__title section__title--large">Write fast. Tag as you go. See the context.</h2>
+    <ol class="principles steps">
+      <li class="principle">
+        <div class="eyebrow eyebrow--number">01</div>
+        <h3>Write it down</h3>
+        <p>Graphite is built for speed: open it, type, move on. Getting a thought down should never feel cumbersome. And it should never require a mouse.</p>
+      </li>
+      <li class="principle">
+        <div class="eyebrow eyebrow--number">02</div>
+        <h3>Tag as you go</h3>
+        <p>Mark people with <code>@</code>, teams with <code>!</code>, and projects with <code>#</code>, right in the text: <code>@tom</code>, <code>!accounting</code>, <code>#year-end-2026</code>. Tags aren't just labels. Each one is a first-class citizen with a note of its own.</p>
+      </li>
+      <li class="principle">
+        <div class="eyebrow eyebrow--number">03</div>
+        <h3>See the context</h3>
+        <p>Beside every note, Graphite's context window shows the tags, links and notes connected to it. Meeting @tom in !accounting about #year-end-2026? Your last conversation and the open questions are already there.</p>
+      </li>
+    </ol>
+    <figure class="figure">
+      {% include extras/graphite-graph.html %}
+      <figcaption>One note, linked to a person, a team and a project. The tags are notes too, so they link to each other, and to every other note that mentions them.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="principles" aria-labelledby="principles-heading">
+  <div class="container">
+    <h2 id="principles-heading" class="section__title section__title--large">Every feature has to earn its place.</h2>
     <div class="principles">
       {%- for principle in site.data.principles %}
       <div class="principle">
@@ -34,6 +56,41 @@ layout: default
         <p>{{ principle.body }}</p>
       </div>
       {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="roadmap" aria-labelledby="roadmap-heading">
+  <div class="container">
+    <div class="section__intro">
+      <h2 id="roadmap-heading" class="section__title section__title--large">Where Graphite is headed.</h2>
+      <p>The first version builds the context window from your tags and links. This is what comes after. Waitlist members hear about each step first, and their feedback helps set the order.</p>
+    </div>
+    <dl class="roadmap">
+      <div class="roadmap__item">
+        <dt><span class="eyebrow eyebrow--status">Version 2</span>Meeting prep</dt>
+        <dd>Open the note for your 1pm meeting and the context window includes a short AI summary of what's happened since you last met. It sits beside your notes and stays out of the way.</dd>
+      </div>
+      <div class="roadmap__item">
+        <dt><span class="eyebrow eyebrow--status">Planned</span>Project boards</dt>
+        <dd>Track projects on a Kanban board, right next to the notes about them.</dd>
+      </div>
+      <div class="roadmap__item">
+        <dt><span class="eyebrow eyebrow--status">Planned</span>Your calendar</dt>
+        <dd>Graphite knows your day, so the context for your next meeting is ready before you go looking for it.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="section" id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <h2 id="about-heading" class="section__title section__title--large">Why I'm building Graphite.</h2>
+    <div class="note">
+      <p>I've kept notes in most of the apps you know. Notion never felt nimble to me: getting a note in and organized always felt cumbersome. Agenda feels much faster, and it knows your calendar, which is great, but your data is locked in their database. Obsidian is both fast and plain text, but it doesn't know your day or provide context for your next note.</p>
+      <p>I want all of it at once. Note taking that feels as fast as Obsidian. An app that knows my day, like Agenda. AI that helps without being in my face. And notes that live outside the editor, where I can use them as I see fit and keep them wherever I want.</p>
+      <p>Obsidian lets you take notes. Graphite is meant to understand your busy schedule and prepare you for what's next.</p>
+      <p class="note__sign">Alan Ridlehoover<br><span class="eyebrow eyebrow--tight">Deliberate Software</span></p>
     </div>
   </div>
 </section>
