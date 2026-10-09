@@ -3,7 +3,7 @@
   <div class="container waitlist__inner">
     <div class="waitlist__intro">
       <h2 id="waitlist-heading" class="waitlist__heading">Join the {{ app.name }} waitlist.</h2>
-      <p>{{ app.name }} is coming to {{ app.platform }} in late 2026. Join, and we'll write when there's something to try, and rarely otherwise.</p>
+      <p>{{ app.name }} is coming to {{ app.platform }} in {{ app.launch }}. Join, and we'll write when there's something to try, and rarely otherwise.</p>
     </div>
     <form class="waitlist__form" action="{{ site.kit.form_action }}" method="post">
       <input type="hidden" name="tags[]" value="{{ app.kit_tag_id }}">

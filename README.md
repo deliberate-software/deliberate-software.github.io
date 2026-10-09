@@ -15,10 +15,10 @@ Then open http://localhost:4000. The `github-pages` gem matches the Jekyll versi
 
 | Path | What it is |
 | --- | --- |
-| `_apps/*.md` | One file per app. Front matter holds the name, platform, status and Kit tag. The home page is built around Graphite; Journey is parked with `published: false`. |
-| `_includes/app-card.html` | The app card from the two-app layout. Unused while the site focuses on Graphite. |
-| `_includes/marks/` | The logos: `enso.html` (company), `journey.html`, `graphite.html`. |
-| `_includes/extras/` | Optional per-app extras (Journey's example reflection, Graphite's graph). |
+| `_apps/graphite.md` | Graphite's name, platform, launch timing and Kit tag. Change `launch` here and the hero and waitlist follow. |
+| `index.html` | The home page, written for Graphite. |
+| `_includes/marks/` | The logos: `enso.html` (company) and `graphite.html`. |
+| `_includes/graphite-graph.html` | The note-and-tags graph under "How it works." |
 | `_includes/waitlist.html` | The Kit signup form: one email field, tagged for Graphite with a hidden `tags[]` input. |
 | `_data/principles.yml` | The three principles. |
 | `privacy.html` | The plain-language privacy page. Update it whenever what the site or list collects changes. |
@@ -28,14 +28,6 @@ Then open http://localhost:4000. The `github-pages` gem matches the Jekyll versi
 | `confirm.html` | Where Kit sends people right after they sign up, asking them to confirm their email. |
 | `thanks.html` | Where Kit sends people after they click the confirmation link. |
 
-### Adding an app
-
-1. Add `_apps/<name>.md`, copying an existing one. Set `order` to place it.
-2. Add its logo as `_includes/marks/<name>.html` and set `mark: <name>`. Give the logo the `js-mark` class if it animates on hover.
-3. Create a Kit tag for it and put the tag's ID in `kit_tag_id`.
-
-The home page is currently written for Graphite alone, so a new app needs its own section in `index.html` and its own Kit tag in the waitlist form.
-
 ## Kit setup
 
 1. **Create a form.** In Kit, go to Grow → Landing Pages & Forms → Create new → Form → Inline. The site supplies its own design, so the template doesn't matter.
@@ -44,10 +36,10 @@ The home page is currently written for Graphite alone, so a new app needs its ow
    If you don't see Embed, use the form's ID instead. It's the number in the browser's address bar while you're editing the form (for example `…/forms/designers/1234567/edit`). Then set `kit.form_action` to `https://app.kit.com/forms/1234567/subscriptions`, with your number in place of `1234567`.
 3. **Turn on confirmation.** In the form's settings, under Incentive, keep "Send incentive email" on. Kit then emails new subscribers a link to confirm their address. In the same Incentive settings, set the page people land on after they click that link to a redirect URL: `https://deliberate.software/thanks/`.
 4. **Send people to the confirm page.** In the form's settings, under "After subscribing," choose "Redirect to an external page" and enter `https://deliberate.software/confirm/`.
-5. **Create one tag per app.** Go to **Grow → Subscribers**. In the right sidebar, below the charts, find the Tags section (the **All Tags** dropdown) and click the **+** next to it. Name the tag, for example "Journey waitlist," and save. Repeat for "Graphite waitlist."
+5. **Create the Graphite tag.** Go to **Grow → Subscribers**. In the right sidebar, below the charts, find the Tags section (the **All Tags** dropdown) and click the **+** next to it. Name the tag "Graphite waitlist" and save.
 
-   To find a tag's ID, click the tag in that sidebar. The page shows only that tag's subscribers, and the address bar ends with something like `?tag=1234567`. That number is the ID. Put each ID in that app's `kit_tag_id` in `_apps/`.
-6. **Test it.** Sign up with your own address, confirm, and check in Kit that the subscriber has the right tags. If tags don't apply, compare the form's field names with the HTML on the form's Embed → HTML tab and match them.
+   To find a tag's ID, click the tag in that sidebar. The page shows only that tag's subscribers, and the address bar ends with something like `?tag=1234567`. That number is the ID. Put it in `kit_tag_id` in `_apps/graphite.md`.
+6. **Test it.** Sign up with your own address, confirm, and check in Kit that the subscriber has the Graphite tag. If tags don't apply, compare the form's field names with the HTML on the form's Embed → HTML tab and match them.
 
 ## Publish on GitHub Pages
 
@@ -61,8 +53,3 @@ The home page is currently written for Graphite alone, so a new app needs its ow
 
    DNS changes can take a few hours to take effect. GitHub's "Managing a custom domain for your GitHub Pages site" guide has the current values if these ever change.
 5. Optionally, verify the domain for your organization (organization Settings → Pages) so no one else can claim it on GitHub.
-
-## Before launch
-
-- Replace the Kit placeholders: `kit.form_action` and each app's `kit_tag_id`.
-- Add a short privacy note if you'd like one; you're collecting email addresses.

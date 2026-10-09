@@ -96,7 +96,7 @@ img, svg { max-width: 100%; }
 
 /* ---------- small caps labels ---------- */
 
-.eyebrow, .byline {
+.eyebrow {
   font-family: var(--sans);
   font-weight: 600;
   font-size: 12px;
@@ -107,7 +107,6 @@ img, svg { max-width: 100%; }
 .eyebrow--tight { letter-spacing: 0.3em; }
 .eyebrow--status { letter-spacing: 0.2em; }
 .eyebrow--number { letter-spacing: 0.2em; text-transform: none; }
-.byline { letter-spacing: 0.42em; padding-left: 0.42em; }
 
 /* ---------- buttons ---------- */
 
@@ -133,16 +132,8 @@ img, svg { max-width: 100%; }
 }
 .mark__art { display: block; width: 100%; height: 100%; }
 
-/* The logos rest in their finished state. Hovering replays the animation,
+/* The logo rests in its finished state. Hovering replays the animation,
    which starts from the hidden state (fill mode "both" covers the delay). */
-.mark--journey .glow { opacity: 0.55; }
-.mark--journey.play .sun  { animation: journey-rise 3600ms cubic-bezier(0.22, 0.61, 0.30, 1) 0.2s both; }
-.mark--journey.play .glow { transform-origin: 50px 66px; animation: journey-glow 3840ms ease-out 0.2s both; }
-.mark--journey.play .hz   { stroke-dasharray: 52; animation: journey-draw 2160ms linear 0.2s both; }
-@keyframes journey-rise { from { transform: translateY(34px); } to { transform: translateY(0); } }
-@keyframes journey-glow { 0% { opacity: 0; transform: scale(0.4); } 45% { opacity: 0; transform: scale(0.5); } 100% { opacity: 0.55; transform: scale(1); } }
-@keyframes journey-draw { from { stroke-dashoffset: 52; } to { stroke-dashoffset: 0; } }
-
 .mark--graphite .p-glow { opacity: 0.45; }
 .mark--graphite.play .p-pencil { animation: graphite-rise 3600ms cubic-bezier(0.22, 0.61, 0.30, 1) 0.2s both; }
 .mark--graphite.play .p-glow   { transform-origin: 50px 34px; animation: graphite-glow 3840ms ease-out 0.2s both; }
@@ -223,8 +214,10 @@ img, svg { max-width: 100%; }
 
 .section { border-top: 1px solid var(--line); }
 .section > .container { padding-top: 96px; padding-bottom: 96px; display: flex; flex-direction: column; gap: 48px; }
-.section__title { font-family: var(--serif); font-weight: 400; font-size: 44px; letter-spacing: -0.015em; }
-.section__title--large { font-size: clamp(34px, 4.4vw, 52px); line-height: 1.12; max-width: 20ch; }
+.section__title {
+  font-family: var(--serif); font-weight: 400; letter-spacing: -0.015em;
+  font-size: clamp(34px, 4.4vw, 52px); line-height: 1.12; max-width: 20ch;
+}
 .section__intro { display: flex; flex-direction: column; gap: 20px; }
 .section__intro p { font-size: 19px; max-width: 34em; color: var(--muted); }
 
@@ -261,31 +254,7 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
 .prose p { color: var(--muted); }
 .prose a { text-decoration: underline; text-underline-offset: 3px; color: var(--ink); }
 
-/* ---------- app cards ---------- */
-
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 24px; }
-.card {
-  border: 1px solid var(--line); border-radius: 20px;
-  padding: 48px 40px 40px;
-  display: flex; flex-direction: column; gap: 28px;
-  scroll-margin-top: 24px;
-}
-@media (max-width: 560px) { .card { padding: 36px 24px 28px; } }
-.card__brand {
-  display: flex; flex-direction: column; align-items: center; gap: 4px;
-  padding: 16px 0 32px; border-bottom: 1px solid var(--line);
-}
-.card__name { font-family: var(--serif); font-size: 56px; line-height: 1; letter-spacing: -0.02em; padding-top: 22px; }
-.card__copy { display: flex; flex-direction: column; gap: 12px; }
-.card__headline { font-family: var(--serif); font-weight: 400; font-size: 30px; line-height: 1.2; }
-.card__body p { color: var(--muted); }
-.card__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: auto; }
-.card__actions .button { min-height: 44px; padding: 0 22px; }
-
-.reflection { margin: 0; border-radius: 14px; background: var(--tint); padding: 20px 22px; display: flex; flex-direction: column; gap: 12px; }
-.reflection__quote { margin: 0; font-family: var(--serif); font-style: italic; font-size: 19px; line-height: 1.4; }
-.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.chips li { padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); font-size: 14px; }
+/* ---------- graph ---------- */
 
 .graph { display: block; width: 100%; height: auto; color: var(--ink); }
 .graph .paper-fill { fill: var(--paper); }
@@ -306,19 +275,9 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
   display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 40px;
 }
 .waitlist__intro { display: flex; flex-direction: column; gap: 14px; max-width: 28em; }
-.waitlist__intro p, .waitlist label, .interests legend { color: var(--inv-muted); }
+.waitlist__intro p, .waitlist label { color: var(--inv-muted); }
 .waitlist__heading { font-family: var(--serif); font-weight: 400; font-size: clamp(36px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.015em; }
 .waitlist__form { display: flex; flex-direction: column; gap: 20px; flex: 0 1 460px; min-width: 0; }
-.interests { margin: 0; padding: 0; border: 0; }
-.interests legend { padding: 0; margin-bottom: 10px; font-size: 14px; }
-.interests__options { display: flex; flex-wrap: wrap; gap: 10px; }
-.waitlist .interest {
-  display: inline-flex; align-items: center; gap: 10px;
-  min-height: 48px; padding: 0 18px;
-  border: 1px solid var(--inv-line); border-radius: 999px;
-  color: var(--paper); cursor: pointer;
-}
-.interest input { width: 18px; height: 18px; margin: 0; accent-color: var(--paper); }
 .field { display: flex; flex-direction: column; gap: 8px; }
 .field label { font-size: 14px; }
 .field__row { display: flex; flex-wrap: wrap; gap: 10px; }

@@ -7,7 +7,7 @@ layout: default
     {% include marks/graphite.html id="hero" %}
     <div>
       <div class="product__name">{{ app.name }}</div>
-      <div class="eyebrow eyebrow--status">For {{ app.platform }} · {{ app.status }}</div>
+      <div class="eyebrow eyebrow--status">For {{ app.platform }} · Coming {{ app.launch }}</div>
     </div>
   </div>
   <h1 class="hero__title">Notes that bring their own <em>context.</em></h1>
@@ -20,7 +20,7 @@ layout: default
 
 <section class="section" id="how" aria-labelledby="how-heading">
   <div class="container">
-    <h2 id="how-heading" class="section__title section__title--large">Write fast. Tag as you go. See the context.</h2>
+    <h2 id="how-heading" class="section__title">Write fast. Tag as you go. See the context.</h2>
     <ol class="principles steps">
       <li class="principle">
         <div class="eyebrow eyebrow--number">01</div>
@@ -39,7 +39,7 @@ layout: default
       </li>
     </ol>
     <figure class="figure">
-      {% include extras/graphite-graph.html %}
+      {% include graphite-graph.html %}
       <figcaption>One note, linked to a person, a team and a project. The tags are notes too, so they link to each other, and to every other note that mentions them.</figcaption>
     </figure>
   </div>
@@ -47,7 +47,7 @@ layout: default
 
 <section class="section" id="principles" aria-labelledby="principles-heading">
   <div class="container">
-    <h2 id="principles-heading" class="section__title section__title--large">Every feature has to earn its place.</h2>
+    <h2 id="principles-heading" class="section__title">Every feature has to earn its place.</h2>
     <div class="principles">
       {%- for principle in site.data.principles %}
       <div class="principle">
@@ -63,7 +63,7 @@ layout: default
 <section class="section" id="roadmap" aria-labelledby="roadmap-heading">
   <div class="container">
     <div class="section__intro">
-      <h2 id="roadmap-heading" class="section__title section__title--large">Where Graphite is headed.</h2>
+      <h2 id="roadmap-heading" class="section__title">Where Graphite is headed.</h2>
       <p>The first version builds the context window from your tags and links. This is what comes after. Waitlist members hear about each step first, and their feedback helps set the order.</p>
     </div>
     <dl class="roadmap">
@@ -85,7 +85,7 @@ layout: default
 
 <section class="section" id="about" aria-labelledby="about-heading">
   <div class="container">
-    <h2 id="about-heading" class="section__title section__title--large">Why I'm building Graphite.</h2>
+    <h2 id="about-heading" class="section__title">Why I'm building Graphite.</h2>
     <div class="note">
       <p>I've kept notes in most of the apps you know. Notion never felt nimble to me: getting a note in and organized always felt cumbersome. Agenda feels much faster, and it knows your calendar, which is great, but your data is locked in their database. Obsidian is both fast and plain text, but it doesn't know your day or provide context for your next note.</p>
       <p>I want all of it at once. Note taking that feels as fast as Obsidian. An app that knows my day, like Agenda. AI that helps without being in my face. And notes that live outside the editor, where I can use them as I see fit and keep them wherever I want.</p>
