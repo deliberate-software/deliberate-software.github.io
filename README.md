@@ -22,6 +22,7 @@ Then open http://localhost:4000. The `github-pages` gem matches the Jekyll versi
 | `_includes/waitlist.html` | The Kit signup form: one email field, tagged for Graphite with a hidden `tags[]` input. |
 | `_data/principles.yml` | The three principles. |
 | `privacy.html` | The plain-language privacy page. Update it whenever what the site or list collects changes. |
+| `assets/fonts/` | Self-hosted Newsreader and Instrument Sans (variable WOFF2, Latin and Latin Extended), with their OFL licenses. |
 | `assets/css/site.css` | All styles. Light and dark mode follow the visitor's system setting. |
 | `assets/js/marks.js` | Plays a logo's animation when it scrolls into view and on hover; opens the phone menu. |
 | `confirm.html` | Where Kit sends people right after they sign up, asking them to confirm their email. |
