@@ -133,35 +133,26 @@ img, svg { max-width: 100%; }
 }
 .mark__art { display: block; width: 100%; height: 100%; }
 
-/* Animation start states apply only when JavaScript is running,
-   so without it the logos simply show their finished state. */
+/* The logos rest in their finished state. Hovering replays the animation,
+   which starts from the hidden state (fill mode "both" covers the delay). */
 .mark--journey .glow { opacity: 0.55; }
-.js .mark--journey .sun  { transform: translateY(34px); }
-.js .mark--journey .glow { transform-origin: 50px 66px; transform: scale(0.4); opacity: 0; }
-.js .mark--journey .hz   { stroke-dasharray: 52; stroke-dashoffset: 52; }
-.mark--journey.play .sun  { animation: journey-rise 3600ms cubic-bezier(0.22, 0.61, 0.30, 1) 0.2s forwards; }
-.mark--journey.play .glow { animation: journey-glow 3840ms ease-out 0.2s forwards; }
-.mark--journey.play .hz   { animation: journey-draw 2160ms linear 0.2s forwards; }
+.mark--journey.play .sun  { animation: journey-rise 3600ms cubic-bezier(0.22, 0.61, 0.30, 1) 0.2s both; }
+.mark--journey.play .glow { transform-origin: 50px 66px; animation: journey-glow 3840ms ease-out 0.2s both; }
+.mark--journey.play .hz   { stroke-dasharray: 52; animation: journey-draw 2160ms linear 0.2s both; }
 @keyframes journey-rise { from { transform: translateY(34px); } to { transform: translateY(0); } }
 @keyframes journey-glow { 0% { opacity: 0; transform: scale(0.4); } 45% { opacity: 0; transform: scale(0.5); } 100% { opacity: 0.55; transform: scale(1); } }
 @keyframes journey-draw { from { stroke-dashoffset: 52; } to { stroke-dashoffset: 0; } }
 
-.js .mark--graphite .p-pencil { transform: translateY(76px); }
-.js .mark--graphite .p-glow   { transform-origin: 50px 34px; transform: scale(0.4); opacity: 0; }
-.js .mark--graphite .p-hz     { stroke-dasharray: 100 100; stroke-dashoffset: 100; }
 .mark--graphite .p-glow { opacity: 0.45; }
-.mark--graphite.play .p-pencil { animation: graphite-rise 3600ms cubic-bezier(0.22, 0.61, 0.30, 1) 0.2s forwards; }
-.mark--graphite.play .p-glow   { animation: graphite-glow 3840ms ease-out 0.2s forwards; }
-.mark--graphite.play .p-hz     { animation: graphite-draw 2160ms linear 0.2s forwards; }
+.mark--graphite.play .p-pencil { animation: graphite-rise 3600ms cubic-bezier(0.22, 0.61, 0.30, 1) 0.2s both; }
+.mark--graphite.play .p-glow   { transform-origin: 50px 34px; animation: graphite-glow 3840ms ease-out 0.2s both; }
+.mark--graphite.play .p-hz     { stroke-dasharray: 100 100; animation: graphite-draw 2160ms linear 0.2s both; }
 @keyframes graphite-rise { from { transform: translateY(76px); } to { transform: translateY(0); } }
 @keyframes graphite-glow { 0% { opacity: 0; transform: scale(0.4); } 45% { opacity: 0; transform: scale(0.5); } 100% { opacity: 0.45; transform: scale(1); } }
 @keyframes graphite-draw { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
 
 @media (prefers-reduced-motion: reduce) {
-  .js .mark--journey .sun, .js .mark--graphite .p-pencil { transform: none; animation: none; }
-  .js .mark--journey .hz, .js .mark--graphite .p-hz { stroke-dashoffset: 0; animation: none; }
-  .js .mark--journey .glow { opacity: 0.55; transform: none; animation: none; }
-  .js .mark--graphite .p-glow { opacity: 0.45; transform: none; animation: none; }
+  .mark.play * { animation: none !important; }
 }
 
 /* ---------- header ---------- */

@@ -24,14 +24,14 @@ Then open http://localhost:4000. The `github-pages` gem matches the Jekyll versi
 | `privacy.html` | The plain-language privacy page. Update it whenever what the site or list collects changes. |
 | `assets/fonts/` | Self-hosted Newsreader and Instrument Sans (variable WOFF2, Latin and Latin Extended), with their OFL licenses. |
 | `assets/css/site.css` | All styles. Light and dark mode follow the visitor's system setting. |
-| `assets/js/marks.js` | Plays a logo's animation when it scrolls into view and on hover; opens the phone menu. |
+| `assets/js/marks.js` | Replays a logo's animation on hover (logos otherwise rest in their finished state); opens the phone menu. |
 | `confirm.html` | Where Kit sends people right after they sign up, asking them to confirm their email. |
 | `thanks.html` | Where Kit sends people after they click the confirmation link. |
 
 ### Adding an app
 
 1. Add `_apps/<name>.md`, copying an existing one. Set `order` to place it.
-2. Add its logo as `_includes/marks/<name>.html` and set `mark: <name>`. Give the logo the `js-mark` class if it animates.
+2. Add its logo as `_includes/marks/<name>.html` and set `mark: <name>`. Give the logo the `js-mark` class if it animates on hover.
 3. Create a Kit tag for it and put the tag's ID in `kit_tag_id`.
 
 The home page is currently written for Graphite alone, so a new app needs its own section in `index.html` and its own Kit tag in the waitlist form.
