@@ -1,0 +1,32 @@
+<span class="mark mark--radar js-mark" data-smil data-duration="4800" aria-hidden="true"><svg class="mark__art" viewBox="-48 -48 96 96" aria-hidden="true">
+  <circle r="48" fill="#27282B"/>
+  <g transform="rotate(-30)">
+    <animateTransform id="radar-sweep-{{ include.id }}" class="smil-replay" attributeName="transform" type="rotate" from="-30" to="690" dur="4.8s" begin="indefinite" calcMode="linear" fill="freeze"/>
+    <path d="M0 0 L48 0 A48 48 0 0 0 0 -48 Z" fill="#B8692A" opacity="0.22"/>
+    <path d="M0 0 L48 0 A48 48 0 0 0 24 -41.57 Z" fill="#B8692A" opacity="0.36"/>
+    <path d="M0 0 L48 0 A48 48 0 0 0 41.57 -24 Z" fill="#B8692A" opacity="0.65"/>
+    <line x1="0" y1="0" x2="48" y2="0" stroke="#FBF8F3" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+  <g>
+    <circle cx="12.68" cy="-23.84" r="2" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="1;0" dur="1.9s" begin="radar-sweep-{{ include.id }}.begin+2.187s;radar-sweep-{{ include.id }}.begin+4.587s" calcMode="spline" keyTimes="0;1" keySplines="0.5 0 1 1" fill="freeze"/>
+      <animate attributeName="fill" values="#FFFFFF;#ECB47A" dur="1.9s" begin="radar-sweep-{{ include.id }}.begin+2.187s;radar-sweep-{{ include.id }}.begin+4.587s" fill="freeze"/>
+    </circle>
+    <circle cx="29.34" cy="6.24" r="2" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="1;0" dur="1.9s" begin="radar-sweep-{{ include.id }}.begin+0.28s;radar-sweep-{{ include.id }}.begin+2.68s" calcMode="spline" keyTimes="0;1" keySplines="0.5 0 1 1" fill="freeze"/>
+      <animate attributeName="fill" values="#FFFFFF;#ECB47A" dur="1.9s" begin="radar-sweep-{{ include.id }}.begin+0.28s;radar-sweep-{{ include.id }}.begin+2.68s" fill="freeze"/>
+    </circle>
+    <circle cx="3.95" cy="18.58" r="2" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="1;0" dur="1.9s" begin="radar-sweep-{{ include.id }}.begin+0.72s;radar-sweep-{{ include.id }}.begin+3.12s" calcMode="spline" keyTimes="0;1" keySplines="0.5 0 1 1" fill="freeze"/>
+      <animate attributeName="fill" values="#FFFFFF;#ECB47A" dur="1.9s" begin="radar-sweep-{{ include.id }}.begin+0.72s;radar-sweep-{{ include.id }}.begin+3.12s" fill="freeze"/>
+    </circle>
+    <circle cx="-23.74" cy="14.84" r="2" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="1;0" dur="1.9s" begin="radar-sweep-{{ include.id }}.begin+1.187s;radar-sweep-{{ include.id }}.begin+3.587s" calcMode="spline" keyTimes="0;1" keySplines="0.5 0 1 1" fill="freeze"/>
+      <animate attributeName="fill" values="#FFFFFF;#ECB47A" dur="1.9s" begin="radar-sweep-{{ include.id }}.begin+1.187s;radar-sweep-{{ include.id }}.begin+3.587s" fill="freeze"/>
+    </circle>
+    <circle cx="-18.66" cy="-11.66" r="2" fill="#FFFFFF" opacity="0">
+      <animate attributeName="opacity" values="1;0" dur="1.9s" begin="radar-sweep-{{ include.id }}.begin+1.613s;radar-sweep-{{ include.id }}.begin+4.013s" calcMode="spline" keyTimes="0;1" keySplines="0.5 0 1 1" fill="freeze"/>
+      <animate attributeName="fill" values="#FFFFFF;#ECB47A" dur="1.9s" begin="radar-sweep-{{ include.id }}.begin+1.613s;radar-sweep-{{ include.id }}.begin+4.013s" fill="freeze"/>
+    </circle>
+  </g>
+</svg></span>

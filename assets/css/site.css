@@ -132,15 +132,10 @@ img, svg { max-width: 100%; }
 }
 .mark__art { display: block; width: 100%; height: 100%; }
 
-/* The logo rests in its finished state. Hovering replays the animation,
-   which starts from the hidden state (fill mode "both" covers the delay). */
-.mark--graphite .p-glow { opacity: 0.45; }
-.mark--graphite.play .p-pencil { animation: graphite-rise 3600ms cubic-bezier(0.22, 0.61, 0.30, 1) 0.2s both; }
-.mark--graphite.play .p-glow   { transform-origin: 50px 34px; animation: graphite-glow 3840ms ease-out 0.2s both; }
-.mark--graphite.play .p-hz     { stroke-dasharray: 100 100; animation: graphite-draw 2160ms linear 0.2s both; }
-@keyframes graphite-rise { from { transform: translateY(76px); } to { transform: translateY(0); } }
-@keyframes graphite-glow { 0% { opacity: 0; transform: scale(0.4); } 45% { opacity: 0; transform: scale(0.5); } 100% { opacity: 0.45; transform: scale(1); } }
-@keyframes graphite-draw { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+/* Logos rest in their finished state. Hovering replays the animation:
+   CSS-animated logos via the "play" class, Radar via its own SVG animation
+   (started from assets/js/marks.js). */
+.mark--radar { background: #27282b; }
 
 @media (prefers-reduced-motion: reduce) {
   .mark.play * { animation: none !important; }
@@ -207,8 +202,25 @@ img, svg { max-width: 100%; }
 @media (max-width: 560px) { .hero { padding-top: 72px; padding-bottom: 72px; } }
 
 .product { display: flex; align-items: center; gap: 18px; }
-.product .mark { width: 64px; height: 64px; }
+.product .mark { width: 88px; height: 88px; }
 .product__name { font-family: var(--serif); font-size: 32px; line-height: 1.1; letter-spacing: -0.01em; }
+/* Name and tagline share one baseline, split by a hairline rule. */
+.product__lockup { display: flex; align-items: baseline; gap: 12px; padding-bottom: 8px; }
+.product__tagline {
+  position: relative; padding-left: 17px;
+  font-weight: 600; font-size: 12px; line-height: 1; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--muted);
+}
+.product__tagline::before {  /* the hairline, as tall as the name's capitals */
+  content: ""; position: absolute; left: 0; bottom: -3px;
+  width: 1px; height: 25px; background: var(--line);
+}
+@media (max-width: 560px) {
+  .product .mark { width: 72px; height: 72px; }
+  .product__lockup { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .product__tagline { padding-left: 0; }
+  .product__tagline::before { display: none; }
+}
 
 /* ---------- sections ---------- */
 
@@ -307,3 +319,13 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
   padding-left: 40.5px;  /* lines up with the D in the name */
 }
 .footer__links { display: flex; flex-wrap: wrap; gap: 20px; }
+.footer__legal { flex-basis: 100%; margin: 0; font-size: 12px; }
+
+/* Trademark symbol: small and raised, without changing the line height. */
+.tm {
+  font-family: var(--sans); font-size: 0.32em; font-weight: 500; letter-spacing: 0;
+  position: relative; top: -1.35em; vertical-align: baseline; line-height: 0;
+  margin-left: 0.12em;
+}
+.brand .tm { font-size: 0.42em; top: -1.1em; }
+.product__name .tm { font-size: 0.4em; top: -1.15em; }

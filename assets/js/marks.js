@@ -1,17 +1,32 @@
 // Replays an app logo's animation when the pointer moves over it.
 // Logos rest in their finished state, so nothing plays on load.
+// CSS-animated logos restart by toggling the "play" class. SVG-animated
+// logos (data-smil, like Radar) start their own .smil-replay animation,
+// which for Radar sweeps two full turns from 2 o'clock back to 2 o'clock.
 (function () {
   "use strict";
 
-  var REPLAY_GUARD_MS = 4000;
+  var reduceMotion = false;
+  try { reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
 
-  function play(mark) {
-    var now = Date.now();
-    if (mark._startedAt && now - mark._startedAt < REPLAY_GUARD_MS) return;
-    mark._startedAt = now;
+  function playSmil(mark) {
+    if (reduceMotion) return;
+    var anim = mark.querySelector(".smil-replay");
+    if (anim && typeof anim.beginElement === "function") anim.beginElement();
+  }
+
+  function playCss(mark) {
     mark.classList.remove("play");
     void mark.offsetWidth; // restart the CSS animations
     mark.classList.add("play");
+  }
+
+  function play(mark) {
+    var guard = parseInt(mark.getAttribute("data-duration"), 10) || 4000;
+    var now = Date.now();
+    if (mark._startedAt && now - mark._startedAt < guard) return;
+    mark._startedAt = now;
+    if (mark.hasAttribute("data-smil")) playSmil(mark); else playCss(mark);
   }
 
   document.querySelectorAll(".js-mark").forEach(function (mark) {
