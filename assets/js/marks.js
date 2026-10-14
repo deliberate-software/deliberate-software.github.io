@@ -11,8 +11,10 @@
 
   function playSmil(mark) {
     if (reduceMotion) return;
-    var anim = mark.querySelector(".smil-replay");
-    if (anim && typeof anim.beginElement === "function") anim.beginElement();
+    // Radar's sweep, arm and shadow are separate animations; start them together.
+    mark.querySelectorAll(".smil-replay").forEach(function (anim) {
+      if (typeof anim.beginElement === "function") anim.beginElement();
+    });
   }
 
   function playCss(mark) {

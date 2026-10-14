@@ -198,28 +198,17 @@ img, svg { max-width: 100%; }
 }
 .hero__title em { font-style: italic; }
 .hero__lead { font-size: 20px; max-width: 34em; color: var(--muted); }
-.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px; }
+.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 8px; }
 @media (max-width: 560px) { .hero { padding-top: 72px; padding-bottom: 72px; } }
 
 .product { display: flex; align-items: center; gap: 18px; }
 .product .mark { width: 88px; height: 88px; }
 .product__name { font-family: var(--serif); font-size: 32px; line-height: 1.1; letter-spacing: -0.01em; }
-/* Name and tagline share one baseline, split by a hairline rule. */
-.product__lockup { display: flex; align-items: baseline; gap: 12px; padding-bottom: 8px; }
-.product__tagline {
-  position: relative; padding-left: 17px;
-  font-weight: 600; font-size: 12px; line-height: 1; letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--muted);
-}
-.product__tagline::before {  /* the hairline, as tall as the name's capitals */
-  content: ""; position: absolute; left: 0; bottom: -3px;
-  width: 1px; height: 25px; background: var(--line);
-}
+/* Name over its status line, beside a logo that's clearly the larger element. */
+.product__lockup { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
 @media (max-width: 560px) {
   .product .mark { width: 72px; height: 72px; }
-  .product__lockup { flex-direction: column; align-items: flex-start; gap: 6px; }
-  .product__tagline { padding-left: 0; }
-  .product__tagline::before { display: none; }
+}
 }
 
 /* ---------- sections ---------- */

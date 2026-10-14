@@ -9,15 +9,15 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Then open http://localhost:4000. The `github-pages` gem matches the Jekyll version GitHub uses, so what you see locally is what ships.
+Then open http://localhost:4000. The Gemfile uses Jekyll 3.10, the version GitHub Pages builds with. GitHub Pages ignores the Gemfile, so it only affects the local preview.
 
 ## Project layout
 
 | Path | What it is |
 | --- | --- |
 | `_apps/radar.md` | Radar's name, platform, launch timing and Kit tag. Change `launch` here and the hero and waitlist follow. |
-| `index.html` | The home page, written for Radar. Radar's tagline lives in `_apps/radar.md`. |
-| `_includes/marks/` | The logos: `enso.html` (company) and `radar.html`. |
+| `index.html` | The home page, written for Radar. |
+| `_includes/marks/` | The logos: `deliberate.html` (company, the brushed D) and `radar.html`. |
 | `_includes/radar-graph.html` | The note-and-tags graph under "How it works." |
 | `_includes/waitlist.html` | The Kit signup form: one email field, tagged for Radar with a hidden `tags[]` input. |
 | `_data/principles.yml` | The three principles. |
