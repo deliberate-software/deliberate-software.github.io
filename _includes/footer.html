@@ -1,22 +1,24 @@
 <footer class="site-footer">
   <div class="container footer">
-    <div class="footer__brand">
-      <a class="brand brand--footer" href="{{ '/' | relative_url }}">
-        {% include marks/deliberate.html id="footer" %}
-        <span>{{ site.title }}</span>
-      </a>
-      <div class="footer__tagline">{{ site.tagline }}</div>
-    </div>
+    <a class="footer__brand" href="{{ '/' | relative_url }}">
+      {% include marks/deliberate.html id="footer" %}
+      <span class="footer__lockup">
+        <span class="footer__name">{{ site.title }}</span>
+        <span class="footer__tagline">{{ site.tagline }}</span>
+      </span>
+    </a>
     <div class="footer__links">
       <a href="{{ '/' | relative_url }}#how">How it works</a>
       <a href="{{ '/roadmap/' | relative_url }}">Roadmap</a>
       <a href="{{ '/' | relative_url }}#about">About</a>
       <a href="{{ '/' | relative_url }}privacy/">Privacy</a>
     </div>
-    <div>© {{ site.time | date: "%Y" }} {{ site.legal_name }}</div>
-    <p class="footer__legal">{{ site.title }}
-      {%- for app in site.apps -%}
-        {%- if forloop.last %} and {% else %}, {% endif -%}{{ app.name }}
-      {%- endfor %} are trademarks of {{ site.legal_name }}.</p>
+    <div class="footer__notices">
+      <p>© {{ site.time | date: "%Y" }} {{ site.legal_name }}</p>
+      <p>{{ site.title }}
+        {%- for app in site.apps -%}
+          {%- if forloop.last %} and {% else %}, {% endif -%}{{ app.name }}
+        {%- endfor %} are<br>trademarks of {{ site.legal_name }}.</p>
+    </div>
   </div>
 </footer>

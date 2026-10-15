@@ -11,7 +11,7 @@ layout: default
     </div>
   </div>
   <h1 class="hero__title">Notes that bring their own <em>context.</em></h1>
-  <p class="hero__lead">You write it all down: the call with Tom, the budget thread, the year-end checklist. Then the meeting starts, and the notes you need are three searches away. Radar is a fast, plain-text notes app for Mac that gathers everything connected to the note in front of you. It knows before you ask, so you walk in prepared.</p>
+  <p class="hero__lead">You write it all down: the call with Tom, the budget thread, the year-end checklist. Then the meeting starts, and the notes you need are three searches away. Radar is a fast, plain-text notes app for Mac that files each note by who and what it's about, and keeps everything connected to it beside the page. It's all there before you even ask, so you walk in prepared.</p>
   <div class="hero__actions">
     <a class="button" href="#waitlist">Join the Radar waitlist</a>
     <a class="button button--outline" href="#how">How it works</a>
@@ -30,18 +30,63 @@ layout: default
       <li class="principle">
         <div class="eyebrow eyebrow--number">02</div>
         <h3>Tag as you go</h3>
-        <p>Mark people with <code>@</code>, teams with <code>!</code>, and projects with <code>#</code>, right in the text: <code>@tom</code>, <code>!accounting</code>, <code>#year-end-2026</code>. Tags aren't just labels. Each one is a first-class citizen with a note of its own.</p>
+        <p>Mark people with <code>@</code>, organizations with <code>!</code>, and projects with <code>#</code>, right in the text: <code>@tom</code>, <code>!accounting</code>, <code>#year-end-2026</code>. Tags aren't just labels. Each one is a first-class citizen with a note of its own.</p>
       </li>
       <li class="principle">
         <div class="eyebrow eyebrow--number">03</div>
         <h3>See the context</h3>
-        <p>Beside every note, Radar's context window shows the tags, links and notes connected to it. Meeting @tom in !accounting about #year-end-2026? Your last conversation and the open questions are already there.</p>
+        <p>Beside every note, Radar's context pane shows the tags, links and notes connected to it. Meeting @tom in !accounting about #year-end-2026? Your last conversation and the open questions are already there.</p>
       </li>
     </ol>
     <figure class="figure">
       {% include radar-graph.html %}
-      <figcaption>One note, linked to a person, a team and a project. The tags are notes too, so they link to each other, and to every other note that mentions them.</figcaption>
+      <figcaption>One note, linked to a person, an organization and a project. The tags are notes too, so they link to each other, and to every other note that mentions them.</figcaption>
     </figure>
+  </div>
+</section>
+
+<section class="section" id="free" aria-labelledby="free-heading">
+  <div class="container">
+    <div class="section__intro">
+      <h2 id="free-heading" class="section__title">Free, for as long as you like.</h2>
+      <p>Everything you need to write, and to find it again, comes free in 1.0.</p>
+    </div>
+    <div class="free">
+    <figure class="shot">
+      <picture>
+        <source srcset="{{ '/assets/images/radar/site-note-light.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+        <img src="{{ '/assets/images/radar/site-note-dark.png' | relative_url }}" alt="A planning note in Radar, its people, organizations, and projects tagged, with the Relay project's page beside it: its people, organizations, related projects, and open tasks." loading="lazy">
+      </picture>
+      <figcaption>A planning note, with the Relay project's page beside it.</figcaption>
+    </figure>
+    {%- assign coming = site.data.roadmap | first %}
+    <ul class="free-list">
+      {%- for feature in coming.free %}
+      <li>{{ feature }}</li>
+      {%- endfor %}
+    </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="premium" aria-labelledby="premium-heading">
+  <div class="container">
+    <div class="section__intro">
+      <h2 id="premium-heading" class="section__title">Your work, at a glance.</h2>
+      <p>Premium adds four views of your whole journal.</p>
+    </div>
+    <div class="views">
+      {%- for view in site.data.views %}
+      <figure class="view view--{{ view.id }}">
+        <picture>
+          {%- comment %} Each picture in the other appearance from the page's, so it stands out. {% endcomment %}
+          <source srcset="{{ '/assets/images/radar/premium-' | append: view.id | append: '-light.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+          <img src="{{ '/assets/images/radar/premium-' | append: view.id | append: '-dark.png' | relative_url }}" alt="{{ view.alt }}" loading="lazy">
+        </picture>
+        <figcaption><strong>{{ view.name }}</strong> {{ view.detail }}</figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
   </div>
 </section>
 
@@ -64,7 +109,7 @@ layout: default
   <div class="container">
     <div class="section__intro">
       <h2 id="roadmap-heading" class="section__title">Where Radar is headed.</h2>
-      <p>Version 1.0 files your notes by who and what they're about, with context beside every one, a board for your projects, and your tasks in one place. Next comes meeting prep from your calendar. Waitlist members hear about each step first, and their feedback helps set the order.</p>
+      <p>Plans, not promises: what's coming in 1.0, what's next, and what's further off, free and Premium. Waitlist members hear about each step first, and their feedback helps set the order.</p>
     </div>
     <div class="hero__actions">
       <a class="button button--outline" href="{{ '/roadmap/' | relative_url }}">See the roadmap</a>
@@ -78,8 +123,12 @@ layout: default
     <div class="note">
       <p>I've kept notes in most of the apps you know. Notion never felt nimble to me: getting a note in and organized always felt cumbersome. Agenda feels much faster, and it knows your calendar, which is great, but your data is locked in their database. Obsidian is both fast and plain text, but it doesn't know your day or provide context for your next note.</p>
       <p>I want all of it at once. Note taking that feels as fast as Obsidian. An app that knows my day, like Agenda. AI that helps without being in my face. And notes that live outside the editor, where I can use them as I see fit and keep them wherever I want.</p>
-      <p>Obsidian lets you take notes. Radar is meant to understand your busy schedule and prepare you for what's next.</p>
-      <p class="note__sign">Alan Ridlehoover<br><span class="eyebrow eyebrow--tight">Founder, Deliberate Software</span></p>
+      <p>I first designed Radar for a job search: every recruiter, company and role, kept straight without filing a thing. It worked so well that I wanted it at work, too.</p>
+      <p>Obsidian lets you take notes. Radar puts what you need beside the note in front of you, and learning your schedule is next on the roadmap.</p>
+      <div class="note__signature">
+        <img class="avatar" src="{{ '/assets/images/alan.jpg' | relative_url }}" alt="Alan Ridlehoover" width="64" height="64">
+        <p class="note__sign">Alan Ridlehoover<br><span class="eyebrow eyebrow--tight">Founder, Deliberate Software</span></p>
+      </div>
     </div>
   </div>
 </section>

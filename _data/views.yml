@@ -1,0 +1,18 @@
+# Premium's four views, pictured on the home page from Radar's Fernwood sample journal. Pictures come from Radar's
+# `make shots`, copied to assets/images/radar.
+- id: tasks
+  name: The Tasks view.
+  detail: Every task in the journal, sorted by when it's due or how much it matters.
+  alt: Radar's Tasks view, listing open tasks with their due dates.
+- id: board
+  name: The Board.
+  detail: Projects in columns by stage, dragged from one to the next.
+  alt: Radar's Board, with projects in To do, In progress, In review, and Done.
+- id: graph
+  name: The Graph.
+  detail: Who and what your notes connect.
+  alt: Radar's Graph, with the Relay project centered among its ten strongest ties.
+- id: ask
+  name: Ask Radar.
+  detail: Questions of your journal, answered by Apple Intelligence on your Mac.
+  alt: Radar answering "What's the status of Atlas?" from the journal's notes.

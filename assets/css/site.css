@@ -230,6 +230,52 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
 .figure { margin: 0 auto; width: 100%; max-width: 520px; display: flex; flex-direction: column; gap: 16px; padding-top: 16px; }
 .figure figcaption { font-size: 15px; color: var(--muted); text-align: center; }
 
+/* ---------- free in 1.0 ---------- */
+
+.shot { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.shot img { display: block; width: 100%; border: 1px solid var(--line); border-radius: 12px; }
+.shot figcaption { color: var(--muted); font-size: 15px; text-align: center; }
+/* The picture at half the width, the free features beside it. */
+.free { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+.free-list { margin: 0; padding-left: 1.1em; }
+.free-list li { color: var(--muted); padding-bottom: 10px; text-wrap: pretty; }
+@media (max-width: 720px) { .free { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- the photo box ---------- */
+
+.shot img, .view img { cursor: zoom-in; }
+.lightbox {
+  max-width: min(80vw, 1100px); max-height: 82vh; padding: 0; border: 0; background: transparent;
+  overflow: visible; cursor: zoom-out;
+}
+.lightbox::backdrop { background: rgba(20, 20, 22, 0.82); }
+.lightbox figure { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.lightbox img {
+  display: block; max-width: 100%; max-height: calc(82vh - 72px); width: auto; height: auto; margin: 0 auto;
+  border-radius: 12px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+.lightbox figcaption { color: #e9e5de; text-align: center; font-size: 16px; text-wrap: pretty; }
+.lightbox figcaption strong { color: #fbf8f3; font-weight: 600; }
+.lightbox__close {
+  position: fixed; top: 16px; right: 20px; width: 44px; height: 44px; border: 0; border-radius: 50%;
+  background: rgba(251, 248, 243, 0.12); color: #fbf8f3; font-size: 26px; line-height: 1; cursor: pointer;
+}
+
+/* ---------- Premium's views ---------- */
+
+.views { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; }
+.view { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.view img {
+  display: block; width: 100%; aspect-ratio: 900 / 560; object-fit: cover; object-position: top left;
+  border: 1px solid var(--line); border-radius: 10px;
+}
+.view--graph img { object-fit: contain; background: var(--graphite); }
+.view--ask img { object-position: top center; }
+.view figcaption { color: var(--muted); text-wrap: pretty; }
+.view figcaption strong { color: var(--ink); font-weight: 600; }
+@media (prefers-color-scheme: dark) { .view--graph img { background: var(--warm); } }
+@media (max-width: 720px) { .views { grid-template-columns: minmax(0, 1fr); } }
+
 /* ---------- roadmap ---------- */
 
 .roadmap { margin: 0; display: flex; flex-direction: column; max-width: 46em; }
@@ -274,6 +320,8 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
 
 .note { display: flex; flex-direction: column; gap: 20px; max-width: 34em; }
 .note p { font-family: var(--serif); font-size: 21px; line-height: 1.5; }
+.note__signature { display: flex; align-items: center; gap: 16px; }
+.avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: none; }
 .note .note__sign { font-family: var(--sans); font-size: 17px; font-weight: 600; line-height: 1.6; }
 
 /* ---------- prose pages ---------- */
@@ -325,18 +373,30 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
 
 .footer {
   padding-top: 40px; padding-bottom: 48px;
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px 40px;
   font-size: 14px; color: var(--muted);
 }
-.footer__brand { display: flex; flex-direction: column; gap: 2px; }
-.brand--footer { font-size: 20px; font-weight: 400; gap: 10px; color: var(--ink); }
-.brand--footer .mark { width: 28px; height: 28px; top: -2px; }
-.footer__tagline {
-  font-weight: 600; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
-  padding-left: 40.5px;  /* lines up with the D in the name */
+/* The D, centered beside the name and tagline as a pair. */
+.footer__brand { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); }
+.footer__brand .mark {
+  width: 40px; height: 40px; flex: none;
+  box-shadow: 0 0 0 1px rgba(39, 40, 43, 0.22), 0 0 6px 1px rgba(39, 40, 43, 0.18);
 }
-.footer__links { display: flex; flex-wrap: wrap; gap: 20px; }
-.footer__legal { flex-basis: 100%; margin: 0; font-size: 12px; }
+.footer__lockup { display: flex; flex-direction: column; gap: 4px; }
+.footer__name { font-family: var(--serif); font-size: 20px; line-height: 1.1; letter-spacing: -0.01em; }
+.footer__tagline {
+  font-weight: 600; font-size: 10px; line-height: 1; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--muted); padding-left: 1px;  /* the M's stem under the D's */
+}
+.footer__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+/* The copyright and trademark notices, together on the right. */
+.footer__notices { display: flex; flex-direction: column; gap: 4px; text-align: right; font-size: 12px; }
+.footer__notices p { margin: 0; }
+@media (max-width: 720px) {
+  .footer { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .footer__links { justify-content: flex-start; }
+  .footer__notices { text-align: left; }
+}
 
 /* Trademark symbol: small and raised, without changing the line height. */
 .tm {

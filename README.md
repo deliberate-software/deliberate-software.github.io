@@ -15,7 +15,7 @@ Then open http://localhost:4000. The Gemfile uses Jekyll 3.10, the version GitHu
 
 | Path | What it is |
 | --- | --- |
-| `_apps/radar.md` | Radar's name, platform, launch timing and Kit tag. Change `launch` here and the hero and waitlist follow. |
+| `_apps/radar.md` | Radar's name, platform, launch timing and Kit tag. Change `launch` here ("soon", or "in early 2027") and the hero and waitlist follow. |
 | `index.html` | The home page, written for Radar. |
 | `_includes/marks/` | The logos: `deliberate.html` (company, the brushed D) and `radar.html`. |
 | `_includes/radar-graph.html` | The note-and-tags graph under "How it works." |
