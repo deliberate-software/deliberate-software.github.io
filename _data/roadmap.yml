@@ -1,0 +1,37 @@
+# Radar's roadmap, nearest first. Each horizon's features are Free or Premium; the further out, the less certain.
+- name: Coming in 1.0
+  forecast: The track we're on. Being built now.
+  free:
+    - Notes that file themselves, by the people, organizations, and projects you tag
+    - Context beside every note, with each one's history
+    - Tasks written right in your notes, with due dates
+    - Links between notes
+    - Attachments, such as images and PDFs, kept with your notes
+    - Journals in Radar's own iCloud Drive folder, or any folder you choose
+    - A Job search journal, with its own board and task list
+  premium:
+    - "The Tasks view: every task in the journal, sorted by when it's due or how much it matters"
+    - "The Board: projects in columns by stage, dragged from one to the next"
+    - "The Graph: who and what your notes connect"
+    - "Ask Radar: questions of your journal, answered by Apple Intelligence on your Mac"
+- name: Next
+  forecast: Likely in the year after 1.0, in roughly this order.
+  free:
+    - Quick capture from anywhere, with a keyboard shortcut
+    - A word and character count
+    - "Project details: owner, lead, and who it belongs to"
+    - Lists of your people, organizations, and projects
+  premium:
+    - "Meeting prep: a brief that's ready when a meeting starts, from your calendar"
+    - A calendar view of what's due
+    - Several journals open at once
+    - Search filters, and searching tasks
+- name: Later
+  forecast: Further out, so less certain. These may change shape, or turn away.
+  free:
+    - Your notes in Spotlight
+    - Shortcuts and Siri
+  premium:
+    - Suggestions as you write, for names and tasks you didn't tag, from Apple Intelligence on your Mac
+    - Professional Editions
+    - Optional online features, such as AI agents
