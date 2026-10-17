@@ -1,61 +1,62 @@
 ---
 layout: default
 ---
-{%- assign app = site.apps | where: "name", "Radar" | first -%}
-<section class="hero container" id="top">
-  <div class="product">
-    {% include marks/radar.html id="hero" %}
-    <div class="product__lockup">
-      <span class="product__name">{{ app.name }}<sup class="tm">™</sup></span>
-      <span class="eyebrow eyebrow--status">For {{ app.platform }} · Coming {{ app.launch }}</span>
+{%- assign app = site.apps | where: "name", "Parker" | first -%}
+<section class="hero hero--parker container" id="top">
+  <div>
+    <span class="eyebrow eyebrow--status">{{ app.name }} · For {{ app.platform }} · Coming {{ app.launch }}</span>
+    <h1 class="hero__title">Meet Parker.</h1>
+    <p class="hero__subtitle">Your most <em>organized</em> assistant ever.</p>
+    <p class="hero__lead">You’re in meetings all day. Jot down who said what, about which project, and what you promised. Parker will keep it all straight. When the next meeting starts, you’ll have all the context you need at your fingertips.</p>
+    <div class="hero__actions">
+      <a class="button" href="#waitlist">Get on Parker’s list</a>
+      <a class="button button--outline" href="#what">What Parker does</a>
     </div>
   </div>
-  <h1 class="hero__title">Notes that bring their own <em>context.</em></h1>
-  <p class="hero__lead">You write it all down: the call with Tom, the budget thread, the year-end checklist. Then the meeting starts, and the notes you need are three searches away. Radar is a fast, plain-text notes app for Mac that files each note by who and what it's about, and keeps everything connected to it beside the page. It's all there before you even ask, so you walk in prepared.</p>
-  <div class="hero__actions">
-    <a class="button" href="#waitlist">Join the Radar waitlist</a>
-    <a class="button button--outline" href="#how">How it works</a>
-  </div>
+  {% include marks/parker.html id="hero" %}
 </section>
 
-<section class="section" id="how" aria-labelledby="how-heading">
+<section class="section" id="what" aria-labelledby="what-heading">
   <div class="container">
-    <h2 id="how-heading" class="section__title">Write fast. Tag as you go. See the context.</h2>
-    <ol class="principles steps">
-      <li class="principle">
-        <div class="eyebrow eyebrow--number">01</div>
-        <h3>Write it down</h3>
-        <p>Radar is built for speed: open it, type, move on. Getting a thought down should never feel cumbersome. And it should never require a mouse.</p>
-      </li>
-      <li class="principle">
-        <div class="eyebrow eyebrow--number">02</div>
-        <h3>Tag as you go</h3>
-        <p>Mark people with <code>@</code>, organizations with <code>!</code>, and projects with <code>#</code>, right in the text: <code>@tom</code>, <code>!accounting</code>, <code>#year-end-2026</code>. Tags aren't just labels. Each one is a first-class citizen with a note of its own.</p>
-      </li>
-      <li class="principle">
-        <div class="eyebrow eyebrow--number">03</div>
-        <h3>See the context</h3>
-        <p>Beside every note, Radar's context pane shows the tags, links and notes connected to it. Meeting @tom in !accounting about #year-end-2026? Your last conversation and the open questions are already there.</p>
-      </li>
-    </ol>
-    <figure class="figure">
-      {% include radar-graph.html %}
-      <figcaption>One note, linked to a person, an organization and a project. The tags are notes too, so they link to each other, and to every other note that mentions them.</figcaption>
-    </figure>
+    <div class="section__intro">
+      <h2 id="what-heading" class="section__title">What Parker does for you.</h2>
+    </div>
+    <div class="jobs">
+      <div class="job">
+        <h3>Organizes as you write</h3>
+        <p>Mention a person, organization, or project, and Parker sorts the note under each&nbsp;of&nbsp;them, so one note can live in several&nbsp;places.</p>
+      </div>
+      <div class="job">
+        <h3>Gives you context</h3>
+        <p>Mention <code>@maya</code>, and everything you’ve written about her opens right next to your&nbsp;note.</p>
+      </div>
+      <div class="job">
+        <h3>Remembers your promises</h3>
+        <p>Jot down “Send <code>@tim</code> the deck&nbsp;Friday,” and Parker keeps it top&nbsp;of&nbsp;mind until it’s&nbsp;done.</p>
+      </div>
+      <div class="job">
+        <h3>Keeps your confidences</h3>
+        <p>Your notes stay where you keep them, on your&nbsp;Mac or in your iCloud&nbsp;Drive, never on our&nbsp;servers.</p>
+      </div>
+      <div class="job job--keys">
+        <h3>Keeps your hands on the keys</h3>
+        <p>Everything works from the keyboard,<br>so you never reach for the mouse mid‑thought.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="section" id="free" aria-labelledby="free-heading">
   <div class="container">
     <div class="section__intro">
-      <h2 id="free-heading" class="section__title">Free, for as long as you like.</h2>
+      <h2 id="free-heading" class="section__title">Free forever.</h2>
       <p>Everything you need to write, and to find it again, comes free in 1.0.</p>
     </div>
     <div class="free">
     <figure class="shot">
       <picture>
         <source srcset="{{ '/assets/images/radar/site-note-light.png' | relative_url }}" media="(prefers-color-scheme: dark)">
-        <img src="{{ '/assets/images/radar/site-note-dark.png' | relative_url }}" alt="A planning note in Radar, its people, organizations, and projects tagged, with the Relay project's page beside it: its people, organizations, related projects, and open tasks." loading="lazy">
+        <img src="{{ '/assets/images/radar/site-note-dark.png' | relative_url }}" alt="A planning note in Parker, its people, organizations, and projects tagged, with the Relay project's page beside it: its people, organizations, related projects, and open tasks." loading="lazy">
       </picture>
       <figcaption>A planning note, with the Relay project's page beside it.</figcaption>
     </figure>
@@ -90,41 +91,14 @@ layout: default
   </div>
 </section>
 
-<section class="section" id="principles" aria-labelledby="principles-heading">
-  <div class="container">
-    <h2 id="principles-heading" class="section__title">Every feature has to earn its place.</h2>
-    <div class="principles">
-      {%- for principle in site.data.principles %}
-      <div class="principle">
-        <div class="eyebrow eyebrow--number">{{ forloop.index | prepend: "0" }}</div>
-        <h3>{{ principle.title }}</h3>
-        <p>{{ principle.body }}</p>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="roadmap" aria-labelledby="roadmap-heading">
-  <div class="container">
-    <div class="section__intro">
-      <h2 id="roadmap-heading" class="section__title">Where Radar is headed.</h2>
-      <p>Plans, not promises: what's coming in 1.0, what's next, and what's further off, free and Premium. Waitlist members hear about each step first, and their feedback helps set the order.</p>
-    </div>
-    <div class="hero__actions">
-      <a class="button button--outline" href="{{ '/roadmap/' | relative_url }}">See the roadmap</a>
-    </div>
-  </div>
-</section>
-
 <section class="section" id="about" aria-labelledby="about-heading">
   <div class="container">
-    <h2 id="about-heading" class="section__title">Why I'm building Radar.</h2>
+    <h2 id="about-heading" class="section__title">Why I'm building Parker.</h2>
     <div class="note">
       <p>I've kept notes in most of the apps you know. Notion never felt nimble to me: getting a note in and organized always felt cumbersome. Agenda feels much faster, and it knows your calendar, which is great, but your data is locked in their database. Obsidian is both fast and plain text, but it doesn't know your day or provide context for your next note.</p>
       <p>I want all of it at once. Note taking that feels as fast as Obsidian. An app that knows my day, like Agenda. AI that helps without being in my face. And notes that live outside the editor, where I can use them as I see fit and keep them wherever I want.</p>
-      <p>I first designed Radar for a job search: every recruiter, company and role, kept straight without filing a thing. It worked so well that I wanted it at work, too.</p>
-      <p>Obsidian lets you take notes. Radar puts what you need beside the note in front of you, and learning your schedule is next on the roadmap.</p>
+      <p>I first designed Parker for a job search: every recruiter, company and role, kept straight without filing a thing. It worked so well that I wanted it at work, too.</p>
+      <p>Obsidian lets you take notes. Parker puts what you need beside the note in front of you, and learning your schedule is next on the roadmap.</p>
       <div class="note__signature">
         <img class="avatar" src="{{ '/assets/images/alan.jpg' | relative_url }}" alt="Alan Ridlehoover" width="64" height="64">
         <p class="note__sign">Alan Ridlehoover<br><span class="eyebrow eyebrow--tight">Founder, Deliberate Software</span></p>

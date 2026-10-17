@@ -136,6 +136,8 @@ img, svg { max-width: 100%; }
    CSS-animated logos via the "play" class, Radar via its own SVG animation
    (started from assets/js/marks.js). */
 .mark--radar { background: #27282b; }
+/* Parker's headshot, on the brushed D's lit graphite. */
+.mark--parker { background: #27282b; }
 
 @media (prefers-reduced-motion: reduce) {
   .mark.play * { animation: none !important; }
@@ -209,11 +211,25 @@ img, svg { max-width: 100%; }
 @media (max-width: 560px) {
   .product .mark { width: 72px; height: 72px; }
 }
+
+/* Parker's hero: the pitch on the left, his headshot large on the right; above the pitch on phones. */
+.hero--parker { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 56px; align-items: center; }
+.hero--parker .eyebrow { display: inline-block; margin-bottom: 18px; }
+.hero--parker .hero__lead { margin-top: 24px; }
+.hero--parker .hero__actions { margin-top: 32px; }
+.hero--parker .mark { width: 320px; height: 320px; }
+.hero__subtitle {
+  font-family: var(--serif); font-size: clamp(28px, 3.6vw, 44px); line-height: 1.15; letter-spacing: -0.01em;
+  margin-top: 10px;
+}
+@media (min-width: 561px) { .hero--parker { padding-bottom: 128px; } }  /* 128 + 64 above What = the 192px between sections */
+@media (max-width: 860px) {
+  .hero--parker { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .hero--parker .mark { order: -1; width: 200px; height: 200px; }
 }
 
 /* ---------- sections ---------- */
 
-.section { border-top: 1px solid var(--line); }
 .section > .container { padding-top: 96px; padding-bottom: 96px; display: flex; flex-direction: column; gap: 48px; }
 .section__title {
   font-family: var(--serif); font-weight: 400; letter-spacing: -0.015em;
@@ -221,8 +237,20 @@ img, svg { max-width: 100%; }
 }
 .section__intro { display: flex; flex-direction: column; gap: 20px; }
 .section__intro p { font-size: 19px; max-width: 34em; color: var(--muted); }
+/* A light rule under each heading, except What's, which follows the hero and needs none. */
+.section:not(#what) .section__title { max-width: none; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
 
 code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em; color: var(--ink); }
+
+/* ---------- what Parker does ---------- */
+
+/* Pulled up under the hero, so the fold shows the start of the list. */
+#what > .container { padding-top: 64px; }
+.jobs { display: grid; gap: 28px 40px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.job { border-top: 1px solid var(--line); padding-top: 20px; }
+.job h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+.job p { color: var(--muted); text-wrap: pretty; }  /* no word left alone on a last line */
+.job--keys p { text-wrap: wrap; }  /* its own break after "keyboard," */
 
 /* ---------- how it works ---------- */
 
@@ -322,6 +350,8 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
 .note p { font-family: var(--serif); font-size: 21px; line-height: 1.5; }
 .note__signature { display: flex; align-items: center; gap: 16px; }
 .avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: none; }
+/* The same white ring as the logos. */
+.note__signature .avatar { border: 1px solid rgba(251, 248, 243, 0.9); box-shadow: 0 0 0 1px rgba(39, 40, 43, 0.22), 0 0 18px 2px rgba(39, 40, 43, 0.2); }
 .note .note__sign { font-family: var(--sans); font-size: 17px; font-weight: 600; line-height: 1.6; }
 
 /* ---------- prose pages ---------- */

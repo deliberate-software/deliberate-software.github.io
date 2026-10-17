@@ -1,4 +1,4 @@
-// Opens a picture of Radar larger, with its caption, in a photo box over the page.
+// Opens a picture of the app larger, with its caption, in a photo box over the page.
 // Clicking a picture, or pressing Return or Space on it, opens it; clicking anywhere, or Escape, closes it.
 (function () {
   "use strict";

@@ -15,11 +15,11 @@ Then open http://localhost:4000. The Gemfile uses Jekyll 3.10, the version GitHu
 
 | Path | What it is |
 | --- | --- |
-| `_apps/radar.md` | Radar's name, platform, launch timing and Kit tag. Change `launch` here ("soon", or "in early 2027") and the hero and waitlist follow. |
-| `index.html` | The home page, written for Radar. |
-| `_includes/marks/` | The logos: `deliberate.html` (company, the brushed D) and `radar.html`. |
-| `_includes/radar-graph.html` | The note-and-tags graph under "How it works." |
-| `_includes/waitlist.html` | The Kit signup form: one email field, tagged for Radar with a hidden `tags[]` input. |
+| `_apps/parker.md` | Parker's name, platform, launch timing and Kit tag. Change `launch` here ("soon", or "in early 2027") and the hero and waitlist follow. |
+| `index.html` | The home page, written for Parker. |
+| `_includes/marks/` | The logos: `deliberate.html` (company, the brushed D), `parker.html` (Parker's headshot on the D's lit graphite), and `radar.html` (Radar's old sweep, unused). |
+| `_includes/radar-graph.html` | The note-and-tags graph, unused since "How it works" became "What Parker does," waiting for a new place. |
+| `_includes/waitlist.html` | The Kit signup form: one email field, tagged for Parker with a hidden `tags[]` input. |
 | `_data/principles.yml` | The three principles. |
 | `privacy.html` | The plain-language privacy page. Update it whenever what the site or list collects changes. |
 | `assets/fonts/` | Self-hosted Newsreader and Instrument Sans (variable WOFF2, Latin and Latin Extended), with their OFL licenses. |
