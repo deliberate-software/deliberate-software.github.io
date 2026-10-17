@@ -34,13 +34,46 @@ layout: default
         <h3>Remembers your promises</h3>
         <p>Jot down “Send <code>@tim</code> the deck&nbsp;Friday,” and Parker keeps it top&nbsp;of&nbsp;mind until it’s&nbsp;done.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="look" aria-labelledby="look-heading">
+  <div class="container">
+    <div class="section__intro">
+      <h2 id="look-heading" class="section__title">A look inside.</h2>
+    </div>
+    <figure class="shot shot--wide">
+      <picture>
+        <source srcset="{{ '/assets/images/radar/site-note-light.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+        <img src="{{ '/assets/images/radar/site-note-dark.png' | relative_url }}" alt="A planning note in Parker, its people, organizations, and projects tagged, with the Relay project's page beside it: its people, organizations, related projects, and open tasks." loading="lazy">
+      </picture>
+      <figcaption>A planning note, with the Relay project's page beside it.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="believes" aria-labelledby="believes-heading">
+  <div class="container">
+    <div class="section__intro">
+      <h2 id="believes-heading" class="section__title">What Parker believes.</h2>
+    </div>
+    <div class="jobs jobs--two">
       <div class="job">
-        <h3>Keeps your confidences</h3>
-        <p>Your notes stay where you keep them, on your&nbsp;Mac or in your iCloud&nbsp;Drive, never on our&nbsp;servers.</p>
+        <h3>Your notes are yours</h3>
+        <p>Every note is a Markdown file in a folder you choose, on your&nbsp;Mac or in your iCloud&nbsp;Drive, never on our&nbsp;servers. Open them in any editor, today or in twenty&nbsp;years.</p>
       </div>
-      <div class="job job--keys">
-        <h3>Keeps your hands on the keys</h3>
-        <p>Everything works from the keyboard,<br>so you never reach for the mouse mid‑thought.</p>
+      <div class="job">
+        <h3>Privacy is a given</h3>
+        <p>Not a setting, and not a feature. Nothing you write is sent to us, sold, or used to train anything. When Parker answers a question, it answers on your&nbsp;Mac.</p>
+      </div>
+      <div class="job">
+        <h3>Made for everyone</h3>
+        <p>Everything works from the keyboard, and the text grows to the size you need, from the editor to the context&nbsp;pane.</p>
+      </div>
+      <div class="job">
+        <h3>Calm, on purpose</h3>
+        <p>No streaks, no badges, no nagging. Parker never pulls you out of your train of&nbsp;thought.</p>
       </div>
     </div>
   </div>
@@ -49,44 +82,108 @@ layout: default
 <section class="section" id="free" aria-labelledby="free-heading">
   <div class="container">
     <div class="section__intro">
-      <h2 id="free-heading" class="section__title">Free forever.</h2>
-      <p>Everything you need to write, and to find it again, comes free in 1.0.</p>
+      <h2 id="free-heading" class="section__title">Free, and fair.</h2>
+      <p>Everything you need to stay organized is free, for as long as you like. Premium adds flourishes, and it never gets in your&nbsp;way.</p>
     </div>
-    <div class="free">
-    <figure class="shot">
-      <picture>
-        <source srcset="{{ '/assets/images/radar/site-note-light.png' | relative_url }}" media="(prefers-color-scheme: dark)">
-        <img src="{{ '/assets/images/radar/site-note-dark.png' | relative_url }}" alt="A planning note in Parker, its people, organizations, and projects tagged, with the Relay project's page beside it: its people, organizations, related projects, and open tasks." loading="lazy">
-      </picture>
-      <figcaption>A planning note, with the Relay project's page beside it.</figcaption>
-    </figure>
-    {%- assign coming = site.data.roadmap | first %}
-    <ul class="free-list">
-      {%- for feature in coming.free %}
-      <li>{{ feature }}</li>
-      {%- endfor %}
-    </ul>
+    <div class="tiers">
+      <div class="tier">
+        <h3 class="eyebrow eyebrow--status">Free</h3>
+        <ul class="free-list">
+          <li>Notes in Markdown: headings, lists, links, formatting</li>
+          <li>People, organizations, and projects, filed as you write</li>
+          <li>Context beside every note</li>
+          <li>Tasks, due dates, and a list of everything you promised</li>
+          <li>The cabinet: every person, organization, and project, to rename, merge, or delete</li>
+          <li>The Board, with stages for every project</li>
+          <li>Search, and find within any note or list</li>
+          <li>Several journals, each in its own folder</li>
+          <li>Work, Home, School, and Job search templates</li>
+          <li>Light and dark, undo for everything, and a Trash</li>
+          <li>Sharing and printing</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <h3 class="eyebrow eyebrow--status">Premium</h3>
+        <ul class="free-list">
+          <li>The Graph: who and what your notes connect</li>
+          <li>Ask Parker: questions of your journal, answered by Apple Intelligence on your&nbsp;Mac</li>
+          <li>Your own fonts and colors, for each journal</li>
+          <li>Your own stages and Board settings</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="premium" aria-labelledby="premium-heading">
+<section class="section" id="templates" aria-labelledby="templates-heading">
   <div class="container">
     <div class="section__intro">
-      <h2 id="premium-heading" class="section__title">Your work, at a glance.</h2>
-      <p>Premium adds four views of your whole journal.</p>
+      <h2 id="templates-heading" class="section__title">Not just for work.</h2>
+      <p>Each journal starts from a template, so Parker speaks its&nbsp;language.</p>
     </div>
-    <div class="views">
-      {%- for view in site.data.views %}
-      <figure class="view view--{{ view.id }}">
-        <picture>
-          {%- comment %} Each picture in the other appearance from the page's, so it stands out. {% endcomment %}
-          <source srcset="{{ '/assets/images/radar/premium-' | append: view.id | append: '-light.png' | relative_url }}" media="(prefers-color-scheme: dark)">
-          <img src="{{ '/assets/images/radar/premium-' | append: view.id | append: '-dark.png' | relative_url }}" alt="{{ view.alt }}" loading="lazy">
-        </picture>
-        <figcaption><strong>{{ view.name }}</strong> {{ view.detail }}</figcaption>
-      </figure>
-      {%- endfor %}
+    <div class="jobs jobs--four">
+      <div class="job">
+        <h3>Work</h3>
+        <p>People, organizations, and projects.</p>
+      </div>
+      <div class="job">
+        <h3>Home</h3>
+        <p>People, places, and projects around the&nbsp;house.</p>
+      </div>
+      <div class="job">
+        <h3>School</h3>
+        <p>Classmates and teachers, courses and clubs, and&nbsp;projects.</p>
+      </div>
+      <div class="job">
+        <h3>Job search</h3>
+        <p>Contacts, employers, and roles, on a Board from first call to&nbsp;offer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="questions" aria-labelledby="questions-heading">
+  <div class="container">
+    <div class="section__intro">
+      <h2 id="questions-heading" class="section__title">Questions.</h2>
+    </div>
+    <div class="jobs jobs--two">
+      <div class="job">
+        <h3>Is Parker really free?</h3>
+        <p>Yes. Everything you need to take notes and stay organized is free, with no time limit. Premium is optional, and you can try it free for two&nbsp;weeks.</p>
+      </div>
+      <div class="job">
+        <h3>What if I stop paying for Premium?</h3>
+        <p>You keep what you have. Think of a National Geographic subscription: stop it, and the issues on your shelf are still yours. Every Premium feature released while you subscribe stays yours, for&nbsp;good.</p>
+      </div>
+      <div class="job">
+        <h3>Where are my notes kept?</h3>
+        <p>In a folder you choose, on your Mac or in iCloud Drive, as Markdown files. Parker reads them where they are, and changes made in other apps show up right&nbsp;away.</p>
+      </div>
+      <div class="job">
+        <h3>Does Parker use AI?</h3>
+        <p>Only when you ask it a question. Ask Parker uses Apple Intelligence on your Mac, so your notes never leave it. Everything else follows plain, predictable&nbsp;rules.</p>
+      </div>
+      <div class="job">
+        <h3>Is there an iPhone app?</h3>
+        <p>Not yet. Parker starts on the&nbsp;Mac.</p>
+      </div>
+      <div class="job">
+        <h3>What Mac do I need?</h3>
+        <p>Any Mac running macOS 15 or later. Ask Parker needs a Mac with Apple&nbsp;Intelligence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="roadmap" aria-labelledby="roadmap-heading">
+  <div class="container">
+    <div class="section__intro">
+      <h2 id="roadmap-heading" class="section__title">Where Parker is headed.</h2>
+      <p>Plans, not promises: what's coming in 1.0, what's next, and what's further off. Waitlist members hear about each step first, and their feedback helps set the order.</p>
+    </div>
+    <div class="hero__actions">
+      <a class="button button--outline" href="{{ '/roadmap/' | relative_url }}">See the roadmap</a>
     </div>
   </div>
 </section>
