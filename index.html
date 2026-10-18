@@ -7,7 +7,7 @@ layout: default
     <span class="eyebrow eyebrow--status">{{ app.name }} · For {{ app.platform }} · Coming {{ app.launch }}</span>
     <h1 class="hero__title">Meet Parker.</h1>
     <p class="hero__subtitle">Your most <em>organized</em> assistant ever.</p>
-    <p class="hero__lead">You’re in meetings all day. Jot down who said what, about which project, and what you promised. Parker will keep it all straight. When the next meeting starts, you’ll have all the context you need at your fingertips.</p>
+    <p class="hero__lead">You’re in meetings all day. You jot down who said what, about which project, and the action items everyone took. Parker keeps it all straight. When the next meeting starts, Parker has all the context you need.</p>
     <div class="hero__actions">
       <a class="button" href="#waitlist">Get on Parker’s list</a>
       <a class="button button--outline" href="#what">What Parker does</a>
@@ -24,36 +24,21 @@ layout: default
     <div class="jobs">
       <div class="job">
         <h3>Organizes as you write</h3>
-        <p>Mention a person, organization, or project, and Parker sorts the note under each&nbsp;of&nbsp;them, so one note can live in several&nbsp;places.</p>
+        <p>Mention a person, organization, or project, and Parker sorts the note under each of them, so one note can live in several places.</p>
       </div>
       <div class="job">
         <h3>Gives you context</h3>
-        <p>Mention <code>@maya</code>, and everything you’ve written about her opens right next to your&nbsp;note.</p>
+        <p>Mention <code>@maya</code>, and everything you’ve written about her opens right next to your note.</p>
       </div>
       <div class="job">
         <h3>Remembers your promises</h3>
-        <p>Jot down “Send <code>@tim</code> the deck&nbsp;Friday,” and Parker keeps it top&nbsp;of&nbsp;mind until it’s&nbsp;done.</p>
+        <p>Jot down “Send <code>@tim</code> the deck Friday,” and Parker keeps it top of mind until it’s done.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="look" aria-labelledby="look-heading">
-  <div class="container">
-    <div class="section__intro">
-      <h2 id="look-heading" class="section__title">A look inside.</h2>
-    </div>
-    <figure class="shot shot--wide">
-      <picture>
-        <source srcset="{{ '/assets/images/radar/site-note-light.png' | relative_url }}" media="(prefers-color-scheme: dark)">
-        <img src="{{ '/assets/images/radar/site-note-dark.png' | relative_url }}" alt="A planning note in Parker, its people, organizations, and projects tagged, with the Relay project's page beside it: its people, organizations, related projects, and open tasks." loading="lazy">
-      </picture>
-      <figcaption>A planning note, with the Relay project's page beside it.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="section" id="believes" aria-labelledby="believes-heading">
+<section class="section section--plain" id="believes" aria-labelledby="believes-heading">
   <div class="container">
     <div class="section__intro">
       <h2 id="believes-heading" class="section__title">What Parker believes.</h2>
@@ -61,19 +46,23 @@ layout: default
     <div class="jobs jobs--two">
       <div class="job">
         <h3>Your notes are yours</h3>
-        <p>Every note is a Markdown file in a folder you choose, on your&nbsp;Mac or in your iCloud&nbsp;Drive, never on our&nbsp;servers. Open them in any editor, today or in twenty&nbsp;years.</p>
+        <p>Every note is a Markdown file in a folder you choose, on your Mac or in your iCloud Drive. Open them in any editor, today or in twenty years.</p>
       </div>
       <div class="job">
         <h3>Privacy is a given</h3>
-        <p>Not a setting, and not a feature. Nothing you write is sent to us, sold, or used to train anything. When Parker answers a question, it answers on your&nbsp;Mac.</p>
+        <p>Not a setting, and not a feature. Nothing you write is sent to us, sold, or used to train anything. When Parker answers a question, it answers on your Mac.</p>
       </div>
       <div class="job">
         <h3>Made for everyone</h3>
-        <p>Everything works from the keyboard, and the text grows to the size you need, from the editor to the context&nbsp;pane.</p>
+        <p>Everything works from the keyboard and with VoiceOver, and the text grows to the size you need, from the editor to the context pane.</p>
       </div>
       <div class="job">
         <h3>Calm, on purpose</h3>
-        <p>No streaks, no badges, no nagging. Parker never pulls you out of your train of&nbsp;thought.</p>
+        <p>No streaks, no badges, no nagging. Parker will never pull you out of your train of thought.</p>
+      </div>
+      <div class="job">
+        <h3>Subscriptions that keep their word</h3>
+        <p>Most subscriptions take everything back the day you stop paying. Parker’s works like a magazine: what you’ve received is yours to keep.</p>
       </div>
     </div>
   </div>
@@ -82,8 +71,8 @@ layout: default
 <section class="section" id="free" aria-labelledby="free-heading">
   <div class="container">
     <div class="section__intro">
-      <h2 id="free-heading" class="section__title">Free, and fair.</h2>
-      <p>Everything you need to stay organized is free, for as long as you like. Premium adds flourishes, and it never gets in your&nbsp;way.</p>
+      <h2 id="free-heading" class="section__title">Free, forever.</h2>
+      <p>Everything you need to stay organized is free, forever. Premium adds flourishes, and it never gets in your way.</p>
     </div>
     <div class="tiers">
       <div class="tier">
@@ -91,24 +80,26 @@ layout: default
         <ul class="free-list">
           <li>Notes in Markdown: headings, lists, links, formatting</li>
           <li>People, organizations, and projects, filed as you write</li>
-          <li>Context beside every note</li>
+          <li>Relevant context, right when you need it</li>
           <li>Tasks, due dates, and a list of everything you promised</li>
-          <li>The cabinet: every person, organization, and project, to rename, merge, or delete</li>
-          <li>The Board, with stages for every project</li>
-          <li>Search, and find within any note or list</li>
-          <li>Several journals, each in its own folder</li>
-          <li>Work, Home, School, and Job search templates</li>
-          <li>Light and dark, undo for everything, and a Trash</li>
-          <li>Sharing and printing</li>
+          <li>Every note within reach: by person, organization, project, or date</li>
+          <li>A Kanban board for tracking projects</li>
+          <li>Full-text search</li>
+          <li>Multiple journals</li>
+          <li>Templates for work, home, and school</li>
+          <li>A custom template for managing a job search</li>
+          <li>Light and dark modes</li>
+          <li>Undo for everything</li>
         </ul>
       </div>
       <div class="tier">
         <h3 class="eyebrow eyebrow--status">Premium</h3>
         <ul class="free-list">
-          <li>The Graph: who and what your notes connect</li>
-          <li>Ask Parker: questions of your journal, answered by Apple Intelligence on your&nbsp;Mac</li>
-          <li>Your own fonts and colors, for each journal</li>
-          <li>Your own stages and Board settings</li>
+          <li>A graph view of the relationships between the people, organizations, and projects in your journal</li>
+          <li>Ask Parker: a more powerful way to ask questions of your journal, answered by Apple Intelligence right on your Mac</li>
+          <li>Several journals open at once</li>
+          <li>Custom fonts and colors</li>
+          <li>Custom Kanban boards</li>
         </ul>
       </div>
     </div>
@@ -119,7 +110,7 @@ layout: default
   <div class="container">
     <div class="section__intro">
       <h2 id="templates-heading" class="section__title">Not just for work.</h2>
-      <p>Each journal starts from a template, so Parker speaks its&nbsp;language.</p>
+      <p>Each journal starts from a template, so Parker speaks its language.</p>
     </div>
     <div class="jobs jobs--four">
       <div class="job">
@@ -128,62 +119,50 @@ layout: default
       </div>
       <div class="job">
         <h3>Home</h3>
-        <p>People, places, and projects around the&nbsp;house.</p>
+        <p>People, places, and projects around the house.</p>
       </div>
       <div class="job">
         <h3>School</h3>
-        <p>Classmates and teachers, courses and clubs, and&nbsp;projects.</p>
+        <p>People, courses, and assignments.</p>
       </div>
       <div class="job">
         <h3>Job search</h3>
-        <p>Contacts, employers, and roles, on a Board from first call to&nbsp;offer.</p>
+        <p>Contacts, employers, and roles, on a Kanban board from first call to offer.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="questions" aria-labelledby="questions-heading">
+<section class="section section--plain" id="questions" aria-labelledby="questions-heading">
   <div class="container">
     <div class="section__intro">
-      <h2 id="questions-heading" class="section__title">Questions.</h2>
+      <h2 id="questions-heading" class="section__title">Questions? Answered.</h2>
     </div>
-    <div class="jobs jobs--two">
-      <div class="job">
-        <h3>Is Parker really free?</h3>
-        <p>Yes. Everything you need to take notes and stay organized is free, with no time limit. Premium is optional, and you can try it free for two&nbsp;weeks.</p>
-      </div>
-      <div class="job">
-        <h3>What if I stop paying for Premium?</h3>
-        <p>You keep what you have. Think of a National Geographic subscription: stop it, and the issues on your shelf are still yours. Every Premium feature released while you subscribe stays yours, for&nbsp;good.</p>
-      </div>
-      <div class="job">
-        <h3>Where are my notes kept?</h3>
-        <p>In a folder you choose, on your Mac or in iCloud Drive, as Markdown files. Parker reads them where they are, and changes made in other apps show up right&nbsp;away.</p>
-      </div>
-      <div class="job">
-        <h3>Does Parker use AI?</h3>
-        <p>Only when you ask it a question. Ask Parker uses Apple Intelligence on your Mac, so your notes never leave it. Everything else follows plain, predictable&nbsp;rules.</p>
-      </div>
-      <div class="job">
-        <h3>Is there an iPhone app?</h3>
-        <p>Not yet. Parker starts on the&nbsp;Mac.</p>
-      </div>
-      <div class="job">
-        <h3>What Mac do I need?</h3>
-        <p>Any Mac running macOS 15 or later. Ask Parker needs a Mac with Apple&nbsp;Intelligence.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="roadmap" aria-labelledby="roadmap-heading">
-  <div class="container">
-    <div class="section__intro">
-      <h2 id="roadmap-heading" class="section__title">Where Parker is headed.</h2>
-      <p>Plans, not promises: what's coming in 1.0, what's next, and what's further off. Waitlist members hear about each step first, and their feedback helps set the order.</p>
-    </div>
-    <div class="hero__actions">
-      <a class="button button--outline" href="{{ '/roadmap/' | relative_url }}">See the roadmap</a>
+    <div class="faq">
+      <details name="faq" open>
+        <summary>Is Parker really free?</summary>
+        <p>Yes. Really. Everything you need to take notes and stay organized is free, forever. Premium is optional, and you can try it free for two weeks.</p>
+      </details>
+      <details name="faq">
+        <summary>What do I keep if I stop paying for Premium?</summary>
+        <p>Every Premium feature released while you subscribed. Like the issues of National Geographic on your shelf, Premium features are yours to keep after the subscription ends.</p>
+      </details>
+      <details name="faq">
+        <summary>Where are my notes kept?</summary>
+        <p>In a folder you choose, on your Mac or in iCloud Drive, as Markdown files. Parker reads them where they are, and changes made in other apps show up right away.</p>
+      </details>
+      <details name="faq">
+        <summary>Does Parker use AI?</summary>
+        <p>Parker’s AI features use Apple Intelligence, right on your Mac.</p>
+      </details>
+      <details name="faq">
+        <summary>Is there an iPhone app?</summary>
+        <p>Not yet. Parker starts on the Mac.</p>
+      </details>
+      <details name="faq">
+        <summary>What Mac do I need?</summary>
+        <p>Any Mac running macOS 15 or later. Ask Parker needs a Mac with Apple Intelligence.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -192,10 +171,13 @@ layout: default
   <div class="container">
     <h2 id="about-heading" class="section__title">Why I'm building Parker.</h2>
     <div class="note">
-      <p>I've kept notes in most of the apps you know. Notion never felt nimble to me: getting a note in and organized always felt cumbersome. Agenda feels much faster, and it knows your calendar, which is great, but your data is locked in their database. Obsidian is both fast and plain text, but it doesn't know your day or provide context for your next note.</p>
-      <p>I want all of it at once. Note taking that feels as fast as Obsidian. An app that knows my day, like Agenda. AI that helps without being in my face. And notes that live outside the editor, where I can use them as I see fit and keep them wherever I want.</p>
-      <p>I first designed Parker for a job search: every recruiter, company and role, kept straight without filing a thing. It worked so well that I wanted it at work, too.</p>
-      <p>Obsidian lets you take notes. Parker puts what you need beside the note in front of you, and learning your schedule is next on the roadmap.</p>
+      <p>I’m a note taker. I couldn’t get by without them. And like you, I’ve probably tried every notes app out there. But I’ve never stuck with any of them.</p>
+      <p>Notion is too cumbersome to configure. I need an editor that’s ready from the moment it opens. And I want control of my notes.</p>
+      <p>Obsidian gives me that control. But it has no opinions. It’s a general Markdown editor. I need an editor that doesn’t force me to do all the work.</p>
+      <p>Agenda might be my favorite. It’s opinionated. And it got really close to what I need with calendar integration. But it still forces me to file my notes in projects inside its database. My notes don’t fit in one bucket.</p>
+      <p>So, I built Parker for myself — for a job search, actually. I needed to track who I was talking to at which companies about which roles. Everything flowed from that. And, in the end, I enjoyed the experience so much, I wanted it at work.</p>
+      <p>Parker is blazing fast. Parker is opinionated. Parker takes the work out of filing your notes. Parker provides context for every situation. Parker protects your privacy. And Parker is totally free (with premium features acting like spices, never the main ingredient).</p>
+      <p>I hope you enjoy using Parker as much as I do.</p>
       <div class="note__signature">
         <img class="avatar" src="{{ '/assets/images/alan.jpg' | relative_url }}" alt="Alan Ridlehoover" width="64" height="64">
         <p class="note__sign">Alan Ridlehoover<br><span class="eyebrow eyebrow--tight">Founder, Deliberate Software</span></p>

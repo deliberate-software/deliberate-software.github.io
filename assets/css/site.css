@@ -237,8 +237,8 @@ img, svg { max-width: 100%; }
 }
 .section__intro { display: flex; flex-direction: column; gap: 20px; }
 .section__intro p { font-size: 19px; max-width: 34em; color: var(--muted); }
-/* A light rule under each heading, except What's, which follows the hero and needs none. */
-.section:not(#what) .section__title { max-width: none; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+/* A light rule under each heading, except What's, which follows the hero, and the plain sections'. */
+.section:not(#what):not(.section--plain) .section__title { max-width: none; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
 
 code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em; color: var(--ink); }
 
@@ -257,6 +257,21 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
 /* ---------- a look inside ---------- */
 
 .shot--wide { max-width: 880px; width: 100%; margin: 0 auto; }
+
+/* ---------- questions: an accordion, one answer open at a time ---------- */
+
+.faq { display: flex; flex-direction: column; max-width: 46em; }
+.faq details { border-top: 1px solid var(--line); }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary {
+  list-style: none; cursor: pointer; padding: 18px 36px 18px 0; position: relative;
+  font-size: 20px; font-weight: 600;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-weight: 400; font-size: 24px; color: var(--muted); }
+.faq details[open] summary::after { content: "\2212"; }
+.faq summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 4px; }
+.faq details p { color: var(--muted); padding: 0 36px 22px 0; text-wrap: pretty; }
 
 /* ---------- free and premium ---------- */
 
@@ -430,13 +445,13 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
   color: var(--muted); padding-left: 1px;  /* the M's stem under the D's */
 }
 .footer__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-/* The copyright and trademark notices, together on the right. */
-.footer__notices { display: flex; flex-direction: column; gap: 4px; text-align: right; font-size: 12px; }
-.footer__notices p { margin: 0; }
+/* The copyright ends the main row; the trademarks run beneath it, right-aligned. */
+.footer__copyright { margin: 0; font-size: 12px; text-align: right; }
+.footer__trademarks { grid-column: 1 / -1; margin: 0; font-size: 11px; text-align: right; text-wrap: pretty; }
 @media (max-width: 720px) {
   .footer { grid-template-columns: minmax(0, 1fr); align-items: start; }
   .footer__links { justify-content: flex-start; }
-  .footer__notices { text-align: left; }
+  .footer__copyright, .footer__trademarks { text-align: left; }
 }
 
 /* Trademark symbol: small and raised, without changing the line height. */
