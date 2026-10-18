@@ -376,6 +376,16 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
 .note p { font-family: var(--serif); font-size: 21px; line-height: 1.5; }
 .note__signature { display: flex; align-items: center; gap: 16px; }
 .avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: none; }
+/* Signed like a letter: the signature, then the name and title beneath it. */
+.note__signed { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+/* Alan's handwritten signature, drawn in the page's ink so it reads in light and dark. */
+.signature {
+  display: block; width: 84px; aspect-ratio: 943 / 736;
+  background: var(--ink);
+  -webkit-mask: url("/assets/images/signature.svg") left center / contain no-repeat;
+  mask: url("/assets/images/signature.svg") left center / contain no-repeat;
+}
+.note__signature .avatar { width: 88px; height: 88px; }  /* as tall as the signature, name, and title beside it */
 /* The same white ring as the logos. */
 .note__signature .avatar { border: 1px solid rgba(251, 248, 243, 0.9); box-shadow: 0 0 0 1px rgba(39, 40, 43, 0.22), 0 0 18px 2px rgba(39, 40, 43, 0.2); }
 .note .note__sign { font-family: var(--sans); font-size: 17px; font-weight: 600; line-height: 1.6; }
@@ -445,13 +455,13 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
   color: var(--muted); padding-left: 1px;  /* the M's stem under the D's */
 }
 .footer__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-/* The copyright ends the main row; the trademarks run beneath it, right-aligned. */
+/* The copyright ends the main row; the trademarks run beneath it, from the left. */
 .footer__copyright { margin: 0; font-size: 12px; text-align: right; }
-.footer__trademarks { grid-column: 1 / -1; margin: 0; font-size: 11px; text-align: right; text-wrap: pretty; }
+.footer__trademarks { grid-column: 1 / -1; margin: 0; font-size: 11px; text-align: left; text-wrap: pretty; }
 @media (max-width: 720px) {
   .footer { grid-template-columns: minmax(0, 1fr); align-items: start; }
   .footer__links { justify-content: flex-start; }
-  .footer__copyright, .footer__trademarks { text-align: left; }
+  .footer__copyright { text-align: left; }
 }
 
 /* Trademark symbol: small and raised, without changing the line height. */

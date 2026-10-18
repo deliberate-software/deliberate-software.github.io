@@ -22,6 +22,7 @@ collections:
 
 markdown: kramdown
 exclude:
+  - signature.jpg   # the photo the signature SVG was traced from
   - README.md
   - Gemfile
   - Gemfile.lock

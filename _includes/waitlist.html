@@ -3,7 +3,8 @@
   <div class="container waitlist__inner">
     <div class="waitlist__intro">
       <h2 id="waitlist-heading" class="waitlist__heading">Leave your name with {{ app.name }}.</h2>
-      <p>{{ app.name }} is coming to {{ app.platform }} {{ app.launch }}. Leave your email, and {{ app.name }} will let you know when there's something to try, and rarely otherwise.</p>
+      {%- comment %} "Coming soon to Mac", but "coming to Mac in early 2027". {% endcomment %}
+      <p>{{ app.name }} is coming {% if app.launch == "soon" %}soon to {{ app.platform }}{% else %}to {{ app.platform }} {{ app.launch }}{% endif %}. Leave your email, and you’ll be first to know when {{ app.name }} is ready.</p>
     </div>
     <form class="waitlist__form" action="{{ site.kit.form_action }}" method="post">
       <input type="hidden" name="tags[]" value="{{ app.kit_tag_id }}">
