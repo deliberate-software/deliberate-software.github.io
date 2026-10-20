@@ -17,14 +17,12 @@ Then open http://localhost:4000. The Gemfile uses Jekyll 3.10, the version GitHu
 | --- | --- |
 | `_apps/parker.md` | Parker's name, platform, launch timing and Kit tag. Change `launch` here ("soon", or "in early 2027") and the hero and waitlist follow. |
 | `index.html` | The home page, written for Parker. |
-| `_includes/marks/` | The logos: `deliberate.html` (company, the brushed D), `parker.html` (Parker's headshot on the D's lit graphite), and `radar.html` (Radar's old sweep, unused). |
-| `_includes/radar-graph.html` | The note-and-tags graph, unused since "How it works" became "What Parker does," waiting for a new place. |
+| `_includes/marks/` | The logos: `deliberate.html` (company, the brushed D), and `parker.html` (Parker's headshot on the D's lit graphite). |
 | `_includes/waitlist.html` | The Kit signup form: one email field, tagged for Parker with a hidden `tags[]` input. |
-| `_data/principles.yml` | The three principles. |
 | `privacy.html` | The plain-language privacy page. Update it whenever what the site or list collects changes. |
 | `assets/fonts/` | Self-hosted Newsreader and Instrument Sans (variable WOFF2, Latin and Latin Extended), with their OFL licenses. |
 | `assets/css/site.css` | All styles. Light and dark mode follow the visitor's system setting. |
-| `assets/js/marks.js` | Replays a logo's animation on hover (logos otherwise rest in their finished state); opens the phone menu. |
+| `assets/js/marks.js` | Opens and closes the phone menu. |
 | `confirm.html` | Where Kit sends people right after they sign up, asking them to confirm their email. |
 | `thanks.html` | Where Kit sends people after they click the confirmation link. |
 
@@ -36,10 +34,10 @@ Then open http://localhost:4000. The Gemfile uses Jekyll 3.10, the version GitHu
    If you don't see Embed, use the form's ID instead. It's the number in the browser's address bar while you're editing the form (for example `…/forms/designers/1234567/edit`). Then set `kit.form_action` to `https://app.kit.com/forms/1234567/subscriptions`, with your number in place of `1234567`.
 3. **Turn on confirmation.** In the form's settings, under Incentive, keep "Send incentive email" on. Kit then emails new subscribers a link to confirm their address. In the same Incentive settings, set the page people land on after they click that link to a redirect URL: `https://deliberate.software/thanks/`.
 4. **Send people to the confirm page.** In the form's settings, under "After subscribing," choose "Redirect to an external page" and enter `https://deliberate.software/confirm/`.
-5. **Create the Radar tag.** Go to **Grow → Subscribers**. In the right sidebar, below the charts, find the Tags section (the **All Tags** dropdown) and click the **+** next to it. Name the tag "Radar waitlist" and save.
+5. **Create the Parker tag.** Go to **Grow → Subscribers**. In the right sidebar, below the charts, find the Tags section (the **All Tags** dropdown) and click the **+** next to it. Name the tag "Parker waitlist" and save.
 
-   To find a tag's ID, click the tag in that sidebar. The page shows only that tag's subscribers, and the address bar ends with something like `?tag=1234567`. That number is the ID. Put it in `kit_tag_id` in `_apps/radar.md`.
-6. **Test it.** Sign up with your own address, confirm, and check in Kit that the subscriber has the Radar tag. If tags don't apply, compare the form's field names with the HTML on the form's Embed → HTML tab and match them.
+   To find a tag's ID, click the tag in that sidebar. The page shows only that tag's subscribers, and the address bar ends with something like `?tag=1234567`. That number is the ID. Put it in `kit_tag_id` in `_apps/parker.md`.
+6. **Test it.** Sign up with your own address, confirm, and check in Kit that the subscriber has the Parker tag. If tags don't apply, compare the form's field names with the HTML on the form's Embed → HTML tab and match them.
 
 ## Publish on GitHub Pages
 

@@ -106,7 +106,6 @@ img, svg { max-width: 100%; }
 .eyebrow { letter-spacing: 0.34em; }
 .eyebrow--tight { letter-spacing: 0.3em; }
 .eyebrow--status { letter-spacing: 0.2em; }
-.eyebrow--number { letter-spacing: 0.2em; text-transform: none; }
 
 /* ---------- buttons ---------- */
 
@@ -132,16 +131,8 @@ img, svg { max-width: 100%; }
 }
 .mark__art { display: block; width: 100%; height: 100%; }
 
-/* Logos rest in their finished state. Hovering replays the animation:
-   CSS-animated logos via the "play" class, Radar via its own SVG animation
-   (started from assets/js/marks.js). */
-.mark--radar { background: #27282b; }
 /* Parker's headshot, on the brushed D's lit graphite. */
 .mark--parker { background: #27282b; }
-
-@media (prefers-reduced-motion: reduce) {
-  .mark.play * { animation: none !important; }
-}
 
 /* ---------- header ---------- */
 
@@ -203,15 +194,6 @@ img, svg { max-width: 100%; }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 8px; }
 @media (max-width: 560px) { .hero { padding-top: 72px; padding-bottom: 72px; } }
 
-.product { display: flex; align-items: center; gap: 18px; }
-.product .mark { width: 88px; height: 88px; }
-.product__name { font-family: var(--serif); font-size: 32px; line-height: 1.1; letter-spacing: -0.01em; }
-/* Name over its status line, beside a logo that's clearly the larger element. */
-.product__lockup { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
-@media (max-width: 560px) {
-  .product .mark { width: 72px; height: 72px; }
-}
-
 /* Parker's hero: the pitch on the left, his headshot large on the right; above the pitch on phones. */
 .hero--parker { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 56px; align-items: center; }
 .hero--parker .eyebrow { display: inline-block; margin-bottom: 18px; }
@@ -250,13 +232,8 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
 .job { border-top: 1px solid var(--line); padding-top: 20px; }
 .job h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
 .job p { color: var(--muted); text-wrap: pretty; }  /* no word left alone on a last line */
-.job--keys p { text-wrap: wrap; }  /* its own break after "keyboard," */
 .jobs--two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); }
 .jobs--four { grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
-
-/* ---------- a look inside ---------- */
-
-.shot--wide { max-width: 880px; width: 100%; margin: 0 auto; }
 
 /* ---------- questions: an accordion, one answer open at a time ---------- */
 
@@ -278,64 +255,14 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
 .tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 48px; }
 .tier { display: flex; flex-direction: column; gap: 16px; }
 
-/* ---------- how it works ---------- */
-
-.steps { list-style: none; margin: 0; padding: 0; }
-.figure { margin: 0 auto; width: 100%; max-width: 520px; display: flex; flex-direction: column; gap: 16px; padding-top: 16px; }
-.figure figcaption { font-size: 15px; color: var(--muted); text-align: center; }
-
-/* ---------- free in 1.0 ---------- */
-
-.shot { margin: 0; display: flex; flex-direction: column; gap: 14px; }
-.shot img { display: block; width: 100%; border: 1px solid var(--line); border-radius: 12px; }
-.shot figcaption { color: var(--muted); font-size: 15px; text-align: center; }
-/* The picture at half the width, the free features beside it. */
-.free { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: start; }
 .free-list { margin: 0; padding-left: 1.1em; }
 .free-list li { color: var(--muted); padding-bottom: 10px; text-wrap: pretty; }
-@media (max-width: 720px) { .free { grid-template-columns: minmax(0, 1fr); } }
-
-/* ---------- the photo box ---------- */
-
-.shot img, .view img { cursor: zoom-in; }
-.lightbox {
-  max-width: min(80vw, 1100px); max-height: 82vh; padding: 0; border: 0; background: transparent;
-  overflow: visible; cursor: zoom-out;
-}
-.lightbox::backdrop { background: rgba(20, 20, 22, 0.82); }
-.lightbox figure { margin: 0; display: flex; flex-direction: column; gap: 14px; }
-.lightbox img {
-  display: block; max-width: 100%; max-height: calc(82vh - 72px); width: auto; height: auto; margin: 0 auto;
-  border-radius: 12px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-}
-.lightbox figcaption { color: #e9e5de; text-align: center; font-size: 16px; text-wrap: pretty; }
-.lightbox figcaption strong { color: #fbf8f3; font-weight: 600; }
-.lightbox__close {
-  position: fixed; top: 16px; right: 20px; width: 44px; height: 44px; border: 0; border-radius: 50%;
-  background: rgba(251, 248, 243, 0.12); color: #fbf8f3; font-size: 26px; line-height: 1; cursor: pointer;
-}
-
-/* ---------- Premium's views ---------- */
-
-.views { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; }
-.view { margin: 0; display: flex; flex-direction: column; gap: 14px; }
-.view img {
-  display: block; width: 100%; aspect-ratio: 900 / 560; object-fit: cover; object-position: top left;
-  border: 1px solid var(--line); border-radius: 10px;
-}
-.view--graph img { object-fit: contain; background: var(--graphite); }
-.view--ask img { object-position: top center; }
-.view figcaption { color: var(--muted); text-wrap: pretty; }
-.view figcaption strong { color: var(--ink); font-weight: 600; }
-@media (prefers-color-scheme: dark) { .view--graph img { background: var(--warm); } }
-@media (max-width: 720px) { .views { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- founder note ---------- */
 
 .note { display: flex; flex-direction: column; gap: 20px; max-width: 34em; }
 .note p { font-family: var(--serif); font-size: 21px; line-height: 1.5; }
 .note__signature { display: flex; align-items: center; gap: 16px; }
-.avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: none; }
 /* Signed like a letter: the signature, then the name and title beneath it. */
 .note__signed { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
 /* Alan's handwritten signature, drawn in the page's ink so it reads in light and dark. */
@@ -345,9 +272,6 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
   -webkit-mask: url("/assets/images/signature.svg") left center / contain no-repeat;
   mask: url("/assets/images/signature.svg") left center / contain no-repeat;
 }
-.note__signature .avatar { width: 88px; height: 88px; }  /* as tall as the signature, name, and title beside it */
-/* The same white ring as the logos. */
-.note__signature .avatar { border: 1px solid rgba(251, 248, 243, 0.9); box-shadow: 0 0 0 1px rgba(39, 40, 43, 0.22), 0 0 18px 2px rgba(39, 40, 43, 0.2); }
 .note .note__sign { font-family: var(--sans); font-size: 17px; font-weight: 600; line-height: 1.6; }
 
 /* ---------- prose pages ---------- */
@@ -358,19 +282,6 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
 .prose h3 { font-size: 20px; font-weight: 600; padding-top: 14px; }
 .prose p { color: var(--muted); }
 .prose a { text-decoration: underline; text-underline-offset: 3px; color: var(--ink); }
-
-/* ---------- graph ---------- */
-
-.graph { display: block; width: 100%; height: auto; color: var(--ink); }
-.graph .paper-fill { fill: var(--paper); }
-.graph__labels { font-family: var(--sans); font-weight: 400; letter-spacing: 0.04em; }
-
-/* ---------- principles ---------- */
-
-.principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 40px; }
-.principle { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--ink); padding-top: 20px; }
-.principle h3 { font-size: 20px; font-weight: 600; }
-.principle p { color: var(--muted); }
 
 /* ---------- waitlist ---------- */
 
@@ -438,4 +349,3 @@ main:has(> .waitlist:last-child) + .site-footer { border-top: 0; }
   margin-left: 0.12em;
 }
 .brand .tm { font-size: 0.42em; top: -1.1em; }
-.product__name .tm { font-size: 0.4em; top: -1.15em; }
