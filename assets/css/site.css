@@ -267,7 +267,7 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
 .note__signed { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
 /* Alan's handwritten signature, drawn in the page's ink so it reads in light and dark. */
 .signature {
-  display: block; width: 84px; aspect-ratio: 943 / 736;
+  display: block; width: 84px; aspect-ratio: 943 / 736; margin-left: 6px;  /* indented a little, like a hand signing under the text */
   background: var(--ink);
   -webkit-mask: url("/assets/images/signature.svg") left center / contain no-repeat;
   mask: url("/assets/images/signature.svg") left center / contain no-repeat;
