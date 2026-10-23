@@ -13,11 +13,12 @@
       <a href="{{ '/' | relative_url }}#questions">Questions</a>
       <a href="{{ '/' | relative_url }}#about">About</a>
       <a href="{{ '/' | relative_url }}privacy/">Privacy</a>
+      <a href="mailto:{{ site.email }}">Contact</a>
     </div>
     <p class="footer__copyright">© {{ site.time | date: "%Y" }} {{ site.legal_name }}</p>
     <p class="footer__trademarks">{{ site.title }}
       {%- for app in site.apps -%}
         {%- if forloop.last %} and {% else %}, {% endif -%}{{ app.name }}
-      {%- endfor %} are trademarks of {{ site.legal_name }}. Apple, Mac, macOS, iPhone, iCloud, Apple Intelligence, VoiceOver, Siri, Spotlight, and Shortcuts are trademarks of Apple Inc. National Geographic, Notion, Agenda, and Obsidian are trademarks of their respective owners.</p>
+      {%- endfor %} are trademarks of {{ site.legal_name }}. Apple, Mac, macOS, iPhone, App Store, iCloud, Apple Intelligence, VoiceOver, Siri, Spotlight, and Shortcuts are trademarks of Apple Inc. National Geographic, Notion, Obsidian, Bear, and Agenda are trademarks of their respective owners.</p>
   </div>
 </footer>

@@ -1,0 +1,12 @@
+{%- comment -%}
+  Puli, in the color opposite what it stands on, so it shows in light and dark mode. Each picture
+  carries its own backdrop and shadow, matched exactly to the paper or graphite it sits on.
+  pose: "sitting" or "standing". on: "paper" (the page, the default) or "ink" (a reversed band, like the waitlist).
+{%- endcomment -%}
+{%- assign light = "black" -%}{%- assign dark = "white" -%}
+{%- if include.on == "ink" -%}{%- assign light = "white" -%}{%- assign dark = "black" -%}{%- endif -%}
+{%- if include.pose == "standing" -%}{%- assign size = 'width="736" height="830"' -%}{%- else -%}{%- assign size = 'width="836" height="816"' -%}{%- endif -%}
+<picture class="puli puli--{{ include.pose }}">
+  <source srcset="{{ '/assets/images/puli/puli-' | append: include.pose | append: '-' | append: dark | append: '.webp' | relative_url }}" media="(prefers-color-scheme: dark)">
+  <img src="{{ '/assets/images/puli/puli-' | append: include.pose | append: '-' | append: light | append: '.webp' | relative_url }}" alt="" {{ size }}>
+</picture>

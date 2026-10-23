@@ -131,8 +131,12 @@ img, svg { max-width: 100%; }
 }
 .mark__art { display: block; width: 100%; height: 100%; }
 
-/* Parker's headshot, on the brushed D's lit graphite. */
-.mark--parker { background: #27282b; }
+/* Puli, in the color opposite what it stands on (see _includes/marks/puli.html). */
+.puli { display: block; flex: none; }
+.puli img { display: block; width: 100%; height: auto; }
+.puli--sitting { width: 380px; }  /* the picture includes its backdrop, so it runs wider than the dog */
+/* Standing at the start of the waitlist band, facing the form. */
+.puli--standing { width: 320px; }
 
 /* ---------- header ---------- */
 
@@ -194,20 +198,19 @@ img, svg { max-width: 100%; }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 8px; }
 @media (max-width: 560px) { .hero { padding-top: 72px; padding-bottom: 72px; } }
 
-/* Parker's hero: the pitch on the left, his headshot large on the right; above the pitch on phones. */
-.hero--parker { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 56px; align-items: center; }
-.hero--parker .eyebrow { display: inline-block; margin-bottom: 18px; }
-.hero--parker .hero__lead { margin-top: 24px; }
-.hero--parker .hero__actions { margin-top: 32px; }
-.hero--parker .mark { width: 320px; height: 320px; }
+/* Puli's hero: the pitch on the left, the dog on the right; above the pitch on phones. */
+.hero--puli { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 56px; align-items: center; }
+.hero--puli .eyebrow { display: inline-block; margin-bottom: 18px; }
+.hero--puli .hero__lead { margin-top: 24px; }
+.hero--puli .hero__actions { margin-top: 32px; }
 .hero__subtitle {
-  font-family: var(--serif); font-size: clamp(28px, 3.6vw, 44px); line-height: 1.15; letter-spacing: -0.01em;
+  font-family: var(--serif); font-size: clamp(28px, 4vw, 50.5px); line-height: 1.15; letter-spacing: -0.01em;  /* ends halfway between the title and the lede */
   margin-top: 10px;
 }
-@media (min-width: 561px) { .hero--parker { padding-bottom: 128px; } }  /* 128 + 64 above What = the 192px between sections */
+@media (min-width: 561px) { .hero--puli { padding-bottom: 128px; } }  /* 128 + 64 above What = the 192px between sections */
 @media (max-width: 860px) {
-  .hero--parker { grid-template-columns: minmax(0, 1fr); gap: 28px; }
-  .hero--parker .mark { order: -1; width: 200px; height: 200px; }
+  .hero--puli { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .hero--puli .puli { order: -1; width: 240px; }
 }
 
 /* ---------- sections ---------- */
@@ -224,7 +227,7 @@ img, svg { max-width: 100%; }
 
 code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em; color: var(--ink); }
 
-/* ---------- what Parker does ---------- */
+/* ---------- what Puli does ---------- */
 
 /* Pulled up under the hero, so the fold shows the start of the list. */
 #what > .container { padding-top: 64px; }
@@ -249,6 +252,8 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
 .faq details[open] summary::after { content: "\2212"; }
 .faq summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 4px; }
 .faq details p { color: var(--muted); padding: 0 36px 22px 0; text-wrap: pretty; }
+.faq__more { font-size: 19px; color: var(--muted); }
+.faq__more a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- free and premium ---------- */
 
@@ -288,12 +293,19 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
 .waitlist { background: var(--ink); color: var(--paper); scroll-margin-top: 0; }
 .waitlist__inner {
   padding-top: 96px; padding-bottom: 96px;
-  display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 40px;
+  display: grid; grid-template-columns: auto minmax(0, 28em); gap: 56px; align-items: end;
+  justify-content: center;  /* the dog and the pitch, together in the middle of the page */
 }
-.waitlist__intro { display: flex; flex-direction: column; gap: 14px; max-width: 28em; }
+/* The pitch over the form, beside the dog. */
+.waitlist__copy { display: flex; flex-direction: column; gap: 32px; min-width: 0; }
+@media (max-width: 860px) {
+  .waitlist__inner { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .waitlist .puli { width: 230px; }
+}
+.waitlist__intro { display: flex; flex-direction: column; gap: 14px; }
 .waitlist__intro p, .waitlist label { color: var(--inv-muted); }
 .waitlist__heading { font-family: var(--serif); font-weight: 400; font-size: clamp(36px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.015em; }
-.waitlist__form { display: flex; flex-direction: column; gap: 20px; flex: 0 1 460px; min-width: 0; }
+.waitlist__form { display: flex; flex-direction: column; gap: 20px; min-width: 0; max-width: 400px; }  /* narrow, but the email field and button still fit side by side */
 .field { display: flex; flex-direction: column; gap: 8px; }
 .field label { font-size: 14px; }
 .field__row { display: flex; flex-wrap: wrap; gap: 10px; }

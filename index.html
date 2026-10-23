@@ -1,64 +1,64 @@
 ---
 layout: default
 ---
-{%- assign app = site.apps | where: "name", "Parker" | first -%}
-<section class="hero hero--parker container" id="top">
+{%- assign app = site.apps | where: "name", "Puli" | first -%}
+<section class="hero hero--puli container" id="top">
   <div>
     <span class="eyebrow eyebrow--status">{{ app.name }} · For {{ app.platform }} · Coming {{ app.launch }}</span>
-    <h1 class="hero__title">Meet Parker.</h1>
-    <p class="hero__subtitle">Your most <em>organized</em> assistant ever.</p>
-    <p class="hero__lead">You’re in meetings all day. You jot down who said what, about which project, and the action items everyone took. Parker keeps it all straight. When the next meeting starts, Parker has all the context you need.</p>
+    <h1 class="hero__title">Meet Puli.</h1>
+    <p class="hero__subtitle">A note-taker’s <em>best friend</em>.</p>
+    <p class="hero__lead">You’re in meetings all day. You jot down who said what, about which project, and who promised what to whom. Puli herds each note into place, filing it under every person, organization, and project it mentions, and keeping watch over every promise. Then, when the next meeting starts, Puli fetches you the context you need.</p>
     <div class="hero__actions">
-      <a class="button" href="#waitlist">Get on Parker’s list</a>
-      <a class="button button--outline" href="#what">What Parker does</a>
+      <a class="button" href="#waitlist">Join the pack</a>
+      <a class="button button--outline" href="#what">What Puli does</a>
     </div>
   </div>
-  {% include marks/parker.html id="hero" %}
+  {% include marks/puli.html pose="sitting" %}
 </section>
 
 <section class="section" id="what" aria-labelledby="what-heading">
   <div class="container">
     <div class="section__intro">
-      <h2 id="what-heading" class="section__title">What Parker does for you.</h2>
+      <h2 id="what-heading" class="section__title">What Puli does for you.</h2>
     </div>
     <div class="jobs">
       <div class="job">
-        <h3>Organizes as you write</h3>
-        <p>Mention a person, organization, or project, and Parker sorts the note under each of them, so one note can live in several places.</p>
+        <h3>Herds your notes</h3>
+        <p>Mention a person, organization, or project, and Puli rounds the note up under each of them. One note, everywhere it belongs.</p>
       </div>
       <div class="job">
-        <h3>Gives you context</h3>
-        <p>Mention <code>@maya</code>, and everything you’ve written about her opens right next to your note.</p>
+        <h3>Comes when you call</h3>
+        <p>Whistle with an <code>@</code>. Mention <code>@maya</code>, and everything you’ve written about her comes running, right next to your note.</p>
       </div>
       <div class="job">
-        <h3>Remembers your promises</h3>
-        <p>Jot down “Send <code>@tim</code> the deck Friday,” and Parker keeps it top of mind until it’s done.</p>
+        <h3>Guards every promise</h3>
+        <p>Jot down “Send <code>@tim</code> the deck” or “<code>@maya</code> will send the numbers,” and Puli keeps watch over both until they’re done.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--plain" id="believes" aria-labelledby="believes-heading">
+<section class="section section--plain" id="beliefs" aria-labelledby="beliefs-heading">
   <div class="container">
     <div class="section__intro">
-      <h2 id="believes-heading" class="section__title">What Parker believes.</h2>
+      <h2 id="beliefs-heading" class="section__title">Made on purpose.</h2>
     </div>
     <div class="jobs jobs--two">
       <div class="job">
-        <h3>Privacy is a given</h3>
-        <p>Not a setting, and not a feature. Nothing you write is sent to us, sold, or used to train anything. When Parker answers a question, it answers on your Mac.</p>
+        <h3>Made for privacy</h3>
+        <p>Not a setting, and not a feature. Nothing you write is sent to us or used to train anything. Everything Puli does, it does on your Mac.</p>
       </div>
       <div class="job">
         <h3>Made for everyone</h3>
         <p>Everything works from the keyboard and with VoiceOver, and the text grows to the size you need, from the editor to the context pane.</p>
       </div>
       <div class="job">
-        <h3>Calm, on purpose</h3>
-        <p>No streaks, no badges, no nagging. Parker will never pull you out of your train of thought.</p>
+        <h3>Made distraction-free</h3>
+        <p>No streaks, no badges, no barking for attention. Puli stays at your side, never underfoot, and never pulls you out of your train of thought.</p>
       </div>
       <div class="job">
-        <h3>Subscriptions that keep their word</h3>
-        <p>Most subscriptions take everything back the day you stop paying. Parker’s works like a magazine: what you’ve received is yours to keep.</p>
+        <h3>Made to keep its word</h3>
+        <p>Most subscriptions take everything back the day you stop paying. Puli’s works like a magazine: what you’ve received is yours to keep.</p>
       </div>
     </div>
   </div>
@@ -68,7 +68,7 @@ layout: default
   <div class="container">
     <div class="section__intro">
       <h2 id="free-heading" class="section__title">Free, forever.</h2>
-      <p>Everything you need to stay organized is free, forever. Premium adds flourishes, and it never gets in your way.</p>
+      <p>Every trick Puli needs to keep you organized is free. Forever.<br>Premium keeps teaching it new tricks.</p>
     </div>
     <div class="tiers">
       <div class="tier">
@@ -77,8 +77,8 @@ layout: default
           <li>Notes in Markdown: headings, lists, links, formatting</li>
           <li>People, organizations, and projects, filed as you write</li>
           <li>Relevant context, right when you need it</li>
-          <li>Tasks, due dates, and a list of everything you promised</li>
-          <li>Every note within reach: by person, organization, project, or date</li>
+          <li>Tasks, due dates, and every promise, made by you or to you</li>
+          <li>Every note within reach: by person, organization, or project</li>
           <li>A Kanban board for tracking projects</li>
           <li>Full-text search</li>
           <li>Multiple journals</li>
@@ -91,11 +91,12 @@ layout: default
       <div class="tier">
         <h3 class="eyebrow eyebrow--status">Premium</h3>
         <ul class="free-list">
+          <li>iCloud sync, so your notes are on every Mac you use</li>
           <li>A graph view of the relationships between the people, organizations, and projects in your journal</li>
-          <li>Ask Parker: a more powerful way to ask questions of your journal, answered by Apple Intelligence right on your Mac</li>
           <li>Several journals open at once</li>
           <li>Custom fonts and colors</li>
           <li>Custom Kanban boards</li>
+          <li>New tricks, as Puli learns them</li>
         </ul>
       </div>
     </div>
@@ -106,7 +107,7 @@ layout: default
   <div class="container">
     <div class="section__intro">
       <h2 id="templates-heading" class="section__title">Not just for work.</h2>
-      <p>Each journal starts from a template, so Parker speaks its language.</p>
+      <p>Each journal starts from a template, so Puli knows the lay of the land.</p>
     </div>
     <div class="jobs jobs--four">
       <div class="job">
@@ -115,7 +116,7 @@ layout: default
       </div>
       <div class="job">
         <h3>Home</h3>
-        <p>People, places, and projects around the house.</p>
+        <p>People, groups, and projects around the house.</p>
       </div>
       <div class="job">
         <h3>School</h3>
@@ -136,7 +137,11 @@ layout: default
     </div>
     <div class="faq">
       <details name="faq" open>
-        <summary>Is Parker really free?</summary>
+        <summary>What’s a Puli?</summary>
+        <p>A Hungarian herding dog, famous for its corded coat. Quick, clever, and bred to keep the flock together. Say it POO-lee.</p>
+      </details>
+      <details name="faq">
+        <summary>Is Puli really free?</summary>
         <p>Yes. Really. Everything you need to take notes and stay organized is free, forever. Premium is optional, and you can try it free for two weeks.</p>
       </details>
       <details name="faq">
@@ -145,33 +150,34 @@ layout: default
       </details>
       <details name="faq">
         <summary>Where are my notes kept?</summary>
-        <p>On your Mac, and in iCloud, so they’re on every Mac you use. They sync through your iCloud account, never through us.</p>
+        <p>On your Mac, and with Premium, synced through your iCloud account. We never see them.</p>
       </details>
       <details name="faq">
-        <summary>Does Parker use AI?</summary>
-        <p>Parker’s AI features use Apple Intelligence, right on your Mac.</p>
+        <summary>Does Puli use AI?</summary>
+        <p>Not yet. When we do teach Puli an AI trick, it will be a convenience, not begging for attention. Our plan is to use Apple Intelligence, right on your Mac. Nothing will leave the Apple ecosystem.</p>
       </details>
       <details name="faq">
         <summary>Is there an iPhone app?</summary>
-        <p>Not yet. Parker starts on the Mac.</p>
+        <p>Not yet. Puli starts on the Mac.</p>
       </details>
       <details name="faq">
         <summary>What Mac do I need?</summary>
-        <p>Any Mac running macOS 15 or later. Ask Parker needs a Mac with Apple Intelligence.</p>
+        <p>Any Mac with Apple silicon, running macOS 26 or later.</p>
       </details>
     </div>
+    <p class="faq__more">Still have questions? <a href="mailto:{{ site.email }}">Ask us!</a></p>
   </div>
 </section>
 
 <section class="section" id="about" aria-labelledby="about-heading">
   <div class="container">
-    <h2 id="about-heading" class="section__title">Why I'm building Parker.</h2>
+    <h2 id="about-heading" class="section__title">Why I'm building Puli.</h2>
     <div class="note">
-      <p>I’m a note taker. Like you, I’ve probably tried every notes app out there, and never stuck with any of them.</p>
-      <p>Notion is too cumbersome to set up. Obsidian gives me control, but no opinions, so I do all the work. Agenda came closest, with its calendar, but it still makes me file each note in one project. My notes don’t fit in one bucket.</p>
-      <p>So I built Parker for myself — for a job search, actually: who I was talking to, at which companies, about which roles. I enjoyed it so much, I wanted to use it everywhere.</p>
-      <p>Parker is fast and opinionated. It takes the work out of filing your notes, gives you context for every situation, and protects your privacy. And it’s free. Premium just adds a little spice.</p>
-      <p>I hope you enjoy using Parker as much as I do.</p>
+      <p>I’m a note taker. I’m guessing you are, too. And if you’re like me, you’ve probably tried every notes app there is, and never stuck with any of them.</p>
+      <p>Notion is too cumbersome to set up. Obsidian gives me control, but no opinions, so I have to do all the work. Bear came close, but there’s no sense of time. Agenda brings it all together, but it still makes me file each note in a single project. My notes don’t fit in one bucket.</p>
+      <p>So I built Puli for myself — for a job search, actually. I needed to track who I was talking to, at which companies, about which roles. I enjoyed using it so much, I wanted to use it for meetings at work.</p>
+      <p>Puli is fast. Puli is opinionated. It herds your notes so you don’t have to, fetches context for every situation, and watches everyone’s promises. It’s private. It’s inclusive. And it’s free! (Premium just teaches Puli a few more tricks.)</p>
+      <p>I hope Puli becomes your best friend, too.</p>
       <div class="note__signature">
         <div class="note__signed">
           <span class="signature" role="img" aria-label="Alan’s signature"></span>

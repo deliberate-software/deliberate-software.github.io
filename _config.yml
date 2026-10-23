@@ -2,9 +2,10 @@
 title: Deliberate Software
 tagline: Made on purpose
 legal_name: Deliberate Software LLC   # the LLC's exact registered name
+email: puli@deliberate.software        # where "Ask us!" and the footer's Contact link send mail
 description: >-
-  Parker is a notes app for Mac that keeps track of who said what, about
-  which project, and what you promised. Coming soon.
+  Puli is a notes app for Mac that herds your notes to the right people
+  and projects, guards your promises, and brings you context. Coming soon.
 url: "https://deliberate.software"
 baseurl: ""
 lang: en

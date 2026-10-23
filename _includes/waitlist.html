@@ -1,21 +1,24 @@
-{%- assign app = site.apps | where: "name", "Parker" | first -%}
+{%- assign app = site.apps | where: "name", "Puli" | first -%}
 <section class="waitlist" id="waitlist" aria-labelledby="waitlist-heading">
   <div class="container waitlist__inner">
-    <div class="waitlist__intro">
-      <h2 id="waitlist-heading" class="waitlist__heading">Leave your name with {{ app.name }}.</h2>
-      {%- comment %} "Coming soon to Mac", but "coming to Mac in early 2027". {% endcomment %}
-      <p>{{ app.name }} is coming {% if app.launch == "soon" %}soon to {{ app.platform }}{% else %}to {{ app.platform }} {{ app.launch }}{% endif %}. Leave your email, and you’ll be first to know when {{ app.name }} is ready.</p>
-    </div>
-    <form class="waitlist__form" action="{{ site.kit.form_action }}" method="post">
-      <input type="hidden" name="tags[]" value="{{ app.kit_tag_id }}">
-      <div class="field">
-        <label for="email">Email address</label>
-        <div class="field__row">
-          <input id="email" name="email_address" type="email" autocomplete="email" placeholder="you@example.com" required>
-          <button class="button button--inverse" type="submit">Let me know</button>
-        </div>
+    {% include marks/puli.html pose="standing" on="ink" %}
+    <div class="waitlist__copy">
+      <div class="waitlist__intro">
+        <h2 id="waitlist-heading" class="waitlist__heading">Join {{ app.name }}’s pack.</h2>
+        {%- comment %} "Coming soon to Mac", but "coming to Mac in early 2027". {% endcomment %}
+        <p>{{ app.name }} is coming {% if app.launch == "soon" %}soon to {{ app.platform }}{% else %}to {{ app.platform }} {{ app.launch }}{% endif %}. Leave your email, and you’ll be first to know when {{ app.name }} is ready to herd your notes.</p>
       </div>
-      <p class="waitlist__note">We use your email only for {{ app.name }} updates. We never sell or share it, and every email has an unsubscribe link. <a href="{{ '/privacy/' | relative_url }}">Privacy, plainly</a></p>
-    </form>
+      <form class="waitlist__form" action="{{ site.kit.form_action }}" method="post">
+        <input type="hidden" name="tags[]" value="{{ app.kit_tag_id }}">
+        <div class="field">
+          <label for="email">Email address</label>
+          <div class="field__row">
+            <input id="email" name="email_address" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <button class="button button--inverse" type="submit">Let me know</button>
+          </div>
+        </div>
+        <p class="waitlist__note">We use your email only for {{ app.name }} updates. We never sell or share it, and every email has an unsubscribe link. <a href="{{ '/privacy/' | relative_url }}">Privacy, plainly</a></p>
+      </form>
+    </div>
   </div>
 </section>
