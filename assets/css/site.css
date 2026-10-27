@@ -194,6 +194,7 @@ img, svg { max-width: 100%; }
   max-width: 14ch;
 }
 .hero__title em { font-style: italic; }
+.hero__title--long { font-size: clamp(36px, 7.4vw, 96px); }  /* one long word, like "Acknowledgements", still fits a phone */
 .hero__lead { font-size: 20px; max-width: 34em; color: var(--muted); }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 8px; }
 @media (max-width: 560px) { .hero { padding-top: 72px; padding-bottom: 72px; } }
@@ -287,6 +288,16 @@ code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em
 .prose h3 { font-size: 20px; font-weight: 600; padding-top: 14px; }
 .prose p { color: var(--muted); }
 .prose a { text-decoration: underline; text-underline-offset: 3px; color: var(--ink); }
+
+/* Acknowledgements: each license folded away under its project, shown as written.
+   Wider than the prose, so licenses hard-wrapped at ~76 columns keep their lines. */
+.license { width: min(46em, calc(100vw - 2 * var(--pad))); }
+.license summary { padding: 10px 0; cursor: pointer; font-weight: 600; }
+.license pre {
+  margin: 4px 0 0; padding: 20px; background: var(--tint); border-radius: 8px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; line-height: 1.6;
+  white-space: pre-wrap; overflow-wrap: anywhere; color: var(--muted);
+}
 
 /* ---------- waitlist ---------- */
 

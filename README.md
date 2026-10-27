@@ -20,6 +20,8 @@ Then open http://localhost:4000. The Gemfile uses Jekyll 3.10, the version GitHu
 | `_includes/marks/` | The logos: `deliberate.html` (company, the brushed D), and `puli.html` (Puli, the herding dog: sitting in the hero, standing by the waitlist, black or white to stand out from what's behind it). |
 | `_includes/waitlist.html` | The Kit signup form: one email field, tagged for Puli with a hidden `tags[]` input. |
 | `privacy.html` | The plain-language privacy page. Update it whenever what the site or list collects changes. |
+| `acknowledgements.html` | Puli's open source and font licenses, at `/puli/acknowledgements/` (Puli's About window links here). It reads each license from `assets/licenses/` and `assets/fonts/OFL-*.txt`, so keep those files identical to the ones the app bundles, and update the date when they change. |
+| `assets/licenses/` | The license texts for Puli's open source code (GRDB, SQLCipher), exactly as upstream ships them. |
 | `assets/fonts/` | Self-hosted Newsreader and Instrument Sans (variable WOFF2, Latin and Latin Extended), with their OFL licenses. |
 | `assets/css/site.css` | All styles. Light and dark mode follow the visitor's system setting. |
 | `assets/js/marks.js` | Opens and closes the phone menu. |

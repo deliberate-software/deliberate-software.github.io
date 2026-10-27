@@ -1,0 +1,56 @@
+---
+layout: default
+title: Acknowledgements
+description: The open source software and fonts Puli is built with, and their licenses.
+permalink: /puli/acknowledgements/
+---
+{%- comment -%}
+  The license texts are the same files the app bundles, so the two can't drift.
+  Each is read from assets/ and shown as-is.
+{%- endcomment -%}
+<section class="hero hero--short container">
+  <p class="eyebrow">Updated 26 October 2026</p>
+  <h1 class="hero__title hero__title--long">Acknowledgements</h1>
+  <div class="prose">
+    <p>Puli is built with these open source projects and fonts. Thank you to the people who make them.</p>
+
+    <h2>Software</h2>
+
+    <h3>SQLite</h3>
+    <p>Public domain. The authors of <a href="https://sqlite.org/copyright.html">SQLite</a> have dedicated its code and documentation to the public domain.</p>
+
+    <h3>SQLCipher</h3>
+    <p>Copyright © Zetetic LLC. <a href="https://www.zetetic.net/sqlcipher/">SQLCipher</a> is licensed under the BSD 3-Clause License.</p>
+    {% capture text %}{% include_relative assets/licenses/SQLCipher.txt %}{% endcapture %}
+    <details class="license">
+      <summary>License</summary>
+      <pre>{{ text | strip | escape }}</pre>
+    </details>
+
+    <h3>GRDB</h3>
+    <p>Copyright © Gwendal Roué. <a href="https://github.com/groue/GRDB.swift">GRDB</a> is licensed under the MIT License.</p>
+    {% capture text %}{% include_relative assets/licenses/GRDB.txt %}{% endcapture %}
+    <details class="license">
+      <summary>License</summary>
+      <pre>{{ text | strip | escape }}</pre>
+    </details>
+
+    <h2>Fonts</h2>
+
+    <h3>Newsreader</h3>
+    <p>Copyright © The Newsreader Project Authors. <a href="https://github.com/productiontype/Newsreader">Newsreader</a> is licensed under the SIL Open Font License, Version 1.1.</p>
+    {% capture text %}{% include_relative assets/fonts/OFL-Newsreader.txt %}{% endcapture %}
+    <details class="license">
+      <summary>License</summary>
+      <pre>{{ text | strip | escape }}</pre>
+    </details>
+
+    <h3>Instrument Sans</h3>
+    <p>Copyright © The Instrument Sans Project Authors. <a href="https://github.com/Instrument/instrument-sans">Instrument Sans</a> is licensed under the SIL Open Font License, Version 1.1.</p>
+    {% capture text %}{% include_relative assets/fonts/OFL-InstrumentSans.txt %}{% endcapture %}
+    <details class="license">
+      <summary>License</summary>
+      <pre>{{ text | strip | escape }}</pre>
+    </details>
+  </div>
+</section>
