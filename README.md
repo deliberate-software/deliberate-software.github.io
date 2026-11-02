@@ -19,7 +19,10 @@ Then open http://localhost:4000. The Gemfile uses Jekyll 3.10, the version GitHu
 | `index.html` | The home page, written for Puli. |
 | `_includes/marks/` | The logos: `deliberate.html` (company, the brushed D), and `puli.html` (Puli, the herding dog: sitting in the hero, standing by the waitlist, black or white to stand out from what's behind it). |
 | `_includes/waitlist.html` | The Kit signup form: one email field, tagged for Puli with a hidden `tags[]` input. |
-| `privacy.html` | The plain-language privacy page. Update it whenever what the site or list collects changes. |
+| `privacy.html` | Deliberate Software's privacy policy, for this site and the waitlist. Update it, and its date, whenever what the site or list collects changes. |
+| `puli/privacy.html` | Puli's privacy policy, at `/puli/privacy/`, for the app alone (App Store Connect links here). Keep it matching the App Store's "Data Not Collected" label, and update its date when it changes. |
+| `puli/terms.html` | Puli's terms, at `/puli/terms/`: Apple's standard license agreement. |
+| `puli/manual/` | Puli's manual, at `/puli/manual/`, starting with How lessons work. |
 | `acknowledgements.html` | Puli's open source and font licenses, at `/puli/acknowledgements/` (Puli's About window links here). It reads each license from `assets/licenses/` and `assets/fonts/OFL-*.txt`, so keep those files identical to the ones the app bundles, and update the date when they change. |
 | `assets/licenses/` | The license texts for Puli's open source code (GRDB, SQLCipher), exactly as upstream ships them. |
 | `assets/fonts/` | Self-hosted Newsreader and Instrument Sans (variable WOFF2, Latin and Latin Extended), with their OFL licenses. |
