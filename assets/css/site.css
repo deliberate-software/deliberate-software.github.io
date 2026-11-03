@@ -196,6 +196,7 @@ img, svg { max-width: 100%; }
 .hero__title em { font-style: italic; }
 .hero__title--long { font-size: clamp(36px, 7.4vw, 96px); }  /* one long word, like "Acknowledgements", still fits a phone */
 .hero__lead { font-size: 20px; max-width: 34em; color: var(--muted); }
+.hero__lead a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 8px; }
 @media (max-width: 560px) { .hero { padding-top: 72px; padding-bottom: 72px; } }
 

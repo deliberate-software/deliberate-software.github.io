@@ -22,7 +22,8 @@ Then open http://localhost:4000. The Gemfile uses Jekyll 3.10, the version GitHu
 | `privacy.html` | Deliberate Software's privacy policy, for this site and the waitlist. Update it, and its date, whenever what the site or list collects changes. |
 | `puli/privacy.html` | Puli's privacy policy, at `/puli/privacy/`, for the app alone (App Store Connect links here). Keep it matching the App Store's "Data Not Collected" label, and update its date when it changes. |
 | `puli/terms.html` | Puli's terms, at `/puli/terms/`: Apple's standard license agreement. |
-| `puli/manual/` | Puli's manual, at `/puli/manual/`, starting with How lessons work. |
+| `puli/support.html` | Puli's support page, at `/puli/support/` (App Store Connect's support URL). |
+| `puli/lessons.html` | How lessons work, at `/puli/lessons/` (Puli's Tricks links here). |
 | `acknowledgements.html` | Puli's open source and font licenses, at `/puli/acknowledgements/` (Puli's About window links here). It reads each license from `assets/licenses/` and `assets/fonts/OFL-*.txt`, so keep those files identical to the ones the app bundles, and update the date when they change. |
 | `assets/licenses/` | The license texts for Puli's open source code (GRDB, SQLCipher), exactly as upstream ships them. |
 | `assets/fonts/` | Self-hosted Newsreader and Instrument Sans (variable WOFF2, Latin and Latin Extended), with their OFL licenses. |
