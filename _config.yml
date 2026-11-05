@@ -25,6 +25,7 @@ markdown: kramdown
 exclude:
   - signature.jpg   # the photo the signature SVG was traced from
   - README.md
+  - PENDING.md        # notes to ourselves, not a page
   - Gemfile
   - Gemfile.lock
   - vendor

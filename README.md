@@ -24,6 +24,7 @@ Then open http://localhost:4000. The Gemfile uses Jekyll 3.10, the version GitHu
 | `puli/terms.html` | Puli's terms, at `/puli/terms/`: Apple's standard license agreement. |
 | `puli/support.html` | Puli's support page, at `/puli/support/` (App Store Connect's support URL). |
 | `puli/guide/` | Puli's User's Guide, at `/puli/guide/`: `index.html` is its contents, and each page beside it is one topic or lesson. Written from Puli's STORIES.md; keep it matching what ships. |
+| `PENDING.md` | Everything to update once iCloud and the licensing model are decided. Not published. |
 | `puli/lessons.html` | How lessons work, at `/puli/lessons/` (Puli's Tricks links here). |
 | `acknowledgements.html` | Puli's open source and font licenses, at `/puli/acknowledgements/` (Puli's About window links here). It reads each license from `assets/licenses/` and `assets/fonts/OFL-*.txt`, so keep those files identical to the ones the app bundles, and update the date when they change. |
 | `assets/licenses/` | The license texts for Puli's open source code (GRDB, SQLCipher), exactly as upstream ships them. |

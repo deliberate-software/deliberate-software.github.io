@@ -1,94 +1,159 @@
 ---
 layout: default
 title: Getting Started
-description: Opening Puli for the first time, starting or importing a journal, and writing your first note.
+description: Opening Puli for the first time, starting a journal, and writing your first note.
 permalink: /puli/guide/getting-started/
 ---
 <section class="hero hero--short container">
   <p class="eyebrow">Puli · User’s Guide</p>
   <h1 class="hero__title">Getting <em>started.</em></h1>
-  <p class="hero__lead">Start a journal, find your way around its window, and write your first note.</p>
-  <div class="prose">
-    <h2>Opening Puli</h2>
-    <p>The first time you open Puli, you see the welcome window. After that, Puli opens the journal you had open when you last quit, with an empty editor ready for a new note.</p>
-    <p>A journal holds your notes, and the people, groups, and projects in them. You can keep more than one, like Work and Personal. Only one is open at a time.</p>
+  <p class="hero__lead">Starting a journal, finding your way around, and writing your first note.</p>
+  <div class="prose prose--topics">
+    <div class="topic">
+      <h2>Opening Puli</h2>
+      <div class="topic__text">
+        <p>The first time you open Puli, you see the welcome window. After that, Puli opens the journal you had open when you last quit, with an empty editor ready for a new note.</p>
+        <p>A journal holds your notes, and the people, groups, and projects in them. You can keep more than one, like Work and Personal. Only one is open at a time.</p>
+      </div>
+    </div>
 
-    <h2>The welcome window</h2>
-    <p>The welcome window offers four choices:</p>
-    <ul>
-      <li>Start a New Journal</li>
-      <li>Open an Existing Journal</li>
-      <li>Import a Folder</li>
-      <li>Try a Sample Journal</li>
-    </ul>
-    <p>Click a choice to select it, then choose Continue. A double-click does both. You can also move through the choices with <kbd>↓</kbd> and <kbd>↑</kbd> and press <kbd>↩</kbd>. Back returns you to the screen before.</p>
-    <p>The welcome window has no Quit button. Closing it quits Puli, and so does <kbd>⌘Q</kbd>.</p>
+    <div class="topic">
+      <h2>The welcome window</h2>
+      <figure class="shot shot--sheet">
+        <a href="{{ '/assets/images/puli/guide/start-welcome-light.png' | relative_url }}" aria-label="Show the screenshot full size">
+          <picture>
+            <source srcset="{{ '/assets/images/puli/guide/start-welcome-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+            <img src="{{ '/assets/images/puli/guide/start-welcome-light.png' | relative_url }}" width="834" height="592" loading="lazy" alt="Puli’s welcome window: “Puli is ready when you are.”, with four choices: Start a New Journal, selected, Open an Existing Journal, Import a Folder, and Try a Sample Journal, and a Continue button.">
+          </picture>
+        </a>
+        <figcaption>The welcome window, with Start a New Journal selected.</figcaption>
+      </figure>
+      <div class="topic__text">
+        <p>The welcome window offers four choices:</p>
+        <ul>
+          <li>Start a New Journal</li>
+          <li>Open an Existing Journal</li>
+          <li>Import a Folder</li>
+          <li>Try a Sample Journal</li>
+        </ul>
+        <p>Click a choice to select it, then choose Continue. A double-click does both. You can also move through the choices with <kbd>↓</kbd> and <kbd>↑</kbd> and press <kbd>↩</kbd>. Back returns you to the screen before.</p>
+        <p>The welcome window has no Quit button. Closing it quits Puli, and so does <kbd>⌘Q</kbd>.</p>
+        <p>This page follows Start a New Journal and Try a Sample Journal. To open a journal you already have, see <a href="{{ '/puli/guide/journals/' | relative_url }}">Journals</a>. To bring in notes from another app, see <a href="{{ '/puli/guide/importing/' | relative_url }}">Importing notes</a>.</p>
+      </div>
+    </div>
 
-    <h2>Starting a new journal</h2>
-    <ol>
-      <li>Choose Start a New Journal, then Continue.</li>
-      <li>Choose a template, then Continue.</li>
-      <li>Name the journal.</li>
-      <li>Choose Start writing.</li>
-    </ol>
-    <p>The journal opens with an empty editor.</p>
+    <div class="topic">
+      <h2>Starting a new journal</h2>
+      <div class="topic__text">
+        <ol>
+          <li>Choose Start a New Journal, then Continue.</li>
+          <li>Choose a template, then Continue.</li>
+          <li>Name the journal.</li>
+          <li>Choose Start writing.</li>
+        </ol>
+        <p>The journal opens with an empty editor.</p>
+      </div>
+    </div>
 
-    <h3>Choosing a template</h3>
-    <p>The template decides what you can tag:</p>
-    <ul>
-      <li>Work, for anyone who works with people and projects: People (<code>@</code>), Orgs (<code>!</code>), and Projects (<code>#</code>).</li>
-      <li>Home, for running a household: People (<code>@</code>), Places (<code>!</code>), and Projects (<code>#</code>).</li>
-      <li>School, for students: People (<code>@</code>), Courses (<code>!</code>), and Assignments (<code>#</code>).</li>
-      <li>Job search, for finding your next role: People (<code>@</code>), Employers (<code>!</code>), and Roles (<code>#</code>).</li>
-    </ul>
-    <p>Work is chosen at first. To see how tagging works in your journal, choose Help › Tagging. <a href="{{ '/puli/guide/tags/' | relative_url }}">People, groups, and projects</a> explains more.</p>
+    <div class="topic">
+      <h3>Choosing a template</h3>
+      <figure class="shot shot--sheet">
+        <a href="{{ '/assets/images/puli/guide/start-templates-light.png' | relative_url }}" aria-label="Show the screenshot full size">
+          <picture>
+            <source srcset="{{ '/assets/images/puli/guide/start-templates-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+            <img src="{{ '/assets/images/puli/guide/start-templates-light.png' | relative_url }}" width="834" height="592" loading="lazy" alt="The welcome window’s Choose a template step, with four templates: Work, selected, Home, School, and Job search, each with a line about who it’s for.">
+          </picture>
+        </a>
+        <figcaption>Choosing a template. Work is chosen at first.</figcaption>
+      </figure>
+      <div class="topic__text">
+        <p>The template decides what you can tag:</p>
+        <ul>
+          <li>Work, for your job: <code>@people !orgs #projects</code></li>
+          <li>Home, for managing a household: <code>@people !groups #projects</code></li>
+          <li>School, for students and teachers: <code>@people !courses #assignments</code></li>
+          <li>Job search, for finding your next role: <code>@people !employers #roles</code></li>
+        </ul>
+        <p>Work is chosen at first. To see how tagging works in your journal, choose Help › Tagging. <a href="{{ '/puli/guide/tags/' | relative_url }}">People, groups, and projects</a> explains more.</p>
+      </div>
+    </div>
 
-    <h3>Naming the journal</h3>
-    <p>The name starts as the template’s, like “Work” or “Job Search”, selected so you can type over it. A journal needs a name: with none, you see “Give your journal a name.” and can’t start writing.</p>
-    <p>If you already have a journal with that name, Puli asks whether to open it or choose a different name.</p>
-    <p>Beneath the name is Back up to iCloud, on at first. With it on, the journal is backed up to iCloud and kept on all your Macs. With it off, nothing of the journal leaves this Mac. You can change it later in Settings; see <a href="{{ '/puli/guide/journals/' | relative_url }}">Journals</a>.</p>
+    <div class="topic">
+      <h3>Naming the journal</h3>
+      <div class="topic__text">
+        <p>The name starts as the template’s, like “Work” or “Job Search”, selected so you can type over it. A journal needs a name: with none, you see “Give your journal a name.” and can’t start writing.</p>
+        <p>If you already have a journal with that name, Puli asks whether to open it or choose a different name.</p>
+        <p>Beneath the name is Back up to iCloud, on at first. With it on, the journal is backed up to iCloud and kept on all your Macs. With it off, nothing of the journal leaves this Mac. You can change it later in Settings; see <a href="{{ '/puli/guide/journals/' | relative_url }}">Journals</a>.</p>
+      </div>
+    </div>
 
-    <h2>Trying a sample journal</h2>
-    <p>To look around before you start your own, choose Try a Sample Journal, then Continue. There are two samples:</p>
-    <ul>
-      <li>Harbor Street, a Work journal for an operations lead at a nonprofit, with 14 weeks of notes.</li>
-      <li>Job Search, a Job search journal for a staff engineer looking for a next role, with 10 weeks of notes.</li>
-    </ul>
-    <p>Select one and choose Open Sample, or double-click it. Each holds notes up to yesterday, with people, tags, stages, and tasks, some due around now. Every lesson is on in a sample, so you can try them all.</p>
-    <p>Samples aren’t saved. Each starts fresh when you open it again, and what you changed is gone. A sample isn’t listed with your journals or in Open Recent, and it’s never backed up to iCloud. The next time you open Puli, it opens the journal you had before the sample, or the welcome window.</p>
+    <div class="topic">
+      <h2>Trying a sample journal</h2>
+      <figure class="shot shot--sheet">
+        <a href="{{ '/assets/images/puli/guide/start-samples-light.png' | relative_url }}" aria-label="Show the screenshot full size">
+          <picture>
+            <source srcset="{{ '/assets/images/puli/guide/start-samples-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+            <img src="{{ '/assets/images/puli/guide/start-samples-light.png' | relative_url }}" width="834" height="592" loading="lazy" alt="The welcome window’s Try a sample journal step, with two samples: Harbor Street, selected, a Work journal for an operations lead at a nonprofit, and Job Search, a staff engineer’s next role.">
+          </picture>
+        </a>
+        <figcaption>The two samples, with Harbor Street selected.</figcaption>
+      </figure>
+      <div class="topic__text">
+        <p>To look around before you start your own, choose Try a Sample Journal, then Continue. There are two samples:</p>
+        <ul>
+          <li>Harbor Street, a Work journal for an operations lead at a nonprofit, with 14 weeks of notes.</li>
+          <li>Job Search, a Job search journal for a staff engineer looking for their next role, with 10 weeks of notes.</li>
+        </ul>
+        <p>Select one and choose Open Sample, or double-click it. Each holds notes up to yesterday, with people, tags, stages, and tasks, some due around now. Every lesson is turned on in a sample, so you can try all of Puli’s premium tricks.</p>
+        <p>Samples aren’t saved. Each starts fresh when you open it again, and what you changed is gone. A sample isn’t listed with your journals or in Open Recent, and it’s never backed up to iCloud. The next time you open Puli, it opens the journal you had before the sample, or the welcome window.</p>
+      </div>
+    </div>
 
-    <h2>Opening a journal you have</h2>
-    <p>Choose Open an Existing Journal, then Continue. You see your journals, the one you opened last at the top, then any in iCloud that this Mac doesn’t have yet. Select one and choose Open Journal, or double-click it.</p>
+    <div class="topic">
+      <h2>The journal’s window</h2>
+      <figure class="shot">
+        <a href="{{ '/assets/images/puli/guide/start-window-light.png' | relative_url }}" aria-label="Show the screenshot full size">
+          <picture>
+            <source srcset="{{ '/assets/images/puli/guide/start-window-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+            <img src="{{ '/assets/images/puli/guide/start-window-light.png' | relative_url }}" width="1200" height="780" loading="lazy" alt="The Harbor Street sample’s window. From left: the cabinet, with Notes, Tasks, Board, Graph, and Trash, then People, Orgs, and Projects; the list of notes; an empty new note in the editor; and the context pane’s guide to tagging and tasks.">
+          </picture>
+        </a>
+        <figcaption>From left: the cabinet, the list of notes, the editor, and the context pane.</figcaption>
+      </figure>
+      <div class="topic__text">
+        <p>The window’s title is the journal’s name. From left to right, it holds:</p>
+        <ul>
+          <li>The cabinet, a sidebar with the views, like Notes and Tasks, and beneath them your people, groups, and projects.</li>
+          <li>The list of notes.</li>
+          <li>The editor, where you write.</li>
+          <li>The context pane, which shows what you know about the people and projects in the note.</li>
+        </ul>
+        <p>Each opens and closes on its own. Use the buttons in the toolbar, or the View menu: Show Sidebar (<kbd>⌃⌘S</kbd>), Hide Notes List (<kbd>⌃⌘L</kbd>), and Show Context (<kbd>⌘\</kbd>). When the window is too narrow for all of them, some hide until you make it wider again. Puli remembers the window’s size and place when you quit.</p>
+      </div>
+    </div>
 
-    <h2>Importing notes</h2>
-    <p>You can bring in a folder of Markdown notes from another app, or a folder Puli exported.</p>
-    <ol>
-      <li>Choose Import a Folder, then Continue.</li>
-      <li>Choose the folder.</li>
-      <li>Name the journal. The name starts as the folder’s.</li>
-      <li>Leave Back up to iCloud on, or turn it off to keep the journal only on this Mac.</li>
-      <li>Choose Import.</li>
-    </ol>
-    <p>Puli counts the notes as it brings them in, then opens the new journal. The folder you imported doesn’t change.</p>
-    <p>Each <code>.md</code>, <code>.markdown</code>, <code>.txt</code>, or <code>.text</code> file becomes a note, titled with its file’s name and dated when it last changed. Images and PDFs the notes show come along with them.</p>
-    <p>Notes from another app use the Imported notes template: <code>@</code> tags people, and <code>#</code> makes a plain tag, which can nest, as in <code>#work/budget</code>. A folder Puli exported comes back as it was, with its template, tags, stages, and Board.</p>
-    <p>Once a journal is open, you can import another folder with File › Import….</p>
+    <div class="topic">
+      <h2>Your first note</h2>
+      <figure class="shot">
+        <a href="{{ '/assets/images/puli/guide/start-first-note-light.png' | relative_url }}" aria-label="Show the screenshot full size">
+          <picture>
+            <source srcset="{{ '/assets/images/puli/guide/start-first-note-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+            <img src="{{ '/assets/images/puli/guide/start-first-note-light.png' | relative_url }}" width="1200" height="780" loading="lazy" alt="A new, empty Work journal: no notes yet, an empty editor, and the context pane’s guide: To get started, just start typing. It shows how to tag a person, an org, and a project, and how to add a task with a due date and a priority.">
+          </picture>
+        </a>
+        <figcaption>A new journal. The context pane shows how to tag and add tasks until you start typing.</figcaption>
+      </figure>
+      <div class="topic__text">
+        <p>A new journal opens with an empty editor, and the context pane shows a short guide to tagging and tasks. Just start typing. The first line is the note’s title.</p>
+        <p>To start another note, choose File › New Note, press <kbd>⌘N</kbd>, or click New Note in the toolbar. The note you were writing is saved, and the cursor goes to the new note’s title. <a href="{{ '/puli/guide/writing/' | relative_url }}">Writing notes</a> covers the rest.</p>
+      </div>
+    </div>
 
-    <h2>The journal’s window</h2>
-    <p>The window’s title is the journal’s name. From left to right, it holds:</p>
-    <ul>
-      <li>The cabinet, a sidebar with the views, like Notes and Tasks, and beneath them your people, groups, and projects.</li>
-      <li>The list of notes.</li>
-      <li>The editor, where you write.</li>
-      <li>The context pane, which shows what you know about the people and projects in the note.</li>
-    </ul>
-    <p>Each opens and closes on its own. Use the buttons in the toolbar, or the View menu: Show Sidebar (<kbd>⌃⌘S</kbd>), Hide Notes List (<kbd>⌃⌘L</kbd>), and Show Context (<kbd>⌘\</kbd>). When the window is too narrow for all of them, some hide until you make it wider again. Puli remembers the window’s size and place when you quit.</p>
-
-    <h2>Your first note</h2>
-    <p>A new journal opens with an empty editor, and the context pane shows a short guide to tagging and tasks. Just start typing. The first line is the note’s title.</p>
-    <p>To start another note, choose File › New Note, press <kbd>⌘N</kbd>, or click New Note in the toolbar. The note you were writing is saved, and the cursor goes to the new note’s title. <a href="{{ '/puli/guide/writing/' | relative_url }}">Writing notes</a> covers the rest.</p>
-
-    <h2>Quitting Puli</h2>
-    <p>Quit Puli with <kbd>⌘Q</kbd>. Puli doesn’t ask anything first. The note you were writing is saved.</p>
+    <div class="topic">
+      <h2>Quitting Puli</h2>
+      <div class="topic__text">
+        <p>Quit Puli with <kbd>⌘Q</kbd>. Puli doesn’t ask anything first. The note you were writing is saved.</p>
+      </div>
+    </div>
   </div>
 </section>

@@ -292,6 +292,7 @@ kbd { font-family: inherit; font-size: 0.92em; color: var(--ink); white-space: n
 .prose h2:first-child { padding-top: 8px; }
 .prose h3 { font-size: 20px; font-weight: 600; padding-top: 14px; }
 .prose p, .prose li { color: var(--muted); }
+.prose ul, .prose ol { margin: 0; }
 .prose a { text-decoration: underline; text-underline-offset: 3px; color: var(--ink); }
 /* Screenshots of Puli's window, taken without the shadow. The radius matches the window's own
    corners (34px of a 2400 x 1560 capture), so the hairline follows them. */
@@ -300,7 +301,7 @@ kbd { font-family: inherit; font-size: 0.92em; color: var(--ink); white-space: n
    thumbnail that opens full size. Narrower than that, the screenshot sits under the heading. */
 .prose--topics { max-width: none; gap: 0; }
 .topic { display: flex; flex-direction: column; gap: 14px; }
-.topic > h2, .topic__text { max-width: 34em; }
+.topic > h2, .topic > h3, .topic__text { max-width: 34em; }
 .topic__text { display: flex; flex-direction: column; gap: 14px; }
 .topic + .topic { margin-top: 14px; }
 .prose--topics .topic + .topic > h2 { padding-top: 32px; }
@@ -309,17 +310,19 @@ kbd { font-family: inherit; font-size: 0.92em; color: var(--ink); white-space: n
 @media (min-width: 1000px) {
   /* The screenshot takes what's left beside the text, up to 250px, so the text leads. */
   .topic { display: grid; grid-template-columns: minmax(0, 34em) minmax(0, 250px); column-gap: 48px; row-gap: 14px; align-items: start; }
-  .topic > h2 { grid-column: 1; }
+  .topic > h2, .topic > h3 { grid-column: 1; }
   .topic__text { grid-column: 1; grid-row: 2; }
   .topic .shot { grid-column: 2; grid-row: 2; margin: 5px 0 0; max-width: none; }  /* top level with the text's first line */
 }
 .shot a { display: block; cursor: zoom-in; border-radius: 1.42% / 2.18%; }
 .shot a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+/* The welcome window is smaller than the journal's (834 x 592), with the same 17pt corners. */
+.shot.shot--sheet img, .shot.shot--sheet a { border-radius: 2.04% / 2.87%; }
 /* A screenshot opened full size: letterboxed on a dark backdrop, no bigger than the window really is. */
 .shot-view { width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 24px; border: 0; background: transparent; }
 .shot-view[open] { display: grid; place-items: center; }
 .shot-view::backdrop { background: rgb(12 12 14 / 0.88); }
-.shot-view img { max-width: min(1200px, 100%); max-height: calc(100vh - 48px); width: auto; height: auto; cursor: zoom-out; border-radius: 1.42% / 2.18%; }
+.shot-view img { display: block; cursor: zoom-out; }  /* sized and rounded by marks.js, to match the shot */
 .shot img { display: block; width: 100%; height: auto; border-radius: 1.42% / 2.18%; box-shadow: 0 0 0 1px var(--line); }
 /* Tasks written as you'd type them: the task's own hyphen is the bullet. */
 .prose .task-lines { list-style: none; padding-left: 1.5em; }

@@ -46,6 +46,12 @@
       event.preventDefault();
       big.src = img.currentSrc || img.src;   // the light or dark shot, whichever the page is showing
       big.alt = img.alt;
+      // As big as the window really is (its width and height attributes), but never past the screen, less 24px a side.
+      var w = +img.getAttribute("width") || 1200, h = +img.getAttribute("height") || 780;
+      var scale = Math.min(1, (window.innerWidth - 48) / w, (window.innerHeight - 48) / h);
+      big.style.width = Math.round(w * scale) + "px";
+      big.style.height = Math.round(h * scale) + "px";
+      big.style.borderRadius = getComputedStyle(img).borderRadius;   // percentages, so they fit any size
       view.showModal();
     });
   });
