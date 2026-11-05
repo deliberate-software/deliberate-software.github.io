@@ -135,6 +135,7 @@ img, svg { max-width: 100%; }
 .puli { display: block; flex: none; }
 .puli img { display: block; width: 100%; height: auto; }
 .puli--sitting { width: 380px; }  /* the picture includes its backdrop, so it runs wider than the dog */
+@media (min-width: 1140px) { .puli--sitting { width: 460px; } }  /* stands about as tall as the two-paragraph lede beside it */
 /* Standing at the start of the waitlist band, facing the form. */
 .puli--standing { width: 320px; }
 
@@ -204,6 +205,7 @@ img, svg { max-width: 100%; }
 .hero--puli { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 56px; align-items: center; }
 .hero--puli .eyebrow { display: inline-block; margin-bottom: 18px; }
 .hero--puli .hero__lead { margin-top: 24px; }
+.hero--puli .hero__lead + .hero__lead { margin-top: 16px; }
 .hero--puli .hero__actions { margin-top: 32px; }
 .hero__subtitle {
   font-family: var(--serif); font-size: clamp(28px, 4vw, 50.5px); line-height: 1.15; letter-spacing: -0.01em;  /* ends halfway between the title and the lede */
