@@ -1,0 +1,96 @@
+---
+layout: default
+title: Finding Your Notes
+description: How to find a note again, with the list of notes, the cabinet, Search, the Tags view, and the Trash.
+permalink: /puli/guide/finding/
+---
+<section class="hero hero--short container">
+  <p class="eyebrow">Puli · User’s Guide</p>
+  <h1 class="hero__title">Finding your <em>notes.</em></h1>
+  <p class="hero__lead">How to get back to what you wrote: by date, by title, by who and what it mentions, or by the words in it.</p>
+  <div class="prose">
+    <h2>The list of notes</h2>
+    <p>To see your notes, choose View › Notes, press <kbd>⇧⌘N</kbd>, or click Notes in the cabinet. The list of notes opens left of the editor.</p>
+    <p>Each row shows the note’s title in bold, then its date and its first words. Click a row to open the note in the editor. Then <kbd>↑</kbd> and <kbd>↓</kbd> move through the list, opening each note as you reach it. Press <kbd>↩</kbd> or <kbd>⇥</kbd>, or click in the editor, to start typing at the end of the note.</p>
+    <p>Drag the line between the list and the editor to make the list wider or narrower. To hide the list, choose View › Hide Notes List, press <kbd>⌃⌘L</kbd>, or click its button in the toolbar. The list lives only beside the editor, so it isn’t there in the other views.</p>
+    <p>From any other view, View › Notes or <kbd>⇧⌘N</kbd> brings you back to the note you were writing.</p>
+
+    <h3>Pinning a note</h3>
+    <p>Hold the pointer over a note in the list and a hollow pin shows beside its ⋮. Click the pin to pin the note. Or choose Pin Note from the note’s ⋮, from its right-click menu, or from the Edit menu while the note is open; <kbd>⌃↩</kbd> opens the same menu. A pinned note’s pin stays filled in. Click it again, or choose Unpin Note, to unpin it. Pins belong to the journal they’re in.</p>
+
+    <h3>Sorting the list</h3>
+    <p>Click the sort button in the toolbar, just right of the list’s button. Choose Title, Date Created, or Date Modified, then a direction: A to Z or Z to A for Title, Newest First or Oldest First for the dates. Upper and lower case sort together.</p>
+    <p>The list starts sorted by Date Created, Newest First. Puli keeps the order you choose, in every journal. Sorted by Date Modified, each row shows when the note was last changed; otherwise, when it was written.</p>
+
+    <h2>Going back and forward</h2>
+    <p>Click ‹ or › in the toolbar, choose View › Back or View › Forward, or press <kbd>⌘[</kbd> or <kbd>⌘]</kbd>. Each step is a view you chose or a note you opened. Searching, sorting, narrowing to a tag, and opening a page in the context pane aren’t steps, so going back doesn’t undo them.</p>
+    <p>Going back saves the note you leave, as leaving the editor always does. An empty note isn’t kept, and a note you’ve moved to the Trash is skipped.</p>
+    <p>Puli remembers your steps while you close and reopen the journal’s window, or lock and unlock it. It forgets them when you quit Puli or open another journal.</p>
+
+    <h2>The cabinet</h2>
+    <p>The cabinet is the sidebar at the left of the window. To show or hide it, choose View › Show Sidebar or Hide Sidebar, press <kbd>⌃⌘S</kbd>, or click its button in the toolbar. Drag its edge to make it wider or narrower.</p>
+    <p>Under VIEWS, it holds Notes, Tasks, Board, Graph, and Trash. All but the Trash show how many they hold. Board is there only when a kind has stages; see <a href="{{ '/puli/guide/stages/' | relative_url }}">Projects and stages</a>. Graph is there once Puli knows <a href="{{ '/puli/guide/graph/' | relative_url }}">the graph</a>. Click one to see it. Beneath Notes, Untagged and Pinned show when they hold notes; click either to see only those notes.</p>
+    <p>Under TAGS, it holds your journal’s kinds, like People, Orgs, and Projects, each with its count. Beneath each kind are its names, those mentioned most recently first. Click the triangle beside a kind to fold its names away. Click a kind itself to see it in the Tags view.</p>
+    <p>A kind’s ⋮, at the right of its heading, sets how its names show: Sort by Most recent, Most mentioned, or Name, and Show 5, 10, or All. Each kind keeps its own choices. Sorted by Name, projects inside other projects are indented beneath them.</p>
+
+    <h3>Narrowing to one tag</h3>
+    <p>Click a name in the cabinet, like Relay, to see only what’s Relay’s. The list of notes holds only the notes that mention Relay, under Relay’s pill. Tasks, the Board, and the Graph narrow to Relay too, and Relay’s page opens in the context pane. For a project, what’s inside it counts as its own.</p>
+    <p>The counts in the cabinet change to match. A check mark beside Relay shows it’s chosen. To see everything again, click the ✕ beside Relay’s pill, or click Relay in the cabinet again. Opening another journal or quitting Puli lets go of it too.</p>
+
+    <h3>Moving through the cabinet with keys</h3>
+    <p>Click in the cabinet, or press <kbd>⇧⇥</kbd> from the list of notes, and the cabinet takes the keys. <kbd>↑</kbd> and <kbd>↓</kbd> move through it, showing each view and narrowing to each name as you land on it. The note in the editor stays as it is.</p>
+    <ul>
+      <li><kbd>←</kbd> folds a kind or a project, and <kbd>→</kbd> opens it again.</li>
+      <li>Type the first letters of a name, like “pr”, to jump to it.</li>
+      <li><kbd>⇥</kbd>, or <kbd>↩</kbd> on a view or a name, gives the keys to the view.</li>
+    </ul>
+
+    <h2>Searching</h2>
+    <p>Click Search in the toolbar, choose Edit › Search, or press <kbd>⌥⌘F</kbd>, and type. The list of notes holds only the notes that have every word you type. A tag’s name counts as words, and case doesn’t matter, so “maya”, “MAYA”, and “#maya” all find notes that mention <code>@Maya-Chen</code>.</p>
+    <p>What you type stays as you move between views. Tasks, the Board, the Tags view, and the Graph each show only what matches. To clear it, press <kbd>⎋</kbd> in Search or click its ✕.</p>
+    <p>A person, group, or project matches by its name, by one of its aliases, or by the words in its own About. The Tags view and the Board say why, as in “Alias atl-v1” or “In its note”.</p>
+    <p>While a name is chosen in the cabinet, Search says, say, “Search Relay”, and finds only Relay’s notes. If none match, click “Search all notes” to let go of Relay and keep your words.</p>
+    <p>Press <kbd>↓</kbd> to move from Search into what it found. In Notes, that opens the first match. <kbd>↩</kbd> in Search does nothing.</p>
+
+    <h3>Searching by date</h3>
+    <p>Type a date word to find what was written then: today, yesterday, tomorrow, this week, last week, next week, this month, last month, or next month. A month works too, as “October” or “October 2025”, and so does a day, as “Oct 12”, “10/12”, or “2026-10-12”. Mix them with other words: “maya last week” finds last week’s notes that mention Maya.</p>
+    <p>A date word also matches the same word in a note, so “april” finds a note written in April and a note about coffee with April. A weekday alone, like “Friday”, and a short month, like “mar”, match only as words.</p>
+    <p>In the Tasks view, a date finds open tasks by when they’re due, and done tasks by when you ticked them. In the Tags view and on the Board, it finds what was last mentioned then.</p>
+
+    <h2>The Tags view</h2>
+    <p>To see everyone and everything you’ve tagged, choose View › Tags, press <kbd>⇧⌘I</kbd>, or click a kind’s heading in the cabinet. Choose People, Orgs, or Projects from the Show dropdown at the right; a journal from another template shows its own kinds there.</p>
+    <p>Each row shows a name, its open tasks, how many notes mention it, and when it was last mentioned. Click a column’s heading to sort by it, and click again to reverse. Click a row, or move to it with <kbd>↓</kbd> and press <kbd>↩</kbd>, to see its page in the context pane.</p>
+    <p>Right-click a row, or click its ⋮, for these:</p>
+    <ul>
+      <li>Open shows its page.</li>
+      <li>Rename… changes its name. Your notes don’t change.</li>
+      <li>Merge Into… makes this one part of another you pick. This one goes, and its tag becomes one of the other’s aliases.</li>
+      <li>Merge With… brings another into this one, which keeps its name.</li>
+      <li>Delete Person, or Delete Org or Delete Project, moves it to the Trash. You can also press <kbd>⌫</kbd>.</li>
+    </ul>
+    <p>Merging changes no notes. To undo a merge, choose Edit › Undo Merge or press <kbd>⌘Z</kbd>.</p>
+
+    <h2>The Trash</h2>
+    <p>What you delete goes to the Trash first: notes, tasks, people, groups, and projects. To delete a note, choose Delete Note from its ⋮ in the list or on its page in the context pane. Or choose it in the list and press <kbd>⌫</kbd> or <kbd>⌘⌫</kbd>, or choose Edit › Delete Note. The next note down opens in its place.</p>
+    <p>“Moved to Trash” shows at the bottom of the window. Choose Edit › Undo Delete Note, or press <kbd>⌘Z</kbd>, to bring it straight back.</p>
+    <p>A project with projects inside it asks first: “Delete Website and the 2 projects inside it?” They go together, and come back together. A deleted task takes its line out of its note, with any lines indented under it. If it was the only thing in the note, the note goes with it.</p>
+    <p>If you delete all of a note’s text, the note is gone for good when you leave it. It doesn’t go to the Trash.</p>
+
+    <h3>Restoring from the Trash</h3>
+    <p>Choose View › Trash, or click Trash in the cabinet. You see what’s there, the most recently deleted first, each saying when it was deleted and how long it has left, as “Deleted yesterday · 29 days left”.</p>
+    <ul>
+      <li>Restore puts it back where it was. A note returns at its own date, with its tasks and tags.</li>
+      <li>Delete Now deletes it for good. Puli asks first.</li>
+    </ul>
+    <p>With the keys, <kbd>↑</kbd> and <kbd>↓</kbd> move through the Trash, <kbd>↩</kbd> restores, and <kbd>⌘⌫</kbd> deletes for good, after asking.</p>
+
+    <h3>How long the Trash keeps things</h3>
+    <p>In Settings › General, choose how long to keep deleted items: For 7 days, For 30 days, For 60 days, For 90 days, or Forever. Puli starts at 30 days, and the choice holds for every journal. When the time is up, Puli deletes an item for good the next time you open its journal. If a shorter time would delete things now, Puli asks first and says how many.</p>
+
+    <h2>Weeks</h2>
+    <p>In Settings › General, “Weeks start on” sets the first day of your week: Sunday, Monday, or Match System, which follows your Mac. Puli uses it for “next week” and “last week” in a due date, and for the weeks in the Tasks view.</p>
+
+    <h2>Filters and groups</h2>
+    <p>Two lessons narrow and sort what the views show: <a href="{{ '/puli/guide/filters/' | relative_url }}">Filters</a> and <a href="{{ '/puli/guide/groups/' | relative_url }}">Groups</a>.</p>
+  </div>
+</section>

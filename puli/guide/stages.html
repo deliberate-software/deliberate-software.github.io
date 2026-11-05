@@ -1,0 +1,66 @@
+---
+layout: default
+title: Projects and Stages
+description: How to give projects stages, let a stage set a task’s priority, and track projects on the Board.
+permalink: /puli/guide/stages/
+---
+<section class="hero hero--short container">
+  <p class="eyebrow">Puli · User’s Guide</p>
+  <h1 class="hero__title">Projects and <em>stages.</em></h1>
+  <p class="hero__lead">Give your projects stages, like To do, Doing, and Done, and the Board shows where each one stands.</p>
+  <div class="prose">
+    <h2>Stages</h2>
+    <p>A stage says where a project is. In each journal, one kind can have stages: Projects, in the Work, Home, and School templates, or Roles, in the Job search template.</p>
+    <p>A Job search journal starts with stages for its roles: Networking, Screening, Interviewing, Negotiating, and Closed. The other templates start with none. You add them when you want them.</p>
+
+    <h2>Adding stages</h2>
+    <ol>
+      <li>Choose Puli › Settings…, or press <kbd>⌘,</kbd>.</li>
+      <li>Choose Journal, then Tags.</li>
+      <li>Beneath Projects’ sigil, or Roles’, click Add Stages.</li>
+      <li>You see To do, Doing, and Done. Change their names, or leave them.</li>
+      <li>Click Save.</li>
+    </ol>
+    <p>The Board now shows in the cabinet and the View menu. Every project starts at the first stage until you choose another.</p>
+
+    <h3>Changing stages</h3>
+    <p>In the same place, you can rename a stage, move it up or down, remove it, or click Add Stage for another. Nothing changes until you click Save. Revert puts them back as they were. Each stage needs a name of its own, and a kind with stages needs at least one.</p>
+    <p>Renaming a stage keeps its projects in it. Your notes never change.</p>
+    <p>To stop using stages, click Remove Stages, then Save. The Board goes. Each project remembers the stage it was at, so if you add stages again, it’s back where it was.</p>
+    <p>In a Job search journal, Use the Template’s Stages puts back the stages it started with.</p>
+
+    <h2>Choosing a project’s stage</h2>
+    <p>Open the project’s page in the context pane. Its top line shows its kind and stage, as “Project · To do”. Click it and choose a stage. You can also drag the project’s card on the Board.</p>
+    <p>Changing a stage doesn’t change the project’s name, its About, or any note.</p>
+
+    <h2>Priority from a stage</h2>
+    <p>Each stage can have a priority, from P0, the highest, to P3, or None. Choose it beside the stage’s name in Settings › Journal › Tags.</p>
+    <p>An open task that tags a project takes the priority of the project’s stage. If the task tags several projects, it takes the highest. A priority you type in the task, like <code>P0</code>, comes first.</p>
+    <ul>
+      <li>In the Tasks view, a priority from a stage shows in lighter text than one you typed.</li>
+      <li>Sorting or grouping by priority puts typed priorities before those from a stage.</li>
+      <li>Move the project to another stage, and its tasks’ priorities change with it. Your notes don’t.</li>
+    </ul>
+    <p>A Job search journal’s stages start with priorities: Networking P3, Screening P2, Interviewing P1, Negotiating P0, and Closed none. A task about a role you’re interviewing for is P1. Change them as you like.</p>
+
+    <h2>The Board</h2>
+    <p>The Board shows only in a journal where a kind has stages. To see it, choose View › Board, press <kbd>⇧⌘B</kbd>, or click Board in the cabinet.</p>
+    <p>Each stage is a column, in order, headed by its name, how many projects it holds, and its priority, if it has one. Each project is a card in its stage’s column. A card shows:</p>
+    <ul>
+      <li>The project’s name.</li>
+      <li>The groups and people it’s mentioned with most, in their colors.</li>
+      <li>How many open tasks it has, and the highest priority among them, as “4 open tasks · P1”.</li>
+      <li>When the next task is due, as “next today”, “next in 3d”, or “next 18d late”.</li>
+    </ul>
+    <p>Click a card to see the project’s page in the context pane. Click its open tasks to see the Tasks view, showing only that project’s tasks.</p>
+
+    <h3>Moving cards</h3>
+    <p>Drag a card to another column to change its stage. Drop it in a column’s empty space to put it at the bottom, or onto another card to put it just above that one. Within a column, the Board keeps the order you give it. A project that joins a column goes to the bottom.</p>
+    <p>The last column, like Done, shows only the projects mentioned or changed in the last 30 days, then “and 12 more”, say. Click that to see them all.</p>
+
+    <h3>Projects inside projects</h3>
+    <p>A project inside another, like <code>#website/checkout</code>, has its own card and its own stage. Its card shows the project it’s inside, small and muted, above its name. Moving one doesn’t move the other.</p>
+    <p>To see one project and everything inside it, click it in the cabinet. See <a href="{{ '/puli/guide/finding/' | relative_url }}">Finding your notes</a>.</p>
+    <p>The <a href="{{ '/puli/guide/filters/' | relative_url }}">Filters</a> lesson adds dropdowns to the Board for narrowing it further.</p>
+  </div>
+</section>

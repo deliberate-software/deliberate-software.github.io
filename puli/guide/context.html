@@ -1,0 +1,84 @@
+---
+layout: default
+title: Context
+description: How to use the context pane, where each person, group, and project has a page of its own.
+permalink: /puli/guide/context/
+---
+<section class="hero hero--short container">
+  <p class="eyebrow">Puli · User’s Guide</p>
+  <h1 class="hero__title"><em>Context.</em></h1>
+  <p class="hero__lead">The context pane sits beside your note. It shows the page of whoever or whatever you’re writing about: what you’ve said about them, who they come up with, and what’s still to do.</p>
+  <div class="prose">
+    <h2>The context pane</h2>
+    <p>When a journal is open, the context pane is at the right of the window. The first time you open a journal, it shows how to tag people, groups, and projects, and how to write a task. Click its close button when you’re done with it. It won’t come back in that journal unless you ask for it.</p>
+    <p>The Help menu holds two pages for the context pane:</p>
+    <ul>
+      <li>Help › Tagging shows the getting-started help again.</li>
+      <li>Help › Navigation shows what clicking does, and the keys for moving around Puli.</li>
+    </ul>
+
+    <h2>Opening a page</h2>
+    <p>Each person, group, and project has a page. To see one in the context pane, do any of these:</p>
+    <ul>
+      <li>Click a tag in your note, like <code>@Priya</code>.</li>
+      <li>Move the cursor into a tag, or just after it.</li>
+      <li>Finish typing a tag, with a space after it.</li>
+      <li>Click a name on another page, or in a note shown in the pane.</li>
+    </ul>
+    <p>The page stays when you move on to text with no tag in it, so you can keep it beside you while you write.</p>
+    <p>If you tag someone the journal doesn’t have yet, their page says “Not in your journal yet.” Saving the note creates them. Leaving the note saves it.</p>
+
+    <h2>What’s on a page</h2>
+    <p>From the top, a page shows:</p>
+    <ul>
+      <li>Its kind, like Person or Project, and for a project with stages, its stage. See <a href="{{ '/puli/guide/stages/' | relative_url }}">Projects and stages</a>.</li>
+      <li>Its name.</li>
+      <li>About: its own note, if you’ve written one.</li>
+      <li>Mentioned with: the people, groups, and projects it comes up with, each with how many notes they share.</li>
+      <li>Open tasks: the tasks still to do that mention it.</li>
+      <li>Notes: every saved note that mentions it, newest first.</li>
+    </ul>
+    <p>A section with nothing in it doesn’t show. The number beside each heading, as in “Notes · 9”, says how many it holds. A long list of notes shows the 10 newest; click “Show all” to see the rest.</p>
+    <p>Click a section’s heading to close it, and click again to open it. A section you close stays closed on every page, even after you quit Puli.</p>
+    <p>The page lists your note as you last saved it. It doesn’t change as you type.</p>
+
+    <h3>A note’s page</h3>
+    <p>Click a note on a page to read it in the context pane. Click ‹ at the top right to go back to the page you came from.</p>
+    <p>A note’s page shows “Note”, its date, and its whole text. You can select and copy from it with <kbd>⌘C</kbd>, tick its tasks, and click its tags, but you can’t type in it. To change the note, choose Edit from its ⋮. The note opens in the editor.</p>
+    <p>Recent dates read the way you’d say them: “Just now”, “5 minutes ago”, “yesterday”, “Tuesday”, “last week”, “last month”. Older notes show the date and time. Hold the pointer over a date to see the exact time. If you changed the note after you wrote it, you’ll see when, as in “yesterday · edited 5 minutes ago”.</p>
+
+    <h2>Mentioned together</h2>
+    <p>“Mentioned with” counts the tags you write together in a note, not every tag in it:</p>
+    <ul>
+      <li>Tags on the same line are mentioned together.</li>
+      <li>A tag in a note’s first line, its title, is mentioned with every tag in the note.</li>
+      <li>A tag in a heading is mentioned with every tag beneath it, until a heading as big or bigger.</li>
+      <li>A heading with no tags, like <code>## Updates</code>, ties nothing together.</li>
+    </ul>
+    <p>So in a 1:1 titled <code># 1:1 @Maya-Chen</code>, Maya is mentioned with every project you talk about. But two projects on lines of their own aren’t mentioned with each other. Each pair counts once per note.</p>
+
+    <h2>Editing a page</h2>
+    <p>To change a page, choose Edit from the ⋮ beside its close button. Click Done when you’re finished.</p>
+    <ul>
+      <li>Name: type a new one, then press <kbd>↩</kbd> or click Done. The tag stays the same, and no notes change. A blank name isn’t kept.</li>
+      <li>About: type in it. It saves as you type. Tags work here as they do in a note.</li>
+      <li>Kind: click the kind, like Person, and choose Convert to Project… or another kind. Puli asks first and says how many notes it will update. Then it changes the tag in every note, as from <code>@Relay</code> to <code>#Relay</code>. If a project by that name already exists, the two become one.</li>
+      <li>Merge Into…: pick another of the same kind. The tag you’re editing becomes one of its aliases, its About is added to the end of theirs, and no notes change. Edit › Undo Merge, or <kbd>⌘Z</kbd>, splits them again.</li>
+      <li>Delete Person, Delete Org, or Delete Project: moves it to the Trash, without asking. Your notes don’t change; its tag reads as plain text. See <a href="{{ '/puli/guide/finding/' | relative_url }}">Finding your notes</a> for the Trash.</li>
+    </ul>
+    <p>You can also delete from the ⋮ without editing: it holds Edit and Delete Person, or Delete Org or Delete Project. A note’s page has Edit and Delete Note.</p>
+
+    <h2>Open tasks on a page</h2>
+    <p>A page lists the open tasks that mention it, from your notes and from its own About, above its notes. Tick one and it stays, struck through, so you can untick it; it’s gone the next time you open the page. Click the ↗ beside “Open tasks” to see the Tasks view showing only this page’s tasks. See <a href="{{ '/puli/guide/tasks/' | relative_url }}">Tasks and promises</a>.</p>
+
+    <h2>Hiding the context pane</h2>
+    <p>To hide it, choose View › Hide Context, press <kbd>⌘\</kbd>, or click the context pane’s button in the toolbar. To show it again, choose View › Show Context or press <kbd>⌘\</kbd> again. A page’s close button hides the pane too.</p>
+    <p>While it’s hidden, moving through your note doesn’t bring it back. It keeps up, though: show it again and it has the page for the last tag you touched. It shows itself again when you ask for a page: when you click a tag, a task in the Tasks view, or a card on the Board, or choose Help › Tagging.</p>
+    <p>The pane also hides itself when it has nothing to show. A hidden pane stays hidden when you quit Puli and open it again.</p>
+
+    <h2>The context pane in its own window</h2>
+    <p>To move the pane into a window of its own, choose View › Move Context to Its Own Window, or press <kbd>⌥⌘\</kbd>. The window is called Context, with the journal’s name beneath. Move it anywhere, even to another display. The editor takes the pane’s room in the main window.</p>
+    <p>The window works as the pane does: click or type a tag and its page shows there. <kbd>⌘\</kbd> hides it and shows it again, where you left it.</p>
+    <p>To put it back, choose View › Move Context Back, press <kbd>⌥⌘\</kbd>, or close the Context window. Puli always opens with the pane in the main window.</p>
+  </div>
+</section>

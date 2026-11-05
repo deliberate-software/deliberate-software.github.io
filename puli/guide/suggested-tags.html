@@ -1,0 +1,50 @@
+---
+layout: default
+title: Suggested Tags
+description: How Puli suggests tags for the people, groups, and projects you mention, and how to take or turn down a suggestion.
+permalink: /puli/guide/suggested-tags/
+---
+<section class="hero hero--short container">
+  <p class="eyebrow">Puli · User’s Guide</p>
+  <h1 class="hero__title">Suggested <em>tags.</em></h1>
+  <p class="hero__lead">When you mention someone without tagging them, Puli notices and offers the tag.</p>
+  <div class="prose">
+    <p>Suggested Tags is a lesson. Until Puli learns it, names you write stay as written, with no underline. You can still tag any word yourself: right-click it and choose a Tag as item. See <a href="{{ '/puli/lessons/' | relative_url }}">How lessons work</a>.</p>
+
+    <h2>What Puli suggests</h2>
+    <p>As you write in the editor, Puli looks for the people, groups, and projects your journal already has. It finds them by name, by alias, and for a person, by first name. If your journal has Priya Natarajan, writing “Lunch with Priya” suggests Priya.</p>
+    <p>A suggested word gets a thick dotted underline in its kind’s color. The text doesn’t move. The tag rail, below the editor, lists each suggestion under “Suggested”, with how many times the note mentions it, as “Priya Natarajan 1”.</p>
+    <p>Puli doesn’t suggest:</p>
+    <ul>
+      <li>A one-word name written without its capital. “We’ll relay it to grace” suggests nothing.</li>
+      <li>A tag you’ve already written, like <code>@Priya</code>.</li>
+      <li>Anything in code, after a backslash, or in a link’s address.</li>
+    </ul>
+    <p>A name of two words or more is found however you capitalize it.</p>
+
+    <h3>New names</h3>
+    <p>On a Mac that can run Apple Intelligence, Puli also suggests names your journal doesn’t know yet, using Apple Intelligence’s on-device model. It looks once you move on from a paragraph, or stop typing for a few seconds. “Dana from Acme wants a demo” suggests Dana as a new person and Acme as a new org, shown in the tag rail as “Dana · New person 1” and “Acme · New org 1”.</p>
+    <p>A new name needs a capital somewhere in it. Puli passes over pronouns, words for a group like “Team”, roles like “CEO”, and words after “the”, “our”, “my”, “your”, or “their”.</p>
+    <p>On a Mac that can’t run the on-device model, or with Apple Intelligence turned off, Puli suggests only the names your journal already knows.</p>
+
+    <h2>Take a suggestion</h2>
+    <p>Right-click the underlined word, and choose:</p>
+    <ul>
+      <li>Tag as, followed by the name, as “Tag as Priya Natarajan”, to tag it.</li>
+      <li>Another, as “Another Priya”, to tag a new person by that name. Only people offer this.</li>
+      <li>Not a Tag, to stop suggesting it.</li>
+    </ul>
+    <p>For a new name, choose Tag as a New Person, Tag as a New Org, or Tag as a New Project. Puli makes the tag as if you’d typed it.</p>
+    <p>Clicking an underlined word only places the cursor, so you can edit it.</p>
+
+    <h3>From the tag rail</h3>
+    <p>Click a suggestion in the tag rail to highlight each place the note mentions it, and see the same menu. When the note mentions it more than once, the menu offers Tag Both or Tag All, to tag every one.</p>
+
+    <h3>What tagging writes</h3>
+    <p>Tagging Priya Natarajan from “Lunch with Priya” makes it “Lunch with <code>@Priya</code>”, and adds <code>@Priya</code> to her aliases, so typing it tags her from then on. The note shows “Priya” in her pill.</p>
+    <p>When two people share a first name, Puli offers both, first the one most often mentioned with the other names in that paragraph, as “Tom Alvarez?”. Choosing one writes their full tag, as <code>@Tom-Alvarez</code>, and adds no alias.</p>
+
+    <h2>Turn down a suggestion</h2>
+    <p>Choose Not a Tag. The note’s text doesn’t change, and Puli doesn’t suggest that word in that note again, even when you open it later. It still suggests it in other notes.</p>
+  </div>
+</section>

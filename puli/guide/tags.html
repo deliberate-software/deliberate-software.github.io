@@ -1,0 +1,95 @@
+---
+layout: default
+title: People, Groups, and Projects
+description: How tags work in Puli, from writing @ for a person to nesting projects and changing a journal’s sigils.
+permalink: /puli/guide/tags/
+---
+<section class="hero hero--short container">
+  <p class="eyebrow">Puli · User’s Guide</p>
+  <h1 class="hero__title">People, groups, and <em>projects.</em></h1>
+  <p class="hero__lead">Tag the people, groups, and projects you write about, and Puli keeps track of them for you.</p>
+  <div class="prose">
+    <h2>Tag someone</h2>
+    <p>Type a sigil and a name. In a journal made with the Work template:</p>
+    <ul>
+      <li><code>@Tom</code> tags a person.</li>
+      <li><code>!Platform</code> tags an org: a team, a vendor, or a customer.</li>
+      <li><code>#Relay</code> tags a project: anything you’re working on.</li>
+    </ul>
+    <p>For a name with more than one word, join the words with hyphens: <code>@Tom-Alvarez</code>, <code>#Relay-Migration</code>. Puli shows it as “Tom Alvarez”.</p>
+    <p>Saving the note creates anyone and anything it tags that the journal doesn’t have yet. Each gets its own page, listing the notes that mention it. Click a tag to open its page in the context pane.</p>
+    <p>For a reminder of your journal’s tags, choose Help › Tagging.</p>
+
+    <h2>What counts as a tag</h2>
+    <p>A tag starts where a word does. These aren’t tags:</p>
+    <ul>
+      <li>Email addresses, like <code>alan@example.com</code>, and anything in a web address.</li>
+      <li>Anything in code, between backticks or in a code block.</li>
+      <li>A heading’s <code>#</code>, followed by a space.</li>
+      <li>A number, like <code>#2026</code>.</li>
+      <li>A tag with a backslash before it, like <code>\#Relay</code>.</li>
+    </ul>
+    <p>Punctuation around a tag isn’t part of it, so “Thanks, @Tom.” tags Tom. Neither is a possessive: <code>@O'Brien's report</code> tags O’Brien, and <code>@Tim'll</code> tags Tim. Names in every script work, accents and all.</p>
+
+    <h2>Tag names</h2>
+    <p>Capitals don’t matter. <code>@tom</code>, <code>@Tom</code>, and <code>@TOM</code> all mean the same person.</p>
+    <p>The name comes from the tag as you first write it. <code>@tom-alvarez</code> becomes “Tom Alvarez”, and <code>!SRE</code> stays “SRE”. Writing <code>!sre</code> later doesn’t change it. Once you rename one, its tag shows the new name in every note.</p>
+    <p>Each kind keeps its own names, so <code>@Relay</code>, <code>!Relay</code>, and <code>#Relay</code> are a person, a group, and a project.</p>
+
+    <h2>How tags look</h2>
+    <p>Once the cursor moves away, a tag shows its name in bold, without its sigil, in its kind’s color. In the Work template, people are blue, orgs green, and projects amber. Move the cursor back into a tag and it shows as you wrote it, so you can change it. Copying copies it as written.</p>
+    <p>A tag the journal doesn’t know yet shows in a pill, and the tag rail marks it new.</p>
+
+    <h2>The tag rail</h2>
+    <p>The tag rail, below the editor, lists the tags in the note that need a decision. Click a tag’s pill to see its menu.</p>
+    <h3>New</h3>
+    <p>“John NEW” means the journal has no <code>@john</code>. Its menu offers people with similar names, then Create a new person, then Not a tag.</p>
+    <ul>
+      <li>Choose a person to use their tag instead. The note then says, for example, <code>@john-smith-acme</code>.</li>
+      <li>Choose Create a new person to add John now.</li>
+      <li>Choose Not a tag to keep <code>@john</code> as plain text. Puli adds a backslash before it.</li>
+    </ul>
+    <p>If you do nothing, saving the note creates John.</p>
+    <h3>Same as?</h3>
+    <p>“Projects SAME AS?” means the tag looks like one the journal has, such as <code>#projects</code> when you have the project “Project”, or <code>#realy</code> when you have “Relay”. Puli doesn’t create it when you save. Its menu starts with Use Project, which changes the tag to the one you have, and Keep Both, which creates the new one.</p>
+    <h3>Too deep</h3>
+    <p>“TOO DEEP”, in the error color, means a project tag nests more levels than the journal allows. Saving doesn’t create it. See Nested projects, below.</p>
+
+    <h2>Autocomplete</h2>
+    <p>Type a sigil and Puli suggests that kind’s names, the ones you mention most first. Keep typing to narrow them. Suggestions match any part of a name, and allow for small slips, so <code>@alv</code> and <code>@prya</code> find Tom Alvarez and Priya.</p>
+    <ul>
+      <li><kbd>↓</kbd> moves to the next suggestion.</li>
+      <li><kbd>↩</kbd>, or a click, writes the tag.</li>
+      <li><kbd>⇥</kbd> writes it with a space after it.</li>
+      <li><kbd>⎋</kbd> closes the suggestions and keeps what you typed.</li>
+    </ul>
+    <p>When two people share a name, each suggestion shows its tag, smaller and muted, so you can tell them apart. “Another John…” at the bottom writes <code>@john-</code>, ready for a last name. When no one has the tag you typed, the last suggestion is “Dana · create new”. Tags you’ve already written in the note but not yet saved come first, marked NEW.</p>
+
+    <h2>Aliases</h2>
+    <p>An alias is another tag for the same person, group, or project. If Robert has the alias <code>@bob</code>, writing <code>@bob</code> tags Robert, and shows “Robert”. Typing <code>@bo</code> suggests Robert, and writes <code>@Robert</code>. Robert’s page lists the notes that use either tag, with “Also @bob” under his name.</p>
+    <p>To add one, open Robert’s page in the context pane, choose Edit from its ⋮, type the alias in Add alias, and press <kbd>↩</kbd>. To remove one, click the ✕ on it. If notes use it, Puli asks whether to change them to <code>@Robert</code> or keep them as written. If you keep them, the alias becomes a person of its own.</p>
+    <p>An alias that already belongs to someone else is refused, with a message saying whose it is. Merging Bob into Robert also gives Robert the alias <code>@bob</code>. See <a href="{{ '/puli/guide/context/' | relative_url }}">Context</a> for merging.</p>
+
+    <h2>Nested projects</h2>
+    <p>Put a project inside another with a slash: <code>#website/checkout/payments</code> is Payments, inside Checkout, inside Website. It shows as “Payments”. Saving creates any of the three the journal doesn’t have.</p>
+    <p>Projects nest up to 4 levels in the Work, Home, and School templates. Other kinds don’t nest, so <code>!acme/legal</code> tags Acme, followed by “/legal”. In the Job search template, nothing nests.</p>
+    <p>Type <code>#website/</code> to see only the projects inside Website. Suggestions show their parents after their names: “Payments · Website / Checkout”. A project’s page shows what it’s Part of, and the projects inside it.</p>
+
+    <h2>Kinds and templates</h2>
+    <p>People are in every journal, always with <code>@</code>, always blue. The journal’s template names its other kinds, their sigils, and their colors:</p>
+    <ul>
+      <li>Work: Orgs (<code>!</code>) and Projects (<code>#</code>).</li>
+      <li>Home: Places (<code>!</code>) and Projects (<code>#</code>).</li>
+      <li>School: Courses (<code>!</code>) and Assignments (<code>#</code>).</li>
+      <li>Job search: Employers (<code>!</code>) and Roles (<code>#</code>).</li>
+    </ul>
+    <p>You choose a template when you make a journal. Help › Tagging explains each kind in the template’s own words.</p>
+
+    <h2>Change a sigil</h2>
+    <p>Open Settings › Journal › Tags. Each kind shows its sigil. Choose another from its menu: <code>!</code>, <code>#</code>, <code>$</code>, <code>%</code>, <code>&amp;</code>, <code>+</code>, <code>~</code>, <code>^</code>, or <code>=</code>, as long as no other kind has it. People’s <code>@</code> can’t change.</p>
+    <p>Puli asks first, saying how many tags in how many notes will change. Choose Change, and every tag of that kind changes, <code>#Relay</code> to <code>+Relay</code>, in every note, along with aliases. Text that wasn’t a tag of that kind, like <code>#general</code>, stays as written, and becomes plain text.</p>
+
+    <h2>Suggested tags</h2>
+    <p>Puli can also spot names the journal knows that you wrote without a sigil, and suggest tagging them. That’s a lesson: see <a href="{{ '/puli/guide/suggested-tags/' | relative_url }}">Suggested tags</a>.</p>
+  </div>
+</section>

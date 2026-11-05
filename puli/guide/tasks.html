@@ -1,0 +1,112 @@
+---
+layout: default
+title: Tasks and Promises
+description: Writing tasks in your notes, giving them due dates and priorities, keeping track of what others owe you, and working through them in the Tasks view.
+permalink: /puli/guide/tasks/
+---
+<section class="hero hero--short container">
+  <p class="eyebrow">Puli · User’s Guide</p>
+  <h1 class="hero__title">Tasks and <em>promises.</em></h1>
+  <p class="hero__lead">How to write tasks in your notes, give them due dates and priorities, keep track of what other people promised you, and tick them off.</p>
+  <div class="prose">
+    <h2>Write a task</h2>
+    <p>Start a line with <code>- [ ]</code> and a space, then the task: <code>- [ ] Call Tom</code>. You can also type <code>[]</code> and a space at the start of a line, and Puli writes <code>- [ ]</code> for you.</p>
+    <p>Puli shows a checkbox in place of the <code>- [ ]</code>, in the editor and the context pane. The note still says <code>- [ ] Call Tom</code>.</p>
+    <ul>
+      <li>Press <kbd>↩</kbd> at the end of a task to start another one.</li>
+      <li>Press <kbd>↩</kbd> on an empty task to end the list. An empty task left in a note is taken out when you save.</li>
+      <li>Press <kbd>⌫</kbd> just before the task’s text to take the checkbox away and leave plain text.</li>
+      <li>Press <kbd>⇥</kbd> anywhere in a task to indent it, and <kbd>⇧⇥</kbd> to bring it back.</li>
+    </ul>
+    <p>A task must start its line. “Notes: - [ ] not a task” isn’t a task. Tasks work the same in a person’s, group’s, or project’s About note as in any other note.</p>
+
+    <h2>Promises: yours and theirs</h2>
+    <p>A task is yours unless it starts with a person. When it starts with someone, it’s theirs: a promise they made to you.</p>
+    <ul>
+      <li><code>- [ ] Send @Maya-Chen the Relay update</code> is yours.</li>
+      <li><code>- [ ] Ask @maya to review the deck</code> is yours.</li>
+      <li><code>- [ ] @tom to send the Q3 numbers</code> is Tom’s.</li>
+      <li><code>- [ ] Waiting on @tom for the numbers</code> is Tom’s. So is “Waiting for @tom”.</li>
+      <li><code>- [ ] @tom and @maya draft the plan</code> is both Tom’s and Maya’s.</li>
+    </ul>
+    <p>Each person’s page shows their open tasks. With the <a href="{{ '/puli/guide/groups/' | relative_url }}">Groups</a> lesson, you can also group the Tasks view by Owner: your tasks under Mine, and everyone else’s under OTHERS, by name.</p>
+
+    <h2>Give a task a due date</h2>
+    <p>Write when it’s due, in words, and save the note. Puli turns the words into a date: on Wednesday, Oct 14, <code>- [ ] Send the deck by Fri</code> becomes <code>- [ ] Send the deck by 2026-10-16</code>. Press <kbd>⌘Z</kbd> right after saving to get your words back.</p>
+    <p>Put <code>by</code>, <code>due</code>, <code>due:</code>, or <code>due on</code> before the day:</p>
+    <ul>
+      <li>A day of the week: <code>by Fri</code>, <code>by Friday</code>, <code>by this Fri</code>, <code>by next Fri</code>, <code>by last Mon</code>.</li>
+      <li>A date: <code>by 10/20</code>, <code>by Oct 20</code>, <code>by Oct 9, 2025</code>, <code>by 2026-11-02</code>.</li>
+      <li>A word: <code>by today</code>, <code>by tomorrow</code>, <code>by next month</code>, <code>due EOW</code>.</li>
+    </ul>
+    <p>A few words always mean a day, so they need no <code>by</code>: <code>today</code>, <code>tonight</code>, <code>EOD</code>, <code>tomorrow</code>, and <code>EOW</code> (this Friday). “Call Tom tomorrow” is due tomorrow.</p>
+    <p>A weekday on its own, or after “on”, doesn’t set a due date, as it might be when something happened. “Follow up on what Tom said Monday” has no due date. Neither does “Plan tomorrow’s standup”, or “Read the book by Tom”. The date can be anywhere in the task. If a task gives two dates, the first one counts.</p>
+    <p>Only tasks get due dates. A line without a checkbox stays as you wrote it.</p>
+    <p>Once saved, the date shows as a pill, such as “Fri, Oct 16”, in the editor and the context pane. Move the cursor onto the pill to see the date as written and change it. You can type words over it again, such as <code>next Fri</code>, and save.</p>
+    <p>When an open task’s due date has passed, it shows in red, after “⚠”.</p>
+
+    <h2>Give a task a priority</h2>
+    <p>Write <code>P0</code>, <code>P1</code>, <code>P2</code>, or <code>P3</code> anywhere in the task. <code>P0</code> is the most urgent. Lowercase works too.</p>
+    <ul>
+      <li><code>- [ ] P0 Fix the outage</code></li>
+      <li><code>- [ ] Review the DPA by Fri P1</code></li>
+    </ul>
+    <p>The priority shows as a small label in the context pane and the Tasks view.</p>
+    <p>A task about a project can also take its priority from the project’s stage. See <a href="{{ '/puli/guide/stages/' | relative_url }}">Projects and stages</a>.</p>
+
+    <h2>Tick a task off</h2>
+    <p>Click its checkbox, in the editor, the context pane, or the Tasks view. Puli writes <code>[x]</code> and the day you did it: <code>- [x] Call Tom (✅ 2026-10-15)</code>. You see “Call Tom” with its box ticked. The date stays hidden.</p>
+    <p>Click the checkbox again to untick it.</p>
+
+    <h2>Start a task</h2>
+    <p>To show you’ve started a task, ⌥-click its checkbox, or choose Start from the task’s menu. Puli writes <code>- [/]</code>, and the box shows half filled. ⌥-click again, or choose Stop, to make it open again. You can also type <code>- [/]</code> yourself.</p>
+    <p>A started task is still open. It counts and shows wherever open tasks do. Click its checkbox to tick it done.</p>
+    <p>To see only started tasks, choose In progress from the Tasks view’s Show dropdown.</p>
+
+    <h2>The Tasks view</h2>
+    <p>Choose View › Tasks, or press <kbd>⇧⌘T</kbd>. You see the open tasks from every note in the journal, in a table of Task, Priority, and Due. A task without a priority or a due date shows “—”. The context pane stays beside it.</p>
+    <p>A task’s tags show as names. Click a name to see that page in the context pane. Click anywhere else on a task to see its note in the context pane. To edit the note, click the task’s pencil, or ⌘-click the task.</p>
+    <p>When you tick a task here, it stays where it is, struck through, so you can untick it. It’s gone the next time you open the Tasks view.</p>
+    <p>To go back to writing, choose View › Notes, or press <kbd>⇧⌘N</kbd>.</p>
+
+    <h3>Sort</h3>
+    <p>Click Task, Priority, or Due at the top of the table to sort by it. Click it again to reverse the order. The Tasks view starts sorted by Due, soonest first, and remembers how you sorted it.</p>
+
+    <h3>Choose what to see</h3>
+    <p>The Show dropdown, across from the Tasks heading, chooses Open, In progress, or Done.</p>
+    <p>The <a href="{{ '/puli/guide/filters/' | relative_url }}">Filters</a> and <a href="{{ '/puli/guide/groups/' | relative_url }}">Groups</a> lessons add two more:</p>
+    <ul>
+      <li>Due: All, Past due, Today, Tomorrow, This week, Next week, or No due date, each with how many tasks it holds. With Done shown, this is when they were done instead: All, Today, Yesterday, This week, Last week, or No date.</li>
+      <li>Group by: None, Priority, Owner, and each kind of tag in your journal, such as People, Orgs, and Projects. Stage is there too once your projects have stages.</li>
+    </ul>
+    <p>Click a group’s heading to collapse it. Option-click a heading to collapse or open them all.</p>
+    <p>With Filters, the cabinet also shows Past due and Today beneath Tasks, with how many. Click either one to see those tasks.</p>
+
+    <h3>Change a priority or a due date</h3>
+    <p>Click a task’s priority, or its “—”, and choose P0, P1, P2, P3, or None. Puli writes it in the note.</p>
+    <p>Click a task’s due date, or its “—”, and choose Today, Tomorrow, a day under “This coming” or “The week after”, or None. Puli writes <code>by</code> and the date in the note. Done tasks’ dates can’t be changed here.</p>
+
+    <h3>Edit a task in place</h3>
+    <p>Double-click a task’s text, or choose Edit from its ⋮. Change the text and press <kbd>↩</kbd>. Its due date and priority stay as they were, unless you type new ones. Press <kbd>⎋</kbd> to leave it as it was.</p>
+    <p>The ⋮ at the end of a row, or a right-click, also has Start or Stop, Open, Open in Editor, and Delete Task. Delete Task moves the task to the Trash.</p>
+
+    <h3>Use the keyboard</h3>
+    <ul>
+      <li><kbd>↑</kbd> <kbd>↓</kbd> move through the tasks. The context pane follows a moment after you stop.</li>
+      <li><kbd>Space</kbd> ticks the selected task, or unticks it.</li>
+      <li><kbd>⌥/</kbd> starts it, or stops it.</li>
+      <li><kbd>↩</kbd> shows its note in the context pane.</li>
+      <li><kbd>⌘↩</kbd> opens its note in the editor.</li>
+      <li><kbd>⌃↩</kbd> opens its menu.</li>
+    </ul>
+
+    <h2>Add a task in the Tasks view</h2>
+    <p>Type in “Add a task”, above the tasks, and press <kbd>↩</kbd>. You don’t need the <code>- [ ]</code>. Due dates and priorities work as they do in a note: <code>Send @priya the deck by Fri P1</code>.</p>
+    <p>Puli puts the day’s tasks in a note titled “Tasks”. The first task you add each day starts a new one.</p>
+    <p>If the Tasks view is filtered and the new task doesn’t match, you see “Task added, hidden by this filter”.</p>
+
+    <h2>A person’s open tasks</h2>
+    <p>A person’s, group’s, or project’s page in the context pane lists its open tasks under “Open tasks”, above its notes. These are the tasks that tag it, and the tasks in its About note. Tick one, and it stays until you leave the page.</p>
+    <p>Click ↗ beside “Open tasks” to see them in the Tasks view.</p>
+  </div>
+</section>

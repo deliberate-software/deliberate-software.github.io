@@ -1,0 +1,91 @@
+---
+layout: default
+title: Journals
+description: Keeping several journals, opening and closing them, backing them up to iCloud, keeping them private, exporting, and deleting.
+permalink: /puli/guide/journals/
+---
+<section class="hero hero--short container">
+  <p class="eyebrow">Puli · User’s Guide</p>
+  <h1 class="hero__title"><em>Journals.</em></h1>
+  <p class="hero__lead">Keep more than one journal, move between them, and decide where each one is kept.</p>
+  <div class="prose">
+    <h2>Keeping several journals</h2>
+    <p>Each journal keeps its own notes, people, groups, and projects, and its own template. You might keep one for Work and one for Home. To start one, see <a href="{{ '/puli/guide/getting-started/' | relative_url }}">Getting started</a>.</p>
+    <p>Only one journal is open at a time. When you open another, the note you were writing is saved in the journal you left, and the new journal opens with an empty editor. Its window shows only its own notes, under its own name.</p>
+
+    <h2>Opening a journal</h2>
+    <ul>
+      <li>To open one you have, choose File › Open Journal… or press <kbd>⌘O</kbd>. Select a journal and choose Open Journal.</li>
+      <li>To start a new one, choose File › New Journal… or press <kbd>⌥⌘N</kbd>.</li>
+      <li>To bring in a folder of notes as a new journal, choose File › Import….</li>
+    </ul>
+    <p>Each opens the welcome window, after a folder picker for Import…. Choose Cancel, and the journal you had open stays open, with what you were writing.</p>
+    <p>In the list of journals, the one you opened last is first. A journal backed up to iCloud says “Backed up to iCloud” beneath its name. A journal in iCloud that this Mac doesn’t have yet says “In iCloud”; when you open it, Puli brings it down from iCloud first.</p>
+
+    <h3>Recent journals</h3>
+    <p>File › Open Recent lists the ten journals you opened most recently, the latest first. Choose one to open it. Clear Menu empties the list; your journals are still there to open from File › Open Journal….</p>
+
+    <h2>Closing a journal</h2>
+    <p>Closing the journal’s window, with its close button, doesn’t close the journal. Puli stays open, and so does the journal. To see it again, click Puli in the Dock, or choose the journal from the Window menu. It comes back as you left it. If you quit, Puli opens it again next time.</p>
+    <p>To close the journal itself, choose File › Close Journal, or press <kbd>⌘W</kbd>. What you were writing is saved, and the welcome window shows, to start or open a journal. The journal stays in Open Recent. The next time you open Puli, you see the welcome window.</p>
+
+    <h2>Backing up to iCloud</h2>
+    <p>A journal backed up to iCloud is encrypted end to end and kept on all your Macs. It syncs as Puli opens, when you come back to Puli, a few seconds after you change something, and when another Mac changes it.</p>
+    <p>New journals are backed up when Back up to iCloud is on as you name them. To change it later:</p>
+    <ol>
+      <li>Open the journal.</li>
+      <li>Choose Puli › Settings…, then Journal, then Privacy.</li>
+      <li>Turn Back up to iCloud on or off.</li>
+    </ol>
+    <p>Beneath the switch, Puli says where things stand: “Backed up just now”, “Backing up…”, or “Waiting for iCloud”. If you aren’t signed in to iCloud, or iCloud Drive is off, the switch is dimmed. Choose Open iCloud Settings to sign in.</p>
+
+    <h3>Turning it off</h3>
+    <p>When you turn Back up to iCloud off, Puli asks: Keep “Work” on this Mac only? It will be removed from iCloud. Choose Keep on This Mac Only to go ahead, or Cancel.</p>
+    <p>If the journal is on your other Macs, you also see Also remove it from my other Macs, checked. Leave it checked, and your other Macs remove the journal when they next sync. Uncheck it, and they keep their own copy, which no longer changes with this Mac’s.</p>
+
+    <h3>On another Mac</h3>
+    <p>To open a backed-up journal on another Mac, choose File › Open Journal…, or Open an Existing Journal in the welcome window, and choose the journal marked “In iCloud”. It’s backed up from that Mac too. If that Mac already has a journal with the same name, the new one gets a number, like “Work 2”.</p>
+    <p>Your notes, people, groups, projects, Trash, sigils, stages, Board, pinned notes, and theme sync between your Macs. Require Touch ID and Lock after stay each Mac’s own.</p>
+
+    <h3>When two Macs change the same note</h3>
+    <p>If you change a note on two Macs before they sync, Puli keeps both. The other Mac’s version arrives beside yours, its title ending in the name of the Mac it came from, like “Weekly staff (from Alan’s MacBook)”. Neither loses any writing.</p>
+    <p>Both notes show a bar saying where else the note changed, and when. Choose Keep This to keep the note you’re looking at, the button that keeps the other Mac’s version, or Keep Both to keep the two as separate notes. Moving either note to the Trash settles it too.</p>
+
+    <h2>Keeping a journal private</h2>
+    <p>Every journal is encrypted on your Mac, with a key of its own kept in your Keychain, so only Puli can read it. When iCloud Keychain is on, it carries the key to your other Macs. Puli opens your journals without asking for anything.</p>
+
+    <h3>Requiring Touch ID</h3>
+    <p>To keep a journal locked when you’re away, open it, choose Puli › Settings…, then Journal, then Privacy, and turn on Require Touch ID to open this journal. Puli asks for Touch ID, or your Mac’s password, before turning it on, and again before turning it off.</p>
+    <p>A journal that requires Touch ID locks when you:</p>
+    <ul>
+      <li>close its window,</li>
+      <li>choose File › Lock Journal, or press <kbd>⌥⌘L</kbd>,</li>
+      <li>quit Puli,</li>
+      <li>let your Mac sleep or lock its screen, or</li>
+      <li>leave it idle as long as Lock after says: 5, 15, or 30 minutes, or an hour. Lock after starts at Never.</li>
+    </ul>
+    <p>As it locks, the note you were writing is saved, and nothing of the journal is left on screen. To open it again, click Unlock with Touch ID, or Unlock with Password on a Mac without Touch ID. If you locked it yourself, Puli waits for that click. Otherwise, it asks as soon as you come back.</p>
+    <p>The setting is kept in the journal, so a copy of the journal on another Mac asks too.</p>
+
+    <h2>Exporting a journal</h2>
+    <p>To keep a copy of a journal as plain files, choose File › Export…, choose where to put it, and choose Export. Puli writes a folder named for the journal, like “Work”, and shows it in the Finder. If a folder by that name is already there, the new one is “Work 2”. The journal doesn’t change.</p>
+    <p>Exported notes are plain Markdown, not encrypted. Anyone with the folder can read them.</p>
+    <p>The folder holds your notes, your people, groups, and projects, the images and files in your notes, and what’s in the Trash. Other apps can read the notes. To bring the journal back into Puli, import the folder with File › Import…. You can’t export a journal while it’s locked.</p>
+
+    <h2>Deleting a journal</h2>
+    <p>To delete the open journal, choose File › Delete Journal…. Puli asks: Delete “Work” from all your Macs? Its notes, people, groups, and projects will be gone for good. Choose Delete, or Cancel.</p>
+    <p>Puli deletes the journal from this Mac, from iCloud, and from Open Recent, then shows the welcome window. Your other Macs delete it when they next sync. If the journal is open on one of them, that Mac says so first, and closes it when you choose OK.</p>
+
+    <h2>Settings</h2>
+    <p>Choose Puli › Settings…, or press <kbd>⌘,</kbd>. Settings has two tabs.</p>
+    <h3>General</h3>
+    <p>These settings are for Puli as a whole, in every journal: Appearance, Weeks start on, and Keep deleted items, which decides how long the Trash keeps things.</p>
+    <h3>Journal</h3>
+    <p>These settings are for the open journal alone. The journal’s name is at the top. Without a journal open, Journal says “No journal is open”. Choose one of these to see its settings:</p>
+    <ul>
+      <li>Theme, the journal’s colors and fonts. It shows while you have lessons; see <a href="{{ '/puli/guide/colors-and-fonts/' | relative_url }}">Colors and fonts</a>.</li>
+      <li>Tags, each kind’s sigil, and the stages of the kind that has them; see <a href="{{ '/puli/guide/stages/' | relative_url }}">Projects and stages</a>.</li>
+      <li>Privacy, for Require Touch ID to open this journal, Lock after, and Back up to iCloud.</li>
+    </ul>
+  </div>
+</section>

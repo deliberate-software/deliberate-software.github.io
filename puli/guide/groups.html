@@ -1,0 +1,55 @@
+---
+layout: default
+title: Groups
+description: How to group the Tasks view by priority, owner, stage, person, group, or project, with the Groups lesson.
+permalink: /puli/guide/groups/
+---
+<section class="hero hero--short container">
+  <p class="eyebrow">Puli · User’s Guide</p>
+  <h1 class="hero__title"><em>Groups.</em></h1>
+  <p class="hero__lead">Group your tasks by priority, owner, stage, person, group, or project.</p>
+  <div class="prose">
+    <p>Groups is a lesson. It comes with Filters. Until Puli learns it, the Tasks view has no Group by dropdown, and shows every task ungrouped. See <a href="{{ '/puli/lessons/' | relative_url }}">How lessons work</a>.</p>
+
+    <h2>Group the Tasks view</h2>
+    <p>In the Tasks view, open the dropdown to the right of the due-date dropdown. It says “Ungrouped” at first. Choose:</p>
+    <ul>
+      <li>None</li>
+      <li>Priority</li>
+      <li>Owner</li>
+      <li>Stage, once a kind has stages</li>
+      <li>People, Orgs, or Projects</li>
+    </ul>
+    <p>The last three are your journal’s kinds. A journal made with the Job search template lists People, Employers, and Roles.</p>
+    <p>Each group’s heading shows how many tasks it holds. Within each group, tasks are sorted as you’ve sorted the Tasks view. Puli remembers your grouping when you choose Done, and when you quit and open it again.</p>
+
+    <h2>The groups</h2>
+    <h3>Priority</h3>
+    <p>P0, P1, P2, and P3, then No priority. Every priority shows, even with no tasks.</p>
+
+    <h3>Owner</h3>
+    <p>Mine, then, under “OTHERS”, a group for each person, A to Z. A task is someone else’s when it starts with them, or with waiting on them:</p>
+    <ul>
+      <li><code>- [ ] @tom to send the Q3 numbers</code> is Tom’s.</li>
+      <li><code>- [ ] Waiting on @tom for the numbers</code> and <code>- [ ] Waiting for @priya to sign</code> are Tom’s and Priya’s.</li>
+      <li><code>- [ ] @tom and @maya draft the plan</code> is both Tom’s and Maya’s.</li>
+      <li><code>- [ ] Send @maya the update</code> is yours, since it doesn’t start with her.</li>
+    </ul>
+
+    <h3>Stage</h3>
+    <p>A group for each stage, in order, then No stage. A task whose projects are in different stages shows under each. See <a href="{{ '/puli/guide/stages/' | relative_url }}">Projects and stages</a>.</p>
+
+    <h3>People, groups, and projects</h3>
+    <p>A group for each one the tasks tag, then one for tasks that tag none, as “No person”. A task that tags two people shows under both. A task in a person’s About shows under that person.</p>
+    <p>Grouped by Projects, a project inside another shows with its parent’s name, as “Website / Checkout”. Each group holds only the tasks that tag that project itself.</p>
+    <p>Click a name in a heading to see its page in the context pane.</p>
+
+    <h2>Fold a group</h2>
+    <p>Click a group’s chevron, or anywhere on its heading but a name, to fold it. Its count still shows. Click it again to open it.</p>
+    <p>Option-click a heading to fold every group, and Option-click again to open them all.</p>
+    <p>Puli remembers which groups you’ve folded for each way of grouping, even after you quit.</p>
+
+    <h2>With a filter</h2>
+    <p>Groups work with the due-date filter. Showing tasks due today, each group counts only its tasks due today, and a group with none due today doesn’t show. See <a href="{{ '/puli/guide/filters/' | relative_url }}">Filters</a>.</p>
+  </div>
+</section>

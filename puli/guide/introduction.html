@@ -1,0 +1,92 @@
+---
+layout: default
+title: Introducing Puli
+description: "What makes Puli different: notes connected by tags, and the context they give you."
+permalink: /puli/guide/introduction/
+---
+<section class="hero hero--short container">
+  <p class="eyebrow">Puli · User’s Guide</p>
+  <h1 class="hero__title">Introducing <em>Puli.</em></h1>
+  <p class="hero__lead">Most notes apps ask where a note belongs. Puli asks who and what a note describes. Tag them as you write, and your notes connect themselves.</p>
+  <div class="prose prose--topics">
+    <div class="topic">
+      <h2>One note, everywhere it belongs</h2>
+      <figure class="shot">
+        <a href="{{ '/assets/images/puli/guide/intro-note-light.png' | relative_url }}" aria-label="Show the screenshot full size">
+          <picture>
+            <source srcset="{{ '/assets/images/puli/guide/intro-note-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+            <img src="{{ '/assets/images/puli/guide/intro-note-light.png' | relative_url }}" width="1200" height="780" alt="A 1:1 note with Maya Chen, tagged with Platform, Relay, and Northwind. Beside it, the context pane shows Maya’s page: the people, groups, and projects she’s mentioned with, and her open task.">
+          </picture>
+        </a>
+        <figcaption>A note tagged with Maya, Platform, and Relay, with Maya’s page in the context pane to the right.</figcaption>
+      </figure>
+      <div class="topic__text">
+        <p>A note from a meeting is rarely about one thing. It’s about the people in the room, the teams they’re on, and the projects they discussed. A folder can only keep it in one of those places. Choosing a single home for your note robs you of valuable context later.</p>
+        <p>In Puli, you don’t file notes. You tag them. Write <code>@Maya-Chen</code>, <code>!Platform</code>, and <code>#Relay</code> in a note, and it shows up on Maya’s page, on the Platform team’s page, and on the Relay project’s page. It’s one note, in three places, and you didn’t have to decide between them.</p>
+      </div>
+    </div>
+
+    <div class="topic">
+      <h2>Tags connect your notes</h2>
+      <figure class="shot">
+        <a href="{{ '/assets/images/puli/guide/intro-page-light.png' | relative_url }}" aria-label="Show the screenshot full size">
+          <picture>
+            <source srcset="{{ '/assets/images/puli/guide/intro-page-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+            <img src="{{ '/assets/images/puli/guide/intro-page-light.png' | relative_url }}" width="1200" height="780" loading="lazy" alt="Maya Chen’s page in the context pane, with Mentioned with open: the people, groups, and projects she’s mentioned with, each with a count, like Raj Mehta 6, Northwind 5, and Relay 6. Below it, her 25 notes, newest first.">
+          </picture>
+        </a>
+        <figcaption>Maya’s page lists who and what she’s mentioned with, and how often.</figcaption>
+      </figure>
+      <div class="topic__text">
+        <p>Every tag is a thread. Write about Maya in January, in March, and in June, and her page gathers all three, newest first. Nothing you wrote about her is lost in an old notebook.</p>
+        <p>The threads connect the people, groups, and projects, too. Each tag’s page shows a list of the people, groups, and projects it’s mentioned with, and how often: who Maya works with, which projects keep coming up together, and which teams they involve. You never set any of that up. It comes from the way you write.</p>
+        <p>Because a tag stands for someone, not just a word, you can rename Maya, or give her an alias, and every note still finds her.</p>
+      </div>
+    </div>
+
+    <div class="topic">
+      <h2>Context, when you need it</h2>
+      <figure class="shot">
+        <a href="{{ '/assets/images/puli/guide/intro-note2-light.png' | relative_url }}" aria-label="Show the screenshot full size">
+          <picture>
+            <source srcset="{{ '/assets/images/puli/guide/intro-note2-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+            <img src="{{ '/assets/images/puli/guide/intro-note2-light.png' | relative_url }}" width="1200" height="780" loading="lazy" alt="The same 1:1 note with Maya Chen, with the cursor in #Relay. The context pane shows the Relay project’s page: what it’s about, its three open tasks, and its notes.">
+          </picture>
+        </a>
+        <figcaption>The cursor is in #Relay, so Relay’s page takes Maya’s place in the context pane.</figcaption>
+      </figure>
+      <div class="topic__text">
+        <p>Before a meeting, you need to remember where you left off last week. Create a new note, type <code>@Maya-Chen</code>, and her page opens in the context pane. Notes from your last meeting are there, as are the open tasks between you. Everything you need for your next meeting.</p>
+        <p>The pane follows your cursor. Move into <code>#Relay</code>, and Relay’s page takes Maya’s place. You don’t search, and you don’t switch windows. The context comes to you, while you write.</p>
+      </div>
+    </div>
+
+    <div class="topic">
+      <h2>Every promise, kept</h2>
+      <figure class="shot">
+        <a href="{{ '/assets/images/puli/guide/intro-promises-light.png' | relative_url }}" aria-label="Show the screenshot full size">
+          <picture>
+            <source srcset="{{ '/assets/images/puli/guide/intro-promises-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+            <img src="{{ '/assets/images/puli/guide/intro-promises-light.png' | relative_url }}" width="1200" height="780" loading="lazy" alt="The 1:1 note with Maya Chen, with the cursor in @Tom-Alvarez in the task Tom Alvarez to send the Relay GA date. The context pane shows Tom Alvarez’s page, with that task under Open tasks, and his notes below.">
+          </picture>
+        </a>
+        <figcaption>Tom’s page shows the task he owes you, from the note where he promised it.</figcaption>
+      </figure>
+      <div class="topic__text">
+        <p>Meetings end in promises: things you said you’d do, and things other people said they’d do for you. Write either as a task, right in your note:</p>
+        <ul class="task-lines">
+          <li><code>- [ ] Send @Maya-Chen the Relay update by Fri</code> is yours.</li>
+          <li><code>- [ ] @tom to send the Q3 numbers</code> is Tom’s.</li>
+        </ul>
+        <p>Puli keeps both. Tom’s page shows what he owes you, and Maya’s shows what you owe her. The next time either comes up, so do their promises.</p>
+      </div>
+    </div>
+
+    <div class="topic">
+      <h2>Where to start</h2>
+      <div class="topic__text">
+        <p><a href="{{ '/puli/guide/getting-started/' | relative_url }}">Getting started</a> walks you through your first journal and your first note.</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,106 @@
+---
+layout: default
+title: Writing Notes
+description: Writing, saving, formatting, and printing notes in Puli, and adding images and PDFs to them.
+permalink: /puli/guide/writing/
+---
+<section class="hero hero--short container">
+  <p class="eyebrow">Puli · User’s Guide</p>
+  <h1 class="hero__title">Writing <em>notes.</em></h1>
+  <p class="hero__lead">How to write a note, format it, add images and PDFs, change it later, and print it.</p>
+  <div class="prose">
+    <h2>Write a note</h2>
+    <p>A new note starts with a title. The cursor sits on the first line, in a heading’s type, after a faint <code>#</code>. Type the title, press <kbd>↩</kbd>, and write the rest.</p>
+    <p>Today’s date shows in small gray text above the title. It isn’t part of the note’s text. When you edit an older note, you see the day you first saved it.</p>
+    <p>To start the note as body text instead of a title, press <kbd>⌫</kbd> at the start of the title line. The <code>#</code> goes away.</p>
+
+    <h2>Save it</h2>
+    <p>Choose File › Save, or press <kbd>⌘S</kbd>. The note is saved, and you keep writing it.</p>
+    <p>Puli also saves the note when you leave it: when you choose New Note, open another journal, choose Tasks or Tags from the View menu, switch to another app, or quit. Pausing while you type, or clicking in the context pane, doesn’t save it.</p>
+    <p>A note with nothing in it isn’t saved. A new note you leave with only its <code>#</code> isn’t saved either. If you delete all the text of a saved note and save it, the note is removed from the journal.</p>
+
+    <h3>The saved message</h3>
+    <p>When you save, you see “Saved” at the bottom of the window. It fades after 3 seconds. If saving created people, groups, or projects, or found tags to check, it says so: “Saved · 1 entity created · 1 tag to check”. See <a href="{{ '/puli/guide/tags/' | relative_url }}">People, groups, and projects</a> for what those mean.</p>
+
+    <h2>Change an earlier note</h2>
+    <p>Open a note in the editor in any of these ways:</p>
+    <ul>
+      <li>Click it in the list of notes.</li>
+      <li>⌘-click it on a person’s, group’s, or project’s page in the context pane.</li>
+      <li>On the note’s page in the context pane, choose Edit from the ⋮ across from its date.</li>
+    </ul>
+    <p>If you were writing a note you hadn’t saved, Puli saves it first. Your changes go into the same note, which keeps the date you first wrote it.</p>
+    <p>A note’s page in the context pane shows the note as the editor does, with its date at the top. You can select and copy from it, tick its tasks, and click its tags, but you can’t type into it.</p>
+
+    <h2>Format text</h2>
+    <p>Puli’s notes are Markdown. You type the marks, and Puli hides them once the cursor moves away. Put the cursor back on the text and the marks show again, faintly, so you can change them.</p>
+    <ul>
+      <li><code>**Relay**</code> for bold, or select the text and press <kbd>⌘B</kbd>.</li>
+      <li><code>*Relay*</code> or <code>_Relay_</code> for italics, or <kbd>⌘I</kbd>.</li>
+      <li><code>`make test`</code> for code, or <kbd>⌘E</kbd>.</li>
+      <li><code>~~Friday~~</code> to strike text through.</li>
+      <li><code>==Relay==</code> to highlight it, or <kbd>⇧⌘H</kbd>.</li>
+    </ul>
+    <p>Press the same keys again to take the marks off. These commands are also in the Format menu.</p>
+
+    <h3>Headings</h3>
+    <p>Type <code>#</code> and a space at the start of a line for a heading, <code>##</code> for a smaller one, and so on. A heading’s <code>#</code>s show faintly while the cursor is on its line.</p>
+
+    <h3>Code blocks</h3>
+    <p>Put <code>```</code> on a line before the code and on a line after it. You can use <code>~~~</code> instead. Everything inside shows as written, in a monospaced font. Tags and formatting in a code block aren’t read.</p>
+
+    <h2>Lists</h2>
+    <ul>
+      <li>Start a line with <code>-</code>, <code>*</code>, or <code>+</code> and a space for a bullet.</li>
+      <li>Start it with <code>1.</code> or <code>1)</code> for a numbered list.</li>
+      <li>Start it with <code>- [ ]</code> for a task. See <a href="{{ '/puli/guide/tasks/' | relative_url }}">Tasks and promises</a>.</li>
+    </ul>
+    <p>Press <kbd>↩</kbd> at the end of an item to start the next one. Numbers count up for you. Press <kbd>↩</kbd> on an empty item to end the list. Press <kbd>↩</kbd> in the middle of an item to split it in two.</p>
+    <p>Press <kbd>⇥</kbd> anywhere in an item to indent it one level, and <kbd>⇧⇥</kbd> to bring it back.</p>
+
+    <h2>Quotes</h2>
+    <p>Start a line with <code>&gt;</code> and a space. The line shows with a bar down its left. Press <kbd>↩</kbd> to continue the quote, and <kbd>↩</kbd> on an empty quote line to end it. Use <code>&gt;&gt;</code> for a quote inside a quote. A quote can hold bullets and numbered lists.</p>
+    <p>A checkbox in a quote is only a picture of one. It doesn’t tick, and it isn’t a task.</p>
+
+    <h2>Horizontal rules</h2>
+    <p>Type <code>---</code> on a line of its own for a thin line across the note. <code>***</code> and <code>___</code> work too.</p>
+
+    <h2>Links</h2>
+    <p>Web addresses that start with <code>https://</code> become links as you type them. Click a link to open it in your browser.</p>
+    <ul>
+      <li>To link words, select them and paste a web address over them. Puli writes <code>[the plan](https://example.com/plan)</code> and shows “the plan”, underlined.</li>
+      <li>Or select the words and press <kbd>⌘K</kbd> (Format › Link), then type the address.</li>
+      <li>For an email address, write <code>&lt;tom@example.com&gt;</code>. Clicking it opens a new email in your mail app.</li>
+    </ul>
+    <p>A bare <code>example.com</code> or <code>tom@example.com</code>, without the <code>https://</code> or the angle brackets, isn’t a link.</p>
+
+    <h2>Keep a mark as written</h2>
+    <p>Put a backslash before a mark to show it as plain text. <code>\*not italic\*</code> shows “*not italic*”. <code>\#Relay</code> shows “#Relay” and isn’t a tag. <code>\- Not a bullet</code> isn’t a bullet. The backslash shows faintly while the cursor touches it.</p>
+    <p>A backslash before anything else is just a backslash, so <code>C:\Users\tom</code> shows as written.</p>
+
+    <h2>Images and PDFs</h2>
+    <p>Drop an image or a PDF into a note, or paste one. It goes on a line of its own where the cursor is, and it’s kept in the journal, encrypted with your notes. If you back the journal up to iCloud, it goes with your notes.</p>
+    <ul>
+      <li>An image shows at its own size, never wider than the text.</li>
+      <li>A PDF shows as the Finder shows it: its icon, a picture of its first page, and its name.</li>
+      <li>Double-click an image to open it in Quick Look. Double-click a PDF to open it in Preview, or whichever app opens PDFs on your Mac.</li>
+    </ul>
+    <p>An image moves as one piece. Click it to select it. Press <kbd>⌫</kbd> after it, or <kbd>⌦</kbd> before it, to remove it. Undo brings it back.</p>
+    <p>Puli doesn’t load images from the web. A web address for an image shows as a link. If a note names a file the journal doesn’t have, you see its name and “Missing”.</p>
+    <p>A PDF bigger than 250 MB stays on this Mac and isn’t backed up to iCloud.</p>
+
+    <h2>Find in a note</h2>
+    <p>Choose Edit › Find › Find…, or press <kbd>⌘F</kbd>. Type what you’re looking for. Every match is outlined, with the one you’re on in yellow.</p>
+    <ul>
+      <li><kbd>↩</kbd> goes to the next match, and <kbd>⇧↩</kbd> to the one before.</li>
+      <li><kbd>⌘G</kbd> and <kbd>⇧⌘G</kbd> do the same, with the find bar open or closed.</li>
+      <li>Tick Replace to replace a match, or every match.</li>
+      <li><kbd>⎋</kbd>, or Done, closes the find bar.</li>
+    </ul>
+    <p>While the find bar is open, tags show as you wrote them, like <code>@tom-alvarez</code>, because Find looks at the note as written. Search for “tom-alvarez”, not “Tom Alvarez”. To search every note, see <a href="{{ '/puli/guide/finding/' | relative_url }}">Finding your notes</a>.</p>
+
+    <h2>Print a note</h2>
+    <p>Choose File › Print…, or press <kbd>⌘P</kbd>. Puli prints the note in the editor, or the one you chose in the list of notes. To save it as a PDF, use the PDF menu in the Print dialog.</p>
+    <p>The printed page shows the note’s date, then the note, as Puli shows it, on white paper, even in dark mode. Tags print as names, in their colors.</p>
+  </div>
+</section>

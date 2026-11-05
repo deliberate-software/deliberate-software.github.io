@@ -1,0 +1,70 @@
+---
+layout: default
+title: Filters
+description: How to filter tasks by date, and narrow the cabinet, the Board, and the Graph, with the Filters lesson.
+permalink: /puli/guide/filters/
+---
+<section class="hero hero--short container">
+  <p class="eyebrow">Puli · User’s Guide</p>
+  <h1 class="hero__title"><em>Filters.</em></h1>
+  <p class="hero__lead">Show only the tasks that are past due, due today, or due this week, and narrow the cabinet, the Board, and the Graph to what’s open or recent.</p>
+  <div class="prose">
+    <p>Filters is a lesson. It comes with Groups. Until Puli learns it, the Tasks view shows every task, the Board every project, and the Graph every dot, and the filters below aren’t there. See <a href="{{ '/puli/lessons/' | relative_url }}">How lessons work</a>.</p>
+
+    <h2>Filter tasks by due date</h2>
+    <p>In the Tasks view, a dropdown beside the Show dropdown says what’s showing, as “All 27”. Choose from it:</p>
+    <ul>
+      <li>All</li>
+      <li>Past due</li>
+      <li>Today</li>
+      <li>Tomorrow</li>
+      <li>This week</li>
+      <li>Next week</li>
+      <li>No due date</li>
+    </ul>
+    <p>Each choice shows how many open tasks it holds. When Past due is chosen, it shows in the error color.</p>
+    <p>Sorting still works on what’s left. If nothing matches, the Tasks view says so, as “Nothing due today.” Puli remembers your choice when you quit and open it again.</p>
+    <p>If you add a task the filter hides, you see “Task added, hidden by this filter” at the bottom of the window.</p>
+
+    <h3>Done tasks, by when they were done</h3>
+    <p>Choose Done from the Show dropdown, and the same dropdown lists All, Today, Yesterday, This week, Last week, and No date. No date holds tasks ticked before Puli recorded when.</p>
+
+    <h2>Past due and Today, in the cabinet</h2>
+    <p>Beneath Tasks in the cabinet, Puli shows:</p>
+    <ul>
+      <li>In progress, while a task is started.</li>
+      <li>Past due, while an open task is past due.</li>
+      <li>Today, while an open task is due today.</li>
+    </ul>
+    <p>Each shows how many tasks it holds. Click one to open the Tasks view showing just those tasks.</p>
+    <p>The counts follow the tag chosen in the cabinet and what you type in Search, not the Tasks view’s due filter.</p>
+    <p>To hide them, click the chevron beside Tasks, or press <kbd>←</kbd> on Tasks. Click it again, or press <kbd>→</kbd>, to show them.</p>
+
+    <h2>Filter the cabinet</h2>
+    <p>Hover over People, Orgs, or Projects in the cabinet and click its <strong>⋮</strong>. Choose Filter › With open tasks. The section lists only those with open tasks, and its count says how many. Choose it again to list everyone.</p>
+    <p>The filter works with Sort by and Show. Filtered and set to Show 5, People lists the first 5 people with open tasks. Each section keeps its own choices.</p>
+
+    <h2>Filter the Board</h2>
+    <p>At the top right of the Board:</p>
+    <ul>
+      <li>Nested under, once a project has projects inside it: All projects, or only the projects inside one.</li>
+      <li>Tasks: Any tasks, or With open tasks.</li>
+      <li>Active: Any time, Last 7 days, Last 30 days, or Last 90 days.</li>
+      <li>With: Anyone, or one person. Type in its search field to find them.</li>
+    </ul>
+    <p>A project is active when a note mentions it, or you change its page. With shows the projects mentioned on a line with that person.</p>
+    <p>The line beneath “Board” says how many projects match, as “2 of 5 projects”. When none match, it says “No projects match.”, and the columns stay, so you can still drop cards in them.</p>
+
+    <h2>Filter the Graph</h2>
+    <p>At the top right of the Graph, before Top:</p>
+    <ul>
+      <li>Show: tick or untick People, Orgs, and Projects. One kind always stays ticked.</li>
+      <li>Tasks: Any tasks, or With open tasks.</li>
+      <li>Active: Any time, Last 7 days, Last 30 days, or Last 90 days.</li>
+    </ul>
+    <p>A project counts as having open tasks if a project inside it does. The line beneath “Graph” says how many match, as “12 of 48 people, orgs, and projects”.</p>
+    <p>If you hide the dot you’ve centered, nothing is centered. See <a href="{{ '/puli/guide/graph/' | relative_url }}">The graph</a>.</p>
+
+    <p>Each journal keeps its own Board and Graph filters, when you quit Puli and open it again.</p>
+  </div>
+</section>

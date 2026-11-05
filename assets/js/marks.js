@@ -24,3 +24,29 @@
     }
   });
 })();
+
+// Guide screenshots: clicking one shows it full size, letterboxed. Click again or press Escape to close.
+// Without dialog support, the link just opens the image.
+(function () {
+  "use strict";
+  var links = document.querySelectorAll(".shot a");
+  if (!links.length || typeof HTMLDialogElement !== "function") return;
+
+  var view = document.createElement("dialog");
+  view.className = "shot-view";
+  view.setAttribute("aria-label", "Screenshot");
+  var big = document.createElement("img");
+  view.appendChild(big);
+  document.body.appendChild(view);
+  view.addEventListener("click", function () { view.close(); });
+
+  links.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      var img = link.querySelector("img");
+      event.preventDefault();
+      big.src = img.currentSrc || img.src;   // the light or dark shot, whichever the page is showing
+      big.alt = img.alt;
+      view.showModal();
+    });
+  });
+})();
