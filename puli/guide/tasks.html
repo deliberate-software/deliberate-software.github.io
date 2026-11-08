@@ -7,10 +7,10 @@ permalink: /puli/guide/tasks/
 <section class="hero hero--short container">
   <p class="eyebrow">Puli · User’s Guide</p>
   <h1 class="hero__title">Tasks and <em>promises.</em></h1>
-  <p class="hero__lead">How to write tasks in your notes, give them due dates and priorities, keep track of what other people promised you, and tick them off.</p>
+  <p class="hero__lead">How to write tasks in your notes, give them due dates and priorities, keep track of what other people promised you, and complete them.</p>
   <div class="prose">
     <h2 id="write-a-task">Write a task</h2>
-    <p>Start a line with <code>- [ ]</code> and a space, then the task: <code>- [ ] Call Tom</code>. You can also type <code>[]</code> and a space at the start of a line, and Puli writes <code>- [ ]</code> for you.</p>
+    <p>Type <code>[]</code> and a space at the start of a line, then the task: <code>[] Call Tom</code>. Puli writes <code>- [ ]</code> for you. You can also use Markdown syntax directly:<code>- [ ] Call Tom</code>.</p>
     <p>Puli shows a checkbox in place of the <code>- [ ]</code>, in the editor and the context pane. The note still says <code>- [ ] Call Tom</code>.</p>
     <ul>
       <li>Press <kbd>↩</kbd> at the end of a task to start another one.</li>
@@ -54,19 +54,19 @@ permalink: /puli/guide/tasks/
     <p>The priority shows as a small label in the context pane and the Tasks view.</p>
     <p>A task about a project can also take its priority from the project’s stage. See <a href="{{ '/puli/guide/stages/' | relative_url }}">Projects and stages</a>.</p>
 
-    <h2 id="tick-a-task-off">Tick a task off</h2>
-    <p>Click its checkbox, in the editor, the context pane, or the Tasks view. Puli writes <code>[x]</code> and the day you did it: <code>- [x] Call Tom (✅ 2026-10-15)</code>. You see “Call Tom” with its box ticked. The date stays hidden.</p>
-    <p>Click the checkbox again to untick it.</p>
+    <h2 id="complete-a-task">Complete a task</h2>
+    <p>Click its checkbox, in the editor, the context pane, or the Tasks view. Puli writes <code>[x]</code> and the day you did it: <code>- [x] Call Tom (✅ 2026-10-15)</code>. You see “Call Tom” with its box checked. The date stays hidden.</p>
+    <p>Click the checkbox again to reopen it.</p>
 
     <h2 id="start-a-task">Start a task</h2>
     <p>To show you’ve started a task, ⌥-click its checkbox, or choose Start from the task’s menu. Puli writes <code>- [/]</code>, and the box shows half filled. ⌥-click again, or choose Stop, to make it open again. You can also type <code>- [/]</code> yourself.</p>
-    <p>A started task is still open. It counts and shows wherever open tasks do. Click its checkbox to tick it done.</p>
+    <p>A started task is still open. It counts and shows wherever open tasks do. Click its checkbox to complete it.</p>
     <p>To see only started tasks, choose In progress from the Tasks view’s Show dropdown.</p>
 
     <h2 id="the-tasks-view">The Tasks view</h2>
     <p>Choose View › Tasks, or press <kbd>⇧⌘T</kbd>. You see the open tasks from every note in the journal, in a table of Task, Priority, and Due. A task without a priority or a due date shows “—”. The context pane stays beside it.</p>
     <p>A task’s tags show as names. Click a name to see that page in the context pane. Click anywhere else on a task to see its note in the context pane. To edit the note, click the task’s pencil, or ⌘-click the task.</p>
-    <p>When you tick a task here, it stays where it is, struck through, so you can untick it. It’s gone the next time you open the Tasks view.</p>
+    <p>When you complete a task here, it stays where it is, struck through, so you can reopen it. It’s gone the next time you open the Tasks view.</p>
     <p>To go back to writing, choose View › Notes, or press <kbd>⇧⌘N</kbd>.</p>
 
     <h3>Sort</h3>
@@ -93,7 +93,7 @@ permalink: /puli/guide/tasks/
     <h3>Use the keyboard</h3>
     <ul>
       <li><kbd>↑</kbd> <kbd>↓</kbd> move through the tasks. The context pane follows a moment after you stop.</li>
-      <li><kbd>Space</kbd> ticks the selected task, or unticks it.</li>
+      <li><kbd>Space</kbd> completes the selected task, or reopens it.</li>
       <li><kbd>⌥/</kbd> starts it, or stops it.</li>
       <li><kbd>↩</kbd> shows its note in the context pane.</li>
       <li><kbd>⌘↩</kbd> opens its note in the editor.</li>
@@ -106,7 +106,7 @@ permalink: /puli/guide/tasks/
     <p>If the Tasks view is filtered and the new task doesn’t match, you see “Task added, hidden by this filter”.</p>
 
     <h2 id="a-persons-open-tasks">A person’s open tasks</h2>
-    <p>A person’s, group’s, or project’s page in the context pane lists its open tasks under “Open tasks”, above its notes. These are the tasks that tag it, and the tasks in its About note. Tick one, and it stays until you leave the page.</p>
+    <p>A person’s, group’s, or project’s page in the context pane lists its open tasks under “Open tasks”, above its notes. These are the tasks that tag it, and the tasks in its About note. Complete one, and it stays until you leave the page.</p>
     <p>Click ↗ beside “Open tasks” to see them in the Tasks view.</p>
   </div>
 </section>

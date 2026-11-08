@@ -40,3 +40,20 @@ The site currently describes: Puli free forever, plus **lessons**, either "Ongoi
 - **The app** (Puli's own repo): Teach Puli New Tricks, the paywall copy, and Restore Purchases.
 
 To recheck: `grep -rniE "icloud|lesson|subscri|lifetime|one-time|trial|free" --include='*.html' . | grep -v _site`
+
+# Screenshots to take
+
+All 1200×780 points (2400×1560), light and dark, saved to `assets/images/puli/guide/`. Unless noted: the cabinet and the list of notes closed, the editor and context pane open, in the Harbor Street sample.
+
+## Retakes (the cabinet still says Board, now Progress)
+
+- **`start-window`** (Getting Started, Opening the sample): the whole window, cabinet open, with Notes, Tasks, Progress, Graph, and Trash. Then update its alt text, which still says Board.
+- **`context-tasks`** (Fetching Context, Open tasks on a page): retake with the cabinet closed. Better still, show a page's Open tasks with one just completed, struck through.
+
+## Tasks and Promises (`puli/guide/tasks.html`)
+
+- **`tasks-note`** (Write a task): a note's Actions with one of your tasks, a promise like "Marco Silva to send…", a due-date pill, a P1, one past due in red with ⚠, one started (half filled), and one completed.
+- **`tasks-date`** (Give a task a due date): the cursor on a due-date pill, showing the date as written, like `by 2026-11-13`.
+- **`tasks-view`** (The Tasks view): sorted by Due, with priorities and due dates, one task just completed and struck through, and a task's note in the context pane.
+- **`tasks-group`** (Choose what to see): the Tasks view grouped by Owner, with Mine and OTHERS by name.
+- **`tasks-due`** (Change a priority or a due date): a task's due-date menu open, showing Today, Tomorrow, This coming, and The week after.
