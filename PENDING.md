@@ -15,7 +15,7 @@ Already done: iCloud sync came off the home page's Free list (Nov 4, 2026).
   - `puli/guide/journals.html`: the description, and the whole "Backing up to iCloud" section. Also opening a journal from the welcome window ("any in iCloud that this Mac doesn't have yet"), the journal list's "Backed up to iCloud" and "In iCloud" labels, opening a backed-up journal on another Mac, iCloud Keychain carrying the journal's key, deleting a journal "from iCloud", and Settings › Journal › Privacy's "Back up to iCloud".
   - `puli/guide/writing.html`: images and PDFs going "with your notes" to iCloud, and PDFs over 250 MB staying on this Mac.
   - `puli/guide/importing.html`: the "Back up to iCloud" step.
-  - If it becomes a lesson, mark it the way the other lesson pages are ("… is a lesson. Until Puli learns it, …"), and add it to the Trainer's Guide's list.
+  - If it becomes a lesson, mark it the way the other lesson pages are ("… is a lesson. Until Puli learns it, …"), and add it to How Lessons Work's list.
 - **App Store privacy label:** check it still matches if iCloud changes.
 
 ## Licensing model
@@ -35,10 +35,9 @@ The site currently describes: Puli free forever, plus **lessons**, either "Ongoi
 - **Handler's Guide**
   - `puli/guide/index.html`: the Lessons section.
   - Pages that mention a lesson in passing: `introduction.html`, `getting-started.html`, `context.html`, `tasks.html`, `yours.html`, and `shortcuts.html`.
-- **Trainer's Guide**
-  - `puli/training/index.html`: the list of lessons, and what's free in Job Search.
+- **Lesson pages** (`puli/lessons/`)
   - Each lesson page, which opens with "… is a lesson."
-- **The app** (Puli's own repo): Teach Puli New Tricks, the paywall copy, and Restore Purchases.
+- **The app** (Puli's own repo): Teach Puli New Tricks…, the paywall copy, and Restore Purchases.
 
 To recheck: `grep -rniE "icloud|lesson|subscri|lifetime|one-time|trial|free" --include='*.html' . | grep -v _site`
 
