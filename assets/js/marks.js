@@ -1,6 +1,13 @@
 // Phone menu: the hamburger opens and closes the header links.
 (function () {
   "use strict";
+  // The header slims down and casts a shadow once the page scrolls under it.
+  var header = document.querySelector(".site-header");
+  if (header) {
+    var stuck = function () { header.classList.toggle("is-stuck", window.scrollY > 8); };
+    window.addEventListener("scroll", stuck, { passive: true });
+    stuck();
+  }
   var nav = document.querySelector(".nav");
   var toggle = document.querySelector(".nav__toggle");
   if (!nav || !toggle) return;

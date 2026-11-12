@@ -1,200 +1,73 @@
 ---
 layout: default
 title: People, Groups, and Projects
-description: How tags work in Puli, from writing @ for a person to aliases and nested projects.
+description: Tagging the people, groups, and projects your notes are about, and keeping your tags tidy.
 permalink: /puli/guide/tags/
 ---
 <section class="hero hero--short container">
   <p class="eyebrow">Puli · User’s Guide</p>
-  <h1 class="hero__title">People, groups,<br> and <em>projects.</em></h1>
-  <p class="hero__lead">Tag the <code>@people</code>, <code>!groups</code>, and <code>#projects</code> you write about, and Puli keeps track of them for you.</p>
+  <h1 class="hero__title">People, groups, and <em>projects.</em></h1>
+  <p class="hero__lead">How to tag who and what your notes are about, and keep your tags tidy.</p>
   <div class="prose prose--topics">
+
     <div class="topic">
       <h2 id="tag-someone">Tag someone</h2>
-      <figure class="shot">
-        <a href="{{ '/assets/images/puli/guide/tags-tag-light.png' | relative_url }}" aria-label="Show the screenshot full size">
-          <picture>
-            <source srcset="{{ '/assets/images/puli/guide/tags-tag-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
-            <img src="{{ '/assets/images/puli/guide/tags-tag-light.png' | relative_url }}" width="1200" height="780" alt="A 1:1 note with Diane Okafor, tagging the Ellis Foundation, the Grant Report, and Safety Training, each in its kind’s color. The context pane shows Diane’s page: who she is, and her notes.">
-          </picture>
-        </a>
-        <figcaption>Click Diane’s tag, and her page opens in the context pane.</figcaption>
-      </figure>
       <div class="topic__text">
-        <p>Type a sigil and a name. In a journal made with the Work template:</p>
+        <p>Type <code>@</code> and a person’s name, with hyphens for spaces: <code>@Diane-Okafor</code>. Puli shows it as a blue pill reading “Diane Okafor”. The first time you save a note that tags her, Diane joins the journal, with a page of her own.</p>
+        <p>As you type, Puli suggests the people you’ve tagged before. Press <kbd>↩</kbd>, or click one, to use it.</p>
+      </div>
+    </div>
+
+    <div class="topic">
+      <h2 id="groups-and-projects">Groups and projects</h2>
+      <div class="topic__text">
+        <p>Each kind of tag has its own mark and color. In a Work journal:</p>
         <ul>
-          <li><code>@Diane</code> tags a person.</li>
-          <li><code>!Development</code> tags a group: an organization, a team, the PTA.</li>
-          <li><code>#Grant-Report</code> tags a project: anything you’re working on.</li>
+          <li><code>@</code> for people, such as <code>@Diane-Okafor</code>, in blue.</li>
+          <li><code>!</code> for orgs, such as <code>!Development</code>, in plum.</li>
+          <li><code>#</code> for projects, such as <code>#Grant-Report</code>, in green.</li>
         </ul>
-        <p>For a name with more than one word, join the words with hyphens: <code>@Diane-Okafor</code>, <code>#Board-Retreat</code>. Puli shows it as “Diane Okafor”.</p>
-        <p>Saving the note creates anyone and anything it tags that the journal doesn’t have yet. Each gets its own page, listing the notes that mention it. Click a tag to open its page in the context pane.</p>
-        <p>For a reminder of your journal’s tags, choose Help › Tagging.</p>
+        <p>Other templates name the kinds for what they hold: groups in a Home journal, courses and assignments in a School journal, and employers and roles in a Job Search journal. To see your journal’s kinds and marks, choose Help › Tagging, or open Settings › Tags.</p>
       </div>
     </div>
 
     <div class="topic">
-      <h2 id="what-counts-as-a-tag">What counts as a tag</h2>
+      <h2 id="new-tags">New tags</h2>
       <div class="topic__text">
-        <p>A tag starts where a word does. These aren’t tags:</p>
-        <ul>
-          <li>Email addresses, like <code>diane@example.org</code>, and anything in a web address.</li>
-          <li>Anything in code, between backticks or in a code block.</li>
-          <li>A heading’s <code>#</code>, followed by a space.</li>
-          <li>A number, like <code>#2026</code>.</li>
-          <li>A tag with a backslash before it, like <code>\#Grant-Report</code>.</li>
-        </ul>
-        <p>Punctuation around a tag isn’t part of it, so “Thanks, @Diane.” tags Diane. Neither is a possessive: <code>@O'Brien's report</code> tags O’Brien, and <code>@Tim'll</code> tags Tim. Names in every script work, accents and all.</p>
+        <p>When you tag someone the journal doesn’t know yet, they show in the tag rail, below the editor, marked NEW. Click the pill to choose who you meant, create someone new, or say it’s not a tag. If you do nothing, saving creates them.</p>
+        <p>Names are unique. If you tag a new John Smith when you already have one, the rail says NAME TAKEN. Choose Use John Smith, or Another John Smith… to tell them apart, as in “John Smith (Acme)”.</p>
       </div>
     </div>
 
     <div class="topic">
-      <h2 id="tag-names">Tag names</h2>
+      <h2 id="tag-a-word-you-already-wrote">Tag a word you already wrote</h2>
       <div class="topic__text">
-        <p>Capitals don’t matter. <code>@diane</code>, <code>@Diane</code>, and <code>@DIANE</code> all mean the same person.</p>
-        <p>The name comes from the tag as you first write it. <code>@diane-okafor</code> becomes “Diane Okafor”, and <code>!HR</code> stays “HR”. Writing <code>!hr</code> later doesn’t change it. Once you rename one, its tag shows the new name in every note.</p>
-        <p>Each kind keeps its own names, so <code>@Ellis</code>, <code>!Ellis</code>, and <code>#Ellis</code> are a person, a group, and a project.</p>
-      </div>
-    </div>
-
-    <div class="topic">
-      <h2 id="how-tags-look">How tags look</h2>
-      <figure class="shot">
-        <a href="{{ '/assets/images/puli/guide/tags-look-light.png' | relative_url }}" aria-label="Show the screenshot full size">
-          <picture>
-            <source srcset="{{ '/assets/images/puli/guide/tags-look-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
-            <img src="{{ '/assets/images/puli/guide/tags-look-light.png' | relative_url }}" width="1200" height="780" loading="lazy" alt="The same 1:1 note, with the cursor in its title. The title shows as written, # 1:1 @Diane-Okafor, while the tags in the rest of the note show as names: Ellis Foundation in green, Grant Report and Safety Training in amber.">
-          </picture>
-        </a>
-        <figcaption>The cursor is in Diane’s tag, so it shows as written. The other tags show as names.</figcaption>
-      </figure>
-      <div class="topic__text">
-        <p>Once the cursor moves away, a tag shows its name in bold, without its sigil, in its kind’s color. In the Work template, people are blue, groups green, and projects amber. Move the cursor back into a tag and it shows as you wrote it, so you can change it. Copying copies it as written.</p>
-        <p>A tag the journal doesn’t know yet looks like any other. At the bottom of the editor, Puli lists it as new.</p>
-      </div>
-    </div>
-
-    <div class="topic">
-      <h2 id="tags-to-check">Tags to check</h2>
-      <div class="topic__text">
-        <p>At the bottom of the editor, Puli lists the tags in the note that need a decision. Click one to see its menu.</p>
-      </div>
-    </div>
-
-    <div class="topic">
-      <h3>New</h3>
-      <figure class="shot">
-        <a href="{{ '/assets/images/puli/guide/tags-check-light.png' | relative_url }}" aria-label="Show the screenshot full size">
-          <picture>
-            <source srcset="{{ '/assets/images/puli/guide/tags-check-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
-            <img src="{{ '/assets/images/puli/guide/tags-check-light.png' | relative_url }}" width="1200" height="780" loading="lazy" alt="A note with a new tag, Marc, which looks like any other person’s tag. At the bottom of the editor, Marc is marked NEW, and its menu is open: Marco Silva, then Create a new person, then Not a tag.">
-          </picture>
-        </a>
-        <figcaption>Marc is new. His menu offers Marco Silva, a new person, or not a tag.</figcaption>
-      </figure>
-      <div class="topic__text">
-        <p>“Marc NEW” means the journal has no <code>@marc</code>. Its menu offers people with similar names, then Create a new person, then Not a tag.</p>
-        <ul>
-          <li>Choose a person to use their tag instead. The note then says <code>@Marco-Silva</code>.</li>
-          <li>Choose Create a new person to add Marc now.</li>
-          <li>Choose Not a tag to keep <code>@marc</code> as plain text. Puli adds a backslash before it.</li>
-        </ul>
-        <p>If you do nothing, saving the note creates Marc.</p>
-      </div>
-    </div>
-
-    <div class="topic">
-      <h3>Same as?</h3>
-      <div class="topic__text">
-        <p>“Grant Reports SAME AS?” means the tag looks like one the journal has, such as <code>#grant-reports</code> when you have the project “Grant Report”, or <code>#grnat-report</code>. Puli doesn’t create it when you save. Its menu starts with Use Grant Report, which changes the tag to the one you have, and Keep Both, which creates the new one.</p>
-      </div>
-    </div>
-
-    <div class="topic">
-      <h3>Too deep</h3>
-      <div class="topic__text">
-        <p>“TOO DEEP” means a project tag nests more levels than the journal allows. Saving doesn’t create it. See Nested projects, below.</p>
-      </div>
-    </div>
-
-    <div class="topic">
-      <h2 id="autocomplete">Autocomplete</h2>
-      <figure class="shot">
-        <a href="{{ '/assets/images/puli/guide/tags-autocomplete-light.png' | relative_url }}" aria-label="Show the screenshot full size">
-          <picture>
-            <source srcset="{{ '/assets/images/puli/guide/tags-autocomplete-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
-            <img src="{{ '/assets/images/puli/guide/tags-autocomplete-light.png' | relative_url }}" width="1200" height="780" loading="lazy" alt="Typing @pr in a note. Below it, the suggestions: Priya Shah, selected, then June Park, then Pr · create new.">
-          </picture>
-        </a>
-        <figcaption>Typing <code>@pr</code> suggests Priya Shah and June Park, or a new person.</figcaption>
-      </figure>
-      <div class="topic__text">
-        <p>Type a sigil and Puli suggests that kind’s names, the ones you mention most first. Keep typing to narrow them. Suggestions match any part of a name, and allow for small slips, so <code>@oka</code> and <code>@prya</code> find Diane Okafor and Priya Shah.</p>
-        <ul>
-          <li><kbd>↓</kbd> moves to the next suggestion.</li>
-          <li><kbd>↩</kbd>, or a click, writes the tag.</li>
-          <li><kbd>⇥</kbd> writes it with a space after it.</li>
-          <li><kbd>⎋</kbd> closes the suggestions and keeps what you typed.</li>
-        </ul>
-        <p>When two people share a name, each suggestion shows its tag, smaller and muted, so you can tell them apart. “Another Diane…” at the bottom writes <code>@diane-</code>, ready for a last name. When no one has the tag you typed, the last suggestion is “Dana · create new”. Tags you’ve already written in the note but not yet saved come first, marked NEW.</p>
-      </div>
-    </div>
-
-    <div class="topic">
-      <h2 id="aliases">Aliases</h2>
-      <figure class="shot">
-        <a href="{{ '/assets/images/puli/guide/tags-alias-light.png' | relative_url }}" aria-label="Show the screenshot full size">
-          <picture>
-            <source srcset="{{ '/assets/images/puli/guide/tags-alias-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
-            <img src="{{ '/assets/images/puli/guide/tags-alias-light.png' | relative_url }}" width="1200" height="780" loading="lazy" alt="Diane Okafor’s page in the context pane, being edited. Under Aliases is @DO, with an ✕ to remove it, beside the Add alias field. Below are About, Merge Into…, and Delete Person.">
-          </picture>
-        </a>
-        <figcaption>Editing Diane’s page. <code>@DO</code> is her alias.</figcaption>
-      </figure>
-      <div class="topic__text">
-        <p>An alias is another tag for the same person, group, or project. If Diane has the alias <code>@DO</code>, writing <code>@DO</code> tags Diane, and shows “Diane Okafor”. Typing <code>@D</code> suggests Diane, and writes <code>@Diane-Okafor</code>. Diane’s page lists the notes that use either tag, with “Also @DO” under her name.</p>
-        <p>To add one, open Diane’s page in the context pane, choose Edit from its ⋮, type the alias in Add alias, and press <kbd>↩</kbd>. To remove one, click the ✕ on it. If notes use a deleted alias, Puli asks whether to change them to <code>@Diane-Okafor</code> or keep them as written. If you keep them, the alias becomes a person of its own.</p>
-        <p>An alias that already belongs to someone else is refused, with a message saying whose it is. Merging Dee into Diane Okafor also gives Diane the alias <code>@Dee</code>. See <a href="{{ '/puli/guide/context/' | relative_url }}">Fetching Context</a> for merging.</p>
+        <p>Right-click a name in a note. Choose Tag as and the name of someone the journal knows, or Tag as a New Person, a New Org, or a New Project. To make a tag plain text again, right-click it and choose Not a Tag.</p>
       </div>
     </div>
 
     <div class="topic">
       <h2 id="nested-projects">Nested projects</h2>
-      <figure class="shot">
-        <a href="{{ '/assets/images/puli/guide/tags-nested-light.png' | relative_url }}" aria-label="Show the screenshot full size">
-          <picture>
-            <source srcset="{{ '/assets/images/puli/guide/tags-nested-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
-            <img src="{{ '/assets/images/puli/guide/tags-nested-light.png' | relative_url }}" width="1200" height="780" loading="lazy" alt="A task, Schedule the caterer for #Board-Retreat/dinner, with the suggestion Dinner · create new below it. The context pane shows Dinner’s page: Not in your journal yet. Saving this note creates it.">
-          </picture>
-        </a>
-        <figcaption><code>#Board-Retreat/dinner</code> makes Dinner, a project inside Board Retreat.</figcaption>
-      </figure>
       <div class="topic__text">
-        <p>Put a project inside another with a slash: <code>#Board-Retreat/Dinner/Caterer</code> is Caterer, inside Dinner, inside Board Retreat. It shows as “Caterer”. Saving creates any of the three the journal doesn’t have.</p>
-        <p>Projects nest up to 4 levels in the Work, Home, and School templates. Other kinds don’t nest, so <code>!Ellis-Foundation/legal</code> tags the Ellis Foundation, followed by “/legal”. In the Job search template, nothing nests.</p>
-        <p>Type <code>#Board-Retreat/</code> to see only the projects inside Board Retreat. Suggestions show their parents after their names: “Caterer · Board Retreat / Dinner”. A project’s page shows what it’s Part of, and the projects inside it.</p>
+        <p>A project can hold other projects. Write <code>#Grant-Report/Budget</code>, and Budget is part of Grant Report. A note about the budget shows on both pages.</p>
+        <p>To move a project inside another, right-click it in the sidebar and choose Nest Under. Choose Top Level to bring it back out.</p>
       </div>
     </div>
 
     <div class="topic">
-      <h2 id="kinds-and-templates">Kinds and templates</h2>
+      <h2 id="tidy-your-tags">Tidy your tags</h2>
       <div class="topic__text">
-        <p>People are in every journal, always with <code>@</code>, always blue. The journal’s template names its other kinds, their sigils, and their colors:</p>
+        <p>Each tag has a page in the context pane. Its ⋮, beside the name, holds:</p>
         <ul>
-          <li>Work: Orgs (<code>!</code>) and Projects (<code>#</code>).</li>
-          <li>Home: Groups (<code>!</code>) and Projects (<code>#</code>).</li>
-          <li>School: Courses (<code>!</code>) and Assignments (<code>#</code>).</li>
-          <li>Job search: Employers (<code>!</code>) and Roles (<code>#</code>).</li>
+          <li><strong>Edit</strong>, to rename it. Every note that tags it changes to match.</li>
+          <li><strong>Change Type</strong>, to make a person a project, say.</li>
+          <li><strong>Merge Into</strong>, to make two tags one. Merging changes your notes, and can’t be undone.</li>
+          <li><strong>Archive</strong>, for someone or something you’re done with. Its notes stay, but it leaves your lists and suggestions. Choose Restore to bring it back.</li>
+          <li><strong>Delete</strong>, which moves it to the Trash. Its tags in your notes become plain text.</li>
         </ul>
-        <p>You choose a template when you make a journal. Help › Tagging explains each kind in the template’s own words.</p>
+        <p>You can do the same from a tag’s right-click menu in the sidebar, or in the Tags view.</p>
       </div>
     </div>
 
-    <div class="topic">
-      <h2 id="suggested-tags">Suggested tags</h2>
-      <div class="topic__text">
-        <p>Puli can also spot names the journal knows that you wrote without a sigil, and suggest tagging them. That’s a lesson: see <a href="{{ '/puli/guide/suggested-tags/' | relative_url }}">Suggested tags</a>.</p>
-      </div>
-    </div>
   </div>
 </section>

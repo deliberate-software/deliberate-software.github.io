@@ -1,28 +1,43 @@
 ---
 layout: default
 title: Importing Notes
-description: Bringing a folder of Markdown notes from another app, or a folder Puli exported, into a new journal.
+description: Bringing your notes into Puli from Apple Notes, Bear, Agenda, Obsidian, or a folder of Markdown or text files.
 permalink: /puli/guide/importing/
 ---
 <section class="hero hero--short container">
   <p class="eyebrow">Puli · User’s Guide</p>
   <h1 class="hero__title">Importing <em>notes.</em></h1>
-  <p class="hero__lead">Bring a folder of notes from another app, or one Puli exported, into a new journal.</p>
-  <div class="prose">
-    <h2 id="importing-a-folder">Importing a folder</h2>
-    <p>You can bring in a folder of Markdown notes from another app, or a folder Puli exported.</p>
-    <ol>
-      <li>In the welcome window, choose Import a Folder, then Continue. With a journal open, choose File › Import… instead.</li>
-      <li>Choose the folder.</li>
-      <li>Name the journal. The name starts as the folder’s.</li>
-      <li>Leave Back up to iCloud on, or turn it off to keep the journal only on this Mac.</li>
-      <li>Choose Import.</li>
-    </ol>
-    <p>Puli counts the notes as it brings them in, then opens the new journal. The folder you imported doesn’t change.</p>
+  <p class="hero__lead">How to bring the notes you already have into Puli.</p>
+  <div class="prose prose--topics">
 
-    <h2 id="what-comes-in">What comes in</h2>
-    <p>Each <code>.md</code>, <code>.markdown</code>, <code>.txt</code>, or <code>.text</code> file becomes a note, titled with its file’s name and dated when it last changed. Images and PDFs the notes show come along with them.</p>
-    <p>Notes from another app use the Imported notes template: <code>@</code> tags people, and <code>#</code> makes a plain tag, which can nest, as in <code>#work/budget</code>.</p>
-    <p>A folder Puli exported comes back as it was, with its template, tags, stages, and Progress. To export one, see <a href="{{ '/puli/guide/journals/' | relative_url }}">Journals</a>.</p>
+    <div class="topic">
+      <h2 id="import-your-notes">Import your notes</h2>
+      <div class="topic__text">
+        <p>Choose Import Notes in the welcome window, or File › Import… Choose where your notes are:</p>
+        <ul>
+          <li><strong>Apple Notes</strong>: every folder you choose, with its pictures. Your Mac asks you to let Puli read them first.</li>
+          <li><strong>Bear</strong>: in Bear, choose File › Export Notes…, as Markdown with attachments, then choose that folder.</li>
+          <li><strong>Agenda</strong>: in Agenda, export your projects as Agenda files, then choose that folder.</li>
+          <li><strong>Obsidian</strong>: choose your vault.</li>
+          <li><strong>A Folder</strong> of Markdown or plain text files.</li>
+        </ul>
+        <p>Then choose to import into a new journal, or one you already have. Puli doesn’t change the notes you import from.</p>
+      </div>
+    </div>
+
+    <div class="topic">
+      <h2 id="what-comes-with-them">What comes with them</h2>
+      <div class="topic__text">
+        <p>Your notes keep their dates, pictures, and checklists, which become tasks. Tags from other apps come along too. Apple Notes’ folders become tags, so each note is still easy to find.</p>
+      </div>
+    </div>
+
+    <div class="topic">
+      <h2 id="import-again">Import again</h2>
+      <div class="topic__text">
+        <p>Import the same notes into the same journal later, and Puli brings in only the ones it doesn’t have yet.</p>
+      </div>
+    </div>
+
   </div>
 </section>

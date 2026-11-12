@@ -44,6 +44,8 @@
   --line: #dcd7cf;
   --inv-muted: #bdb9b2;
   --inv-line: #6a6b70;
+  --accent: #8a4b08;      /* Puli's accent: its primary buttons are this amber */
+  --on-accent: var(--warm);
 
   --serif: "Newsreader", Georgia, serif;
   --sans: "Instrument Sans", "Helvetica Neue", Helvetica, sans-serif;
@@ -61,11 +63,13 @@
     --line: #4a4b50;
     --inv-muted: #5c5d61;
     --inv-line: #b5b0a8;
+    --accent: #fac775;
+    --on-accent: var(--graphite);
   }
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }  /* a heading jumped to clears the sticky header */
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
@@ -119,6 +123,15 @@ img, svg { max-width: 100%; }
 .button--small { min-height: 44px; padding: 0 18px; }
 .button--outline { background: transparent; color: var(--ink); border-color: var(--line); }
 .button--inverse { background: var(--paper); color: var(--ink); border-color: var(--paper); font-weight: 600; }
+/* On hover, a solid button softens toward the page and an outlined one fills in, so it's plain it can be clicked. */
+.button { transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease; }
+.button:hover { background: color-mix(in srgb, var(--ink) 82%, var(--paper)); border-color: color-mix(in srgb, var(--ink) 82%, var(--paper)); }
+.button--outline:hover { background: var(--tint); border-color: var(--ink); }
+.button--inverse:hover { background: color-mix(in srgb, var(--paper) 85%, var(--ink)); border-color: color-mix(in srgb, var(--paper) 85%, var(--ink)); }
+.button--accent { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.button--accent:hover { background: color-mix(in srgb, var(--accent) 85%, var(--paper)); border-color: color-mix(in srgb, var(--accent) 85%, var(--paper)); }
+.button:active { transform: translateY(1px); }
+@media (prefers-reduced-motion: reduce) { .button { transition: none; } .button:active { transform: none; } }
 
 /* ---------- logos ---------- */
 
@@ -141,11 +154,24 @@ img, svg { max-width: 100%; }
 
 /* ---------- header ---------- */
 
-.site-header { border-bottom: 1px solid var(--line); }
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--paper); border-bottom: 1px solid var(--line);
+  transition: box-shadow 200ms ease, margin 200ms ease;
+}
 .nav {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
   padding-top: 22px; padding-bottom: 22px;
+  transition: padding 200ms ease;
 }
+/* Once the page scrolls, the header slims down and casts a shadow, so it's plain there's more above.
+   The margin gives back the padding it loses, so the page beneath doesn't jump. */
+.site-header.is-stuck { margin-bottom: 32px; box-shadow: 0 6px 16px -10px rgba(39, 40, 43, 0.35); }
+.site-header.is-stuck .nav { padding-top: 6px; padding-bottom: 6px; }
+@media (prefers-color-scheme: dark) {
+  .site-header.is-stuck { box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.7); }
+}
+@media (prefers-reduced-motion: reduce) { .site-header, .nav { transition: none; } }
 .brand {
   display: inline-flex; align-items: center; gap: 12px;
   font-family: var(--serif); font-size: 24px; font-weight: 500; letter-spacing: -0.01em;
@@ -160,9 +186,9 @@ img, svg { max-width: 100%; }
 .nav__link { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; }
 
 /* Hamburger: phones only, and only when JavaScript can open it.
-   Without JavaScript the links simply show. */
+   Without JavaScript the links simply show. Below 1000px the links no longer fit on one line beside the name. */
 .nav__toggle { display: none; }
-@media (max-width: 720px) {
+@media (max-width: 1000px) {
   .js .nav__toggle {
     display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px;
     width: 44px; height: 44px; margin-right: -10px;
