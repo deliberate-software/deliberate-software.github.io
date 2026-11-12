@@ -2,7 +2,7 @@
 
 > **Nov 11:** the guide was rewritten from the ground up, basics only, from Puli as of d9ea895. The page-by-page list below is what that rewrite worked from; it isn't a to-do list any more. What's still open is under "For the app, not the guide".
 
-The User's Guide and the site, checked against Puli as STORIES.md, Lessons.json, and the source describe it on Nov 10, 2026. Numbers in parentheses are STORIES.md lines. This file isn't published (it's excluded in `_config.yml`).
+The Handler's Guide and the site, checked against Puli as STORIES.md, Lessons.json, and the source describe it on Nov 10, 2026. Numbers in parentheses are STORIES.md lines. This file isn't published (it's excluded in `_config.yml`).
 
 ## The big changes
 
@@ -388,7 +388,7 @@ The User's Guide and the site, checked against Puli as STORIES.md, Lessons.json,
 Open, found while rewriting the guide on Nov 11 (Puli at d9ea895):
 - **A page's Open tasks show without the Tasks lesson.** Alan said a page should have no Open tasks before Tasks is learned. The code shows them and gates only the ↗ (ContextPane.swift:722, 870), and STORIES says "Open tasks · 2" with no ↗ (in "No Tasks view without Tasks", near line 6985). The guide follows Alan: open tasks on a page are on the Tasks lesson's page.
 - **Sidebar** (decided Nov 11): the guide now says sidebar, as the View menu does. Puli's help, its cabinet rows' wording, and STORIES still say "the cabinet" in places.
-- **Owner's Guide or User's Guide?** Puli's Tricks says "Stuck? The Owner's Guide walks through every lesson." The site calls it the User's Guide. Alan is weighing "Puli Training".
+- **Handler's Guide** (decided Nov 11): the site now calls it the Handler's Guide. Puli's Tricks still says "Stuck? The Owner's Guide walks through every lesson."; Alan is updating the app.
 - **Today "Requires Apple Intelligence."** (Lessons.swift:161; STORIES 2461). Alan agrees only Lately, on a meeting's page, needs it, and Lately is free. Apple Intelligence is used in Lately.swift, SuggestedTasks.swift, and NewNames.swift. The deployment target is macOS 26.0.
 - **School template's description** says a task "is in your Tasks view" (Templates/school.json). Alan: it shouldn't say that. School journals don't get the Tasks lesson (freeInJobSearch is only Job Search), so only the description needs to change.
 - **Help menu**: Alan is tearing it out and redoing it.

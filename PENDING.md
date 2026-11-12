@@ -10,7 +10,7 @@ Already done: iCloud sync came off the home page's Free list (Nov 4, 2026).
   - FAQ, "Where are my notes kept?": "…if you choose, synced to your iCloud account, encrypted end to end."
   - If iCloud becomes a lesson, add it to the Lessons list.
 - **Puli's privacy policy** (`puli/privacy.html`): "If you back them up to iCloud…", and "To back up to iCloud" in the list of when Puli connects to the network. Update its date if it changes.
-- **User's Guide**
+- **Handler's Guide**
   - `puli/guide/getting-started.html`: Naming the journal ("Beneath the name is Back up to iCloud, on at first"), and Trying a sample journal ("never backed up to iCloud").
   - `puli/guide/journals.html`: the description, and the whole "Backing up to iCloud" section. Also opening a journal from the welcome window ("any in iCloud that this Mac doesn't have yet"), the journal list's "Backed up to iCloud" and "In iCloud" labels, opening a backed-up journal on another Mac, iCloud Keychain carrying the journal's key, deleting a journal "from iCloud", and Settings › Journal › Privacy's "Back up to iCloud".
   - `puli/guide/writing.html`: images and PDFs going "with your notes" to iCloud, and PDFs over 250 MB staying on this Mac.
@@ -32,7 +32,7 @@ The site currently describes: Puli free forever, plus **lessons**, either "Ongoi
 - **Puli's terms** (`puli/terms.html`): the Lessons section ("bought through the App Store…").
 - **Puli's privacy policy** (`puli/privacy.html`): "To buy lessons. Apple handles the payment…"
 - **Puli's support page** (`puli/support.html`): the Lessons section, Restore Purchases, and canceling a subscription.
-- **User's Guide**
+- **Handler's Guide**
   - `puli/guide/index.html`: "from your first note to every lesson", and the Lessons section.
   - The lesson pages, which each open with "… is a lesson. Until Puli learns it, …": `colors-and-fonts.html`, `filters.html`, `groups.html`, `graph.html`, `suggested-tags.html`.
   - Pages that mention a lesson in passing: `finding.html`, `stages.html`, `tags.html`, `tasks.html`, `journals.html` (Theme shows "while you have lessons"), `shortcuts.html` (⇧⌘G Graph, "a lesson").
