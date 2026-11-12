@@ -393,7 +393,7 @@ Open, found while rewriting the guide on Nov 11 (Puli at d9ea895):
 - **School template's description** says a task "is in your Tasks view" (Templates/school.json). Alan: it shouldn't say that. School journals don't get the Tasks lesson (freeInJobSearch is only Job Search), so only the description needs to change.
 - **Help menu**: Alan is tearing it out and redoing it.
 - **macOS** (decided Nov 11): Puli stays on macOS 26 or later, on any Mac, Intel included. The home page FAQ now says "Any Mac running macOS 26 or later." The project sets no ARCHS, so it should build for Intel; try it on an Intel Mac before release. Today's "Requires Apple Intelligence." in Puli's Tricks would turn Intel buyers away; only Lately needs it.
-- **Lesson names** (decided Nov 11): the docs now say Themes, Typography, and Graph. Lessons.json still says Colors, Type, and The Graph; Alan is updating the app. The guide pages moved to /puli/guide/themes/ and /puli/guide/typography/.
+- **Lesson names** (decided Nov 11): the docs now say Themes, Typography, and Graph. Lessons.json still says Colors, Type, and The Graph; Alan is updating the app. The lesson pages are now in the Trainer’s Guide, at /puli/training/.
 
 Resolved in Puli as of Nov 11 (checked by hand):
 - a866a9a: Format › Code is ⇧⌘C and View › Graph is ⌃⌘G, so ⌘E and ⇧⌘G no longer clash. Help › Navigation's Return text is fixed. Touch ID and Lock after now follow the journal. The stale STORIES lines are brought up to date.
