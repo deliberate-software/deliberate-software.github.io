@@ -1,8 +1,11 @@
 {%- comment -%}
   The company's name over its tagline, in Instrument Sans, as in getpuli.com's footer (Alan, Nov 21). No mark: the
-  D is retired. size: "small" (18px, the footer's) or "large" (the home page's head). link: true to lead home.
+  D is retired. size: "small" (18px, the footer's) or "large" (the home page's head). link: true to lead home. tagline=false leaves "Made on purpose" out, as at the head of the
+  home page, where the section of that name follows (Alan, Nov 21).
 {%- endcomment -%}
 {%- if include.link %}<a class="lockup lockup--{{ include.size }}" href="{{ '/' | relative_url }}">{% else %}<span class="lockup lockup--{{ include.size }}">{% endif -%}
   <span class="lockup__name">{{ site.title }}</span>
+  {%- unless include.tagline == false %}
   <span class="lockup__tagline">{{ site.tagline }}</span>
+  {%- endunless %}
 {%- if include.link %}</a>{% else %}</span>{% endif %}

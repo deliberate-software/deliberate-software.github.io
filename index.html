@@ -3,15 +3,18 @@ layout: default
 ---
 {%- comment -%} A draft for Alan to line-edit (Nov 21): who we are, what we make, and what we promise. {%- endcomment -%}
 <section class="hero container">
-  <h1>{% include lockup.html size="large" %}</h1>
+  <h1>{% include lockup.html size="large" tagline=false %}</h1>
   <p class="hero__lead">We’re a small, independent software company. We make thoughtful apps for the Mac: private, calm, and made for everyone.</p>
 </section>
 
 <section class="section" aria-labelledby="puli-heading">
   <div class="container">
     <h2 class="section__title" id="puli-heading">Our first app: Puli.</h2>
-    <div class="section__body">
-      <p class="lede">Puli is a notes app for the Mac. It herds your thoughts into all the right places, so relevant context arrives just in time, right where it’s needed.</p>
+    <div class="section__body promises">
+      <div>
+        <h3>Puli is a notes app for the Mac.</h3>
+        <p>It herds your thoughts into all the right places, so relevant context arrives just in time, right where it’s needed.</p>
+      </div>
       <p><a class="section__link" href="https://getpuli.com">Meet Puli at getpuli.com <span aria-hidden="true">→</span></a></p>
     </div>
   </div>
@@ -19,7 +22,7 @@ layout: default
 
 <section class="section" aria-labelledby="promises-heading">
   <div class="container">
-    <h2 class="section__title" id="promises-heading">Our philosophy.</h2>
+    <h2 class="section__title" id="promises-heading">Made on purpose.</h2>
     <div class="section__body promises">
       <div>
         <h3>Your privacy is not for sale.</h3>
@@ -30,12 +33,16 @@ layout: default
         <p>Too many apps are designed to keep you hooked. We design ours to protect your train of thought. They do their work quietly, with no badges, streaks, or ads. Your best thinking happens without interruption.</p>
       </div>
       <div>
-        <h3>Your purchases are yours to keep.</h3>
-        <p>Once you buy something from us, it’s yours to keep.</p>
+        <h3>Ownership should mean something.</h3>
+        <p>Most subscription-based software takes everything away when you stop paying. Ours are different. Whatever you received while subscribed is yours to keep. We’d rather earn your renewal than hold features hostage.</p>
       </div>
       <div>
-        <h3>Everyone is welcome.</h3>
-        <p>VoiceOver, Voice Control, large text, and the keyboard work for everything.</p>
+        <h3>We build for everyone.</h3>
+        <p>However you use your Mac, you should find the whole app waiting for you, not a stripped-down version or an apology. When we build for everyone, everyone gets something better.</p>
+      </div>
+      <div>
+        <h3>The best AI goes unnoticed.</h3>
+        <p>AI should make life easier by augmenting what people already do well, not by replacing them. It should assist gently, in the background. When it’s working, you won’t notice it at all. You’ll just notice you got more done.</p>
       </div>
     </div>
   </div>
@@ -45,7 +52,7 @@ layout: default
   <div class="container">
     <h2 class="section__title" id="contact-heading">Say hello.</h2>
     <div class="section__body">
-      <p>Deliberate Software was founded by Alan Ridlehoover. Write to us at <a href="mailto:{{ site.email }}">{{ site.email }}</a>. We read every email, and we answer it ourselves.</p>
+      <p>Hi. My name is Alan. I started Deliberate Software to create the software I wished existed. I hope you find it as useful and beautiful as I do. I’d love to hear your thoughts. Am I on the right track? How could I improve? Let me know at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
     </div>
   </div>
 </section>
