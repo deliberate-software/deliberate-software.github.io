@@ -75,6 +75,7 @@ h1, h2, h3, p { margin: 0; }
 .lockup__tagline { font-size: 0.5556em; font-weight: 600; line-height: 1; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); padding-left: 0.1em; }
 .lockup--small { font-size: 18px; }
 .lockup--large { font-size: clamp(40px, 8vw, 84px); }
+.lockup__tm { font-size: 0.26em; font-weight: 500; line-height: 0; position: relative; top: -1.75em; vertical-align: baseline; margin-left: 0.12em; color: var(--muted); }  /* small and raised, without changing the line height (Alan, Nov 21) */
 
 /* Every page but the home page: the small lockup, home. */
 .site-header .container { padding-top: 28px; padding-bottom: 28px; }
