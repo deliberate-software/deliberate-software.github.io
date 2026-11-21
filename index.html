@@ -1,189 +1,51 @@
 ---
 layout: default
 ---
-{%- assign app = site.apps | where: "name", "Puli" | first -%}
-<section class="hero hero--puli container" id="top">
-  <div>
-    <span class="eyebrow eyebrow--status">{{ app.name }} · For {{ app.platform }} · Coming {{ app.launch }}</span>
-    <h1 class="hero__title">Meet Puli.</h1>
-    <p class="hero__subtitle">A note-taker’s <em>best friend</em>.</p>
-    <p class="hero__lead">You’re in meetings all day. You jot down who said what, about which project, and who promised what to whom. A week later, you’re in the same meetings, but you can’t remember who said what last week, and you can’t find your notes in the two minutes between meetings.</p>
-    <p class="hero__lead">Puli is a different kind of note-taker. It’s friction-free. It herds each note into place, filing it under every person, organization, and project mentioned. It keeps watch over every promise. And it can even prep you for your next meeting when the time is right.</p>
-    <div class="hero__actions">
-      <a class="button button--accent" href="#waitlist">Join the pack</a>
-      <a class="button button--outline" href="#what">What Puli does</a>
-    </div>
-  </div>
-  {% include marks/puli.html pose="sitting" %}
+{%- comment -%} A draft for Alan to line-edit (Nov 21): who we are, what we make, and what we promise. {%- endcomment -%}
+<section class="hero container">
+  <h1>{% include lockup.html size="large" %}</h1>
+  <p class="hero__lead">We’re a small, independent software company. We make thoughtful apps for the Mac: private, calm, and made for everyone.</p>
 </section>
 
-<section class="section" id="what" aria-labelledby="what-heading">
+<section class="section" aria-labelledby="puli-heading">
   <div class="container">
-    <div class="section__intro">
-      <h2 id="what-heading" class="section__title">What Puli does for you.</h2>
-    </div>
-    <div class="jobs">
-      <div class="job">
-        <h3>Herds your notes</h3>
-        <p>Mention a person, organization, or project, and Puli rounds up notes under each of them. One note, everywhere it belongs.</p>
-      </div>
-      <div class="job">
-        <h3>Comes when you call</h3>
-        <p>Whistle with an <code>@</code>. Mention <code>@maya</code>, and everything you’ve written about her comes running, right next to your note.</p>
-      </div>
-      <div class="job">
-        <h3>Guards every promise</h3>
-        <p>Jot down “Send <code>@tim</code> the deck” or “<code>@maya</code> will send the numbers,” and Puli keeps watch over both so you know what you owe and who owes you.</p>
-      </div>
+    <h2 class="section__title" id="puli-heading">Our first app: Puli.</h2>
+    <div class="section__body">
+      <p class="lede">Puli is a notes app for the Mac. It herds your thoughts into all the right places, so relevant context arrives just in time, right where it’s needed.</p>
+      <p><a class="section__link" href="https://getpuli.com">Meet Puli at getpuli.com <span aria-hidden="true">→</span></a></p>
     </div>
   </div>
 </section>
 
-<section class="section section--plain" id="beliefs" aria-labelledby="beliefs-heading">
+<section class="section" aria-labelledby="promises-heading">
   <div class="container">
-    <div class="section__intro">
-      <h2 id="beliefs-heading" class="section__title">Made on purpose.</h2>
-    </div>
-    <div class="jobs jobs--two">
-      <div class="job">
-        <h3>Made for privacy</h3>
-        <p>Not a setting, not a feature. Privacy is a value to us. Your notes are encrypted. And everything Puli does, it does on your Mac. Nothing you write is ever read by us or anyone else.</p>
+    <h2 class="section__title" id="promises-heading">Our philosophy.</h2>
+    <div class="section__body promises">
+      <div>
+        <h3>Your privacy is not for sale.</h3>
+        <p>Plenty of software is free because you’re the product. Ours isn’t. Our apps keep your work on your Mac, encrypted, with no accounts, no analytics, and no ads. We can’t sell what we never collect, and we never will.</p>
       </div>
-      <div class="job">
-        <h3>Made for everyone</h3>
-        <p>From large fonts, to dictation, to keyboard, mouse, VoiceOver, and Voice Control, anyone can do everything Puli can do.</p>
+      <div>
+        <h3>We won’t compete for your attention.</h3>
+        <p>Too many apps are designed to keep you hooked. We design ours to protect your train of thought. They do their work quietly, with no badges, streaks, or ads. Your best thinking happens without interruption.</p>
       </div>
-      <div class="job">
-        <h3>Made distraction-free</h3>
-        <p>No streaks, no red bubbles, no barking for attention. Puli’s purpose-built user interface stays at your side, never underfoot. Good dog!</p>
+      <div>
+        <h3>Your purchases are yours to keep.</h3>
+        <p>Once you buy something from us, it’s yours to keep.</p>
       </div>
-      <div class="job">
-        <h3>Made to keep</h3>
-        <p>Most subscriptions take everything back the day you stop paying. Puli’s works like a magazine: features you’ve received are yours to keep.</p>
+      <div>
+        <h3>Everyone is welcome.</h3>
+        <p>VoiceOver, Voice Control, large text, and the keyboard work for everything.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="free" aria-labelledby="free-heading">
+<section class="section" aria-labelledby="contact-heading">
   <div class="container">
-    <div class="section__intro">
-      <h2 id="free-heading" class="section__title">Free, forever.</h2>
-      <p>Puli is a herding dog, with all the instincts to keep you organized, for free, forever. Lessons teach Puli new tricks.</p>
-    </div>
-    <div class="tiers">
-      <div class="tier">
-        <h3 class="eyebrow eyebrow--status">Free</h3>
-        <ul class="free-list">
-          <li>Notes in Markdown: headings, lists, links, images</li>
-          <li>People, organizations, and projects, filed as you write</li>
-          <li>Relevant context, right when you need it</li>
-          <li>Tasks, due dates, priorities, and every promise, made by you or to you</li>
-          <li>Templates for work, home, and school</li>
-          <li>A custom template for managing a job search that includes Today, Tasks, Progress, and Graph</li>
-          <li>Multiple journals</li>
-          <li>Import and export in Markdown</li>
-          <li>Light and dark modes</li>
-          <li>Full-text search</li>
-          <li>Dictation, and notes from the menu bar, a widget, or Siri</li>
-          <li>VoiceOver, Voice Control, large text, and the keyboard for everything</li>
-        </ul>
-      </div>
-      <div class="tier">
-        <h3 class="eyebrow eyebrow--status">Lessons</h3>
-        <ul class="free-list">
-          <li><strong>Today</strong>: Your day, with meetings, due tasks, and relevant notes brought to you</li>
-          <li><strong>Tasks</strong>: Every task from every note in one place, sorted, filtered, and grouped</li>
-          <li><strong>Progress</strong>: Stages for your projects, and a board to track them</li>
-          <li><strong>Graph</strong>: See how the people, orgs, and projects in your notes connect</li>
-          <li><strong>Suggestions</strong>: Tags and tasks recommended as you write</li>
-          <li><strong>Themes &amp; Typography</strong>: Custom looks for every journal</li>
-          <li>More on the way. <a href="{{ '/puli/lessons/' | relative_url }}">How Lessons Work</a></li>
-        </ul>
-      </div>
+    <h2 class="section__title" id="contact-heading">Say hello.</h2>
+    <div class="section__body">
+      <p>Deliberate Software was founded by Alan Ridlehoover. Write to us at <a href="mailto:{{ site.email }}">{{ site.email }}</a>. We read every email, and we answer it ourselves.</p>
     </div>
   </div>
 </section>
-
-<section class="section" id="templates" aria-labelledby="templates-heading">
-  <div class="container">
-    <div class="section__intro">
-      <h2 id="templates-heading" class="section__title">Not just for work.</h2>
-      <p>Each journal starts from a template, so Puli knows the lay of the land.</p>
-    </div>
-    <div class="jobs jobs--four">
-      <div class="job">
-        <h3>Work</h3>
-        <p>People, organizations, and projects.</p>
-      </div>
-      <div class="job">
-        <h3>Home</h3>
-        <p>People, groups, and projects around the house.</p>
-      </div>
-      <div class="job">
-        <h3>School</h3>
-        <p>People, courses, and assignments.</p>
-      </div>
-      <div class="job">
-        <h3>Job search</h3>
-        <p>Contacts, employers, and roles.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--plain" id="questions" aria-labelledby="questions-heading">
-  <div class="container">
-    <div class="section__intro">
-      <h2 id="questions-heading" class="section__title">Questions? Answered.</h2>
-    </div>
-    <div class="faq">
-      <details name="faq" open>
-        <summary>What’s a Puli?</summary>
-        <p>A Hungarian herding dog, famous for its corded coat. Quick, clever, and bred to keep the flock together. Say it POO-lee.</p>
-      </details>
-      <details name="faq">
-        <summary>Is Puli really free?</summary>
-        <p>Yes. Really. Everything you need to take notes and stay organized is free, forever. Lessons are optional, and you can try them free for 30 days. <a href="{{ '/puli/lessons/' | relative_url }}">How Lessons Work</a>.</p>
-      </details>
-      <details name="faq">
-        <summary>What do I keep if I stop paying for lessons?</summary>
-        <p>Puli never forgets a lesson. You keep every lesson Puli learned while you were a paying subscriber. Think of it like a magazine subscription. No one comes to take your back issues when you stop subscribing. Puli won’t either. <a href="{{ '/puli/lessons/' | relative_url }}">How Lessons Work</a>.</p>
-      </details>
-      <details name="faq">
-        <summary>Where are my notes kept?</summary>
-        <p>On your Mac, and if you choose, synced to your iCloud account, encrypted end to end. We never see them, and neither does anyone else.</p>
-      </details>
-      <details name="faq">
-        <summary>Is there an iPhone app?</summary>
-        <p>On its way. We’re a small, independent software company moving as fast as we can. Sign up for our <a href="#waitlist">mailing list</a>, below, and we’ll let you know when it’s ready.</p>
-      </details>
-      <details name="faq">
-        <summary>What Mac do I need?</summary>
-        <p>Any Mac running macOS 26 or later.</p>
-      </details>
-    </div>
-    <p class="faq__more">Still have questions? <a href="mailto:{{ site.email }}">Ask us!</a></p>
-  </div>
-</section>
-
-<section class="section" id="about" aria-labelledby="about-heading">
-  <div class="container">
-    <h2 id="about-heading" class="section__title">Why I'm building Puli.</h2>
-    <div class="note">
-      <p>I’m a note taker. I’m guessing you are, too. And if you’re like me, you’ve probably tried every notes app there is, and never stuck with any of them.</p>
-      <p>Notion is too cumbersome to set up. Obsidian gives me control, but no opinions, so I have to do all the work. Bear came close, but there’s no sense of time. Agenda brings it all together, but it still makes me file each note in a single project. My notes don’t fit in one bucket.</p>
-      <p>So I built Puli for myself.</p>
-      <p>Puli is fast. Puli is opinionated. It herds your notes so you don’t have to. It fetches context for every situation. And it watches everyone’s promises. It’s private. It’s inclusive. And it’s free! (Lessons just teach Puli a few more tricks.)</p>
-      <p>I hope Puli becomes your best friend, too.</p>
-      <div class="note__signature">
-        <div class="note__signed">
-          <span class="signature" role="img" aria-label="Alan’s signature"></span>
-          <p class="note__sign">Alan Ridlehoover<br><span class="eyebrow eyebrow--tight">Founder, Deliberate Software</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-{% include waitlist.html %}

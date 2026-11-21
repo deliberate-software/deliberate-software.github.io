@@ -1,20 +1,6 @@
+{%- comment -%} Every page but the home page: the small lockup, leading home. The home page is headed by the large one. {%- endcomment -%}
 <header class="site-header">
-  <nav class="container nav" aria-label="Main">
-    <a class="brand" href="{{ '/' | relative_url }}">
-      {% include marks/deliberate.html id="nav" %}
-      <span>{{ site.title }}<sup class="tm">™</sup></span>
-    </a>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
-      <span class="nav__toggle-bar"></span>
-      <span class="nav__toggle-bar"></span>
-    </button>
-    <div class="nav__links" id="nav-links">
-      <a class="nav__link" href="{{ '/' | relative_url }}#what">What it does</a>
-      <a class="nav__link" href="{{ '/' | relative_url }}#beliefs">Purpose</a>
-      <a class="nav__link" href="{{ '/' | relative_url }}#free">Pricing</a>
-      <a class="nav__link" href="{{ '/' | relative_url }}#questions">Questions</a>
-      <a class="nav__link" href="{{ '/' | relative_url }}#about">About</a>
-      <a class="button button--accent button--small" href="{{ '/' | relative_url }}#waitlist">Join the pack</a>
-    </div>
-  </nav>
+  <div class="container">
+    {% include lockup.html size="small" link=true %}
+  </div>
 </header>

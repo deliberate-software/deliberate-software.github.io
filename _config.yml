@@ -2,31 +2,17 @@
 title: Deliberate Software
 tagline: Made on purpose
 legal_name: Deliberate Software LLC   # the LLC's exact registered name
-email: puli@deliberate.software        # where "Ask us!" and the footer's Contact link send mail
+email: support@deliberate.software   # the footer's Contact link and the pages' "Write to us"
 description: >-
-  Puli is a notes app for Mac that herds your notes to the right people
-  and projects, guards your promises, and brings you context. Coming soon.
+  Deliberate Software is an independent software company that makes thoughtful apps for the Mac, on purpose.
 url: "https://deliberate.software"
 baseurl: ""
 lang: en
-
-# Kit (kit.com) waitlist form.
-# In Kit: open the form → Save & Publish → Embed → HTML tab.
-# Copy the `action` URL from the <form> tag here exactly as Kit shows it.
-kit:
-  form_action: "https://app.kit.com/forms/10018273/subscriptions"
-
-# Each app is one file in _apps/. Add a file to add an app.
-collections:
-  apps:
-    output: false
 
 markdown: kramdown
 exclude:
   - signature.jpg   # the photo the signature SVG was traced from
   - README.md
-  - PENDING.md        # notes to ourselves, not a page
-  - GUIDE-AUDIT.md    # the guide checked against the app, not a page
   - Gemfile
   - Gemfile.lock
   - vendor

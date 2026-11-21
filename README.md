@@ -1,6 +1,6 @@
 # deliberate.software
 
-The Deliberate Software website: a Jekyll site hosted on GitHub Pages, with the waitlist handled by Kit.
+The Deliberate Software website: a Jekyll site hosted on GitHub Pages. One page about the company, with a link to Puli at getpuli.com, plus Privacy, Legal, Acknowledgements, and a 404. Puli's own site is a separate repository (puli-site), at getpuli.com.
 
 ## Run it locally
 
@@ -15,38 +15,16 @@ Then open http://localhost:4000. The Gemfile uses Jekyll 3.10, the version GitHu
 
 | Path | What it is |
 | --- | --- |
-| `_apps/puli.md` | Puli's name, platform, launch timing and Kit tag. Change `launch` here ("soon", or "in early 2027") and the hero and waitlist follow. |
-| `index.html` | The home page, written for Puli. |
-| `_includes/marks/` | The logos: `deliberate.html` (company, the brushed D), and `puli.html` (Puli, the herding dog: sitting in the hero, standing by the waitlist, black or white to stand out from what's behind it). |
-| `_includes/waitlist.html` | The Kit signup form: one email field, tagged for Puli with a hidden `tags[]` input. |
-| `privacy.html` | Deliberate Software's privacy policy, for this site and the waitlist. Update it, and its date, whenever what the site or list collects changes. |
-| `puli/privacy.html` | Puli's privacy policy, at `/puli/privacy/`, for the app alone (App Store Connect links here). Keep it matching the App Store's "Data Not Collected" label, and update its date when it changes. |
-| `puli/terms.html` | Puli's terms, at `/puli/terms/`: Apple's standard license agreement. |
-| `puli/support.html` | Puli's support page, at `/puli/support/` (App Store Connect's support URL). |
-| `puli/guide/` | Puli's Handler's Guide, at `/puli/guide/`: `index.html` is its contents, and each page beside it is one topic of the free app. Written from Puli's STORIES.md; keep it matching what ships. |
-| `puli/lessons/` | One page per lesson, at `/puli/lessons/<lesson>/`. `puli/lessons.html` (How Lessons Work, at `/puli/lessons/`) lists them. |
-| `PENDING.md` | Everything to update once iCloud and the licensing model are decided. Not published. |
-| `puli/lessons.html` | How Lessons Work, at `/puli/lessons/` (Puli's Tricks links here). |
-| `acknowledgements.html` | Puli's open source and font licenses, at `/puli/acknowledgements/` (Puli's About window links here). It reads each license from `assets/licenses/` and `assets/fonts/OFL-*.txt`, so keep those files identical to the ones the app bundles, and update the date when they change. |
-| `assets/licenses/` | The license texts for Puli's open source code (GRDB, SQLCipher), exactly as upstream ships them. |
+| `index.html` | The home page: who we are, Puli, what we promise, and how to reach us. |
+| `_includes/lockup.html` | The logo: "Deliberate Software" over "Made on purpose", in Instrument Sans, as in getpuli.com's footer. Large at the head of the home page, small everywhere else. There is no mark. |
+| `_includes/nav.html` | The small lockup at the top of every page but the home page. |
+| `_includes/footer.html` | The lockup, links, copyright, and a trademark line pointing to Legal. |
+| `privacy.html` | The site's privacy policy. Update it, and its date, if the site ever collects anything. |
+| `legal.html` | Every trademark the site names. Add a name when a page starts using it. |
+| `acknowledgements.html` | The fonts' licenses, read from `assets/fonts/OFL-*.txt`. |
 | `assets/fonts/` | Self-hosted Newsreader and Instrument Sans (variable WOFF2, Latin and Latin Extended), with their OFL licenses. |
 | `assets/css/site.css` | All styles. Light and dark mode follow the visitor's system setting. |
-| `assets/js/marks.js` | Opens and closes the phone menu. |
-| `confirm.html` | Where Kit sends people right after they sign up, asking them to confirm their email. |
-| `thanks.html` | Where Kit sends people after they click the confirmation link. |
-
-## Kit setup
-
-1. **Create a form.** In Kit, go to Grow → Landing Pages & Forms → Create new → Form → Inline. The site supplies its own design, so the template doesn't matter.
-2. **Copy the form's action URL.** Click **Save & Publish** first. Then click **Embed** at the top right of the form builder and choose the **HTML** tab. In that code, find `action="…"` on the `<form>` tag and paste the URL into `kit.form_action` in `_config.yml`.
-
-   If you don't see Embed, use the form's ID instead. It's the number in the browser's address bar while you're editing the form (for example `…/forms/designers/1234567/edit`). Then set `kit.form_action` to `https://app.kit.com/forms/1234567/subscriptions`, with your number in place of `1234567`.
-3. **Turn on confirmation.** In the form's settings, under Incentive, keep "Send incentive email" on. Kit then emails new subscribers a link to confirm their address. In the same Incentive settings, set the page people land on after they click that link to a redirect URL: `https://deliberate.software/thanks/`.
-4. **Send people to the confirm page.** In the form's settings, under "After subscribing," choose "Redirect to an external page" and enter `https://deliberate.software/confirm/`.
-5. **Create the Puli tag.** Go to **Grow → Subscribers**. In the right sidebar, below the charts, find the Tags section (the **All Tags** dropdown) and click the **+** next to it. Name the tag "Puli waitlist" and save.
-
-   To find a tag's ID, click the tag in that sidebar. The page shows only that tag's subscribers, and the address bar ends with something like `?tag=1234567`. That number is the ID. Put it in `kit_tag_id` in `_apps/puli.md`.
-6. **Test it.** Sign up with your own address, confirm, and check in Kit that the subscriber has the Puli tag. If tags don't apply, compare the form's field names with the HTML on the form's Embed → HTML tab and match them.
+| `assets/images/og-image.png` | The link-preview image: the lockup on warm paper. |
 
 ## Publish on GitHub Pages
 

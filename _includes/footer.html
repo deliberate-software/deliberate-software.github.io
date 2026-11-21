@@ -1,25 +1,14 @@
 <footer class="site-footer">
   <div class="container footer">
-    <a class="footer__brand" href="{{ '/' | relative_url }}">
-      {% include marks/deliberate.html id="footer" %}
-      <span class="footer__lockup">
-        <span class="footer__name">{{ site.title }}</span>
-        <span class="footer__tagline">{{ site.tagline }}</span>
-      </span>
-    </a>
+    {% include lockup.html size="small" link=true %}
     <div class="footer__links">
-      <a href="{{ '/' | relative_url }}#what">What it does</a>
-      <a href="{{ '/' | relative_url }}#beliefs">Purpose</a>
-      <a href="{{ '/' | relative_url }}#free">Pricing</a>
-      <a href="{{ '/' | relative_url }}#questions">Questions</a>
-      <a href="{{ '/' | relative_url }}#about">About</a>
-      <a href="{{ '/' | relative_url }}privacy/">Privacy</a>
+      <a href="https://getpuli.com">Puli</a>
+      <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
+      <a href="{{ '/legal/' | relative_url }}">Legal</a>
+      <a href="{{ '/acknowledgements/' | relative_url }}">Acknowledgements</a>
       <a href="mailto:{{ site.email }}">Contact</a>
     </div>
     <p class="footer__copyright">© {{ site.time | date: "%Y" }} {{ site.legal_name }}</p>
-    <p class="footer__trademarks">{{ site.title }}
-      {%- for app in site.apps -%}
-        {%- if forloop.last %} and {% else %}, {% endif -%}{{ app.name }}
-      {%- endfor %} are trademarks of {{ site.legal_name }}. Apple, Mac, macOS, iPhone, App Store, iCloud, Apple Intelligence, VoiceOver, Siri, Spotlight, and Shortcuts are trademarks of Apple Inc. National Geographic, Notion, Obsidian, Bear, and Agenda are trademarks of their respective owners.</p>
+    <p class="footer__trademarks">Deliberate Software and Puli are trademarks of {{ site.legal_name }}. For a list of all trademarks used on this site, see <a href="{{ '/legal/' | relative_url }}">Legal</a>.</p>
   </div>
 </footer>

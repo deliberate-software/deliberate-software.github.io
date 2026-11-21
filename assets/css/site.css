@@ -42,10 +42,7 @@
   --tint: #f3eee5;
   --muted: #5c5d61;
   --line: #dcd7cf;
-  --inv-muted: #bdb9b2;
-  --inv-line: #6a6b70;
-  --accent: #8a4b08;      /* Puli's accent: its primary buttons are this amber */
-  --on-accent: var(--warm);
+  --accent: #8a4b08;
 
   --serif: "Newsreader", Georgia, serif;
   --sans: "Instrument Sans", "Helvetica Neue", Helvetica, sans-serif;
@@ -53,386 +50,103 @@
   --pad: 32px;
   color-scheme: light dark;
 }
-
 @media (prefers-color-scheme: dark) {
-  :root {
-    --ink: var(--warm);
-    --paper: var(--graphite);
-    --tint: #313236;
-    --muted: #bdb9b2;
-    --line: #4a4b50;
-    --inv-muted: #5c5d61;
-    --inv-line: #b5b0a8;
-    --accent: #fac775;
-    --on-accent: var(--graphite);
-  }
+  :root { --ink: var(--warm); --paper: var(--graphite); --tint: #313236; --muted: #bdb9b2; --line: #4a4b50; --accent: #fac775; }
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }  /* a heading jumped to clears the sticky header */
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
 body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-size: 17px;
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--sans); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased;
 }
-
 a { color: inherit; text-decoration: none; }
 h1, h2, h3, p { margin: 0; }
-img, svg { max-width: 100%; }
-
 :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 4px; }
-
-.skip-link {
-  position: absolute; left: 16px; top: -60px; z-index: 10;
-  padding: 10px 16px; border-radius: 999px;
-  background: var(--ink); color: var(--paper);
-}
-.skip-link:focus { top: 16px; }
-
+.skip-link { position: absolute; left: -9999px; top: 8px; padding: 8px 14px; background: var(--ink); color: var(--paper); border-radius: 6px; z-index: 10; }
+.skip-link:focus { left: 8px; }
 .container { max-width: var(--max); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
 @media (max-width: 560px) { :root { --pad: 20px; } }
 
-/* ---------- small caps labels ---------- */
+/* ---------- the lockup: the name over "Made on purpose", in Instrument Sans ----------
+   The same fonts and proportions as getpuli.com's footer (name Medium 18px, tagline SemiBold 10px in capitals spaced
+   0.3em, 4px between), set by one font size so it scales: at the head of the home page, and small elsewhere (Nov 21). */
+.lockup { display: inline-flex; flex-direction: column; gap: 0.22em; font-family: var(--sans); color: var(--ink); }
+.lockup__name { font-size: 1em; font-weight: 500; line-height: 1.1; letter-spacing: -0.01em; }
+.lockup__tagline { font-size: 0.5556em; font-weight: 600; line-height: 1; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); padding-left: 0.1em; }
+.lockup--small { font-size: 18px; }
+.lockup--large { font-size: clamp(40px, 8vw, 84px); }
+.lockup--large .lockup__tagline { font-size: 0.32em; }  /* smaller than the footer's proportion, so the tagline doesn't compete with the name (Alan, Nov 21) */
 
-.eyebrow {
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 12px;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.eyebrow { letter-spacing: 0.34em; }
-.eyebrow--tight { letter-spacing: 0.3em; }
-.eyebrow--status { letter-spacing: 0.2em; }
+/* Every page but the home page: the small lockup, home. */
+.site-header .container { padding-top: 28px; padding-bottom: 28px; }
 
-/* ---------- buttons ---------- */
+/* ---------- labels and page heads ---------- */
 
-.button {
-  display: inline-flex; align-items: center; justify-content: center;
-  min-height: 48px; padding: 0 26px;
-  border: 1px solid var(--ink); border-radius: 999px;
-  background: var(--ink); color: var(--paper);
-  font: inherit; font-weight: 500; cursor: pointer;
-}
-.button--small { min-height: 44px; padding: 0 18px; }
-.button--outline { background: transparent; color: var(--ink); border-color: var(--line); }
-.button--inverse { background: var(--paper); color: var(--ink); border-color: var(--paper); font-weight: 600; }
-/* On hover, a solid button softens toward the page and an outlined one fills in, so it's plain it can be clicked. */
-.button { transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease; }
-.button:hover { background: color-mix(in srgb, var(--ink) 82%, var(--paper)); border-color: color-mix(in srgb, var(--ink) 82%, var(--paper)); }
-.button--outline:hover { background: var(--tint); border-color: var(--ink); }
-.button--inverse:hover { background: color-mix(in srgb, var(--paper) 85%, var(--ink)); border-color: color-mix(in srgb, var(--paper) 85%, var(--ink)); }
-.button--accent { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
-.button--accent:hover { background: color-mix(in srgb, var(--accent) 85%, var(--paper)); border-color: color-mix(in srgb, var(--accent) 85%, var(--paper)); }
-.button:active { transform: translateY(1px); }
-@media (prefers-reduced-motion: reduce) { .button { transition: none; } .button:active { transform: none; } }
-
-/* ---------- logos ---------- */
-
-.mark {
-  display: block; flex: none;
-  width: 112px; height: 112px;
-  border-radius: 50%; overflow: hidden;
-  border: 1px solid rgba(251, 248, 243, 0.9);
-  box-shadow: 0 0 0 1px rgba(39, 40, 43, 0.22), 0 0 18px 2px rgba(39, 40, 43, 0.2);
-}
-.mark__art { display: block; width: 100%; height: 100%; }
-
-/* Puli, in the color opposite what it stands on (see _includes/marks/puli.html). */
-.puli { display: block; flex: none; }
-.puli img { display: block; width: 100%; height: auto; }
-.puli--sitting { width: 380px; }  /* the picture includes its backdrop, so it runs wider than the dog */
-@media (min-width: 1140px) { .puli--sitting { width: 460px; } }  /* stands about as tall as the two-paragraph lede beside it */
-/* Standing at the start of the waitlist band, facing the form. */
-.puli--standing { width: 320px; }
-
-/* ---------- header ---------- */
-
-.site-header {
-  position: sticky; top: 0; z-index: 10;
-  background: var(--paper); border-bottom: 1px solid var(--line);
-  transition: box-shadow 200ms ease, margin 200ms ease;
-}
-.nav {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
-  padding-top: 22px; padding-bottom: 22px;
-  transition: padding 200ms ease;
-}
-/* Once the page scrolls, the header slims down and casts a shadow, so it's plain there's more above.
-   The margin gives back the padding it loses, so the page beneath doesn't jump. */
-.site-header.is-stuck { margin-bottom: 32px; box-shadow: 0 6px 16px -10px rgba(39, 40, 43, 0.35); }
-.site-header.is-stuck .nav { padding-top: 6px; padding-bottom: 6px; }
-@media (prefers-color-scheme: dark) {
-  .site-header.is-stuck { box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.7); }
-}
-@media (prefers-reduced-motion: reduce) { .site-header, .nav { transition: none; } }
-.brand {
-  display: inline-flex; align-items: center; gap: 12px;
-  font-family: var(--serif); font-size: 24px; font-weight: 500; letter-spacing: -0.01em;
-}
-.brand .mark {
-  width: 34px; height: 34px;
-  position: relative; top: -3px;  /* the name has no descenders: center on the caps */
-  box-shadow: 0 0 0 1px rgba(39, 40, 43, 0.22), 0 0 6px 1px rgba(39, 40, 43, 0.18);
-}
-.nav .brand { position: relative; top: 3px; }  /* centers the name's capitals on the menu */
-.nav__links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
-.nav__link { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; }
-
-/* Hamburger: phones only, and only when JavaScript can open it.
-   Without JavaScript the links simply show. Below 1000px the links no longer fit on one line beside the name. */
-.nav__toggle { display: none; }
-@media (max-width: 1000px) {
-  .js .nav__toggle {
-    display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px;
-    width: 44px; height: 44px; margin-right: -10px;
-    padding: 0; border: 0; background: none; color: var(--ink); cursor: pointer;
-  }
-  .nav__toggle-bar {
-    display: block; width: 22px; height: 1.5px; border-radius: 1px; background: currentColor;
-    transition: transform 200ms ease;
-  }
-  .nav.is-open .nav__toggle-bar:first-child { transform: translateY(4.25px) rotate(45deg); }
-  .nav.is-open .nav__toggle-bar:last-child  { transform: translateY(-4.25px) rotate(-45deg); }
-
-  .js .nav__links { display: none; }
-  .js .nav.is-open .nav__links {
-    display: flex; flex-direction: column; align-items: stretch; gap: 0;
-    flex-basis: 100%; padding: 8px 0 4px;
-  }
-  .js .nav.is-open .nav__link { padding: 0; min-height: 52px; border-bottom: 1px solid var(--line); font-size: 18px; }
-  .js .nav.is-open .nav__links .button { margin-top: 20px; min-height: 48px; }
-}
-@media (prefers-reduced-motion: reduce) { .nav__toggle-bar { transition: none; } }
-
-/* ---------- hero ---------- */
-
-.hero { padding-top: 120px; padding-bottom: 112px; display: flex; flex-direction: column; gap: 32px; }
-.hero--short { padding-top: 96px; padding-bottom: 120px; }
-.hero__title {
-  font-family: var(--serif); font-weight: 400;
-  font-size: clamp(48px, 7.4vw, 96px); line-height: 1.02; letter-spacing: -0.025em;
-  max-width: 14ch;
-}
-.hero__title em { font-style: italic; }
+.eyebrow { font-family: var(--sans); font-weight: 600; font-size: 12px; letter-spacing: 0.34em; text-transform: uppercase; color: var(--muted); }
+.hero { padding-top: 120px; padding-bottom: 96px; display: flex; flex-direction: column; gap: 32px; }
+.hero--short { padding-top: 64px; padding-bottom: 120px; }
+.hero__title { font-family: var(--serif); font-weight: 400; font-size: clamp(48px, 7.4vw, 96px); line-height: 1.02; letter-spacing: -0.025em; max-width: 14ch; }
 .hero__title--long { font-size: clamp(36px, 7.4vw, 96px); }  /* one long word, like "Acknowledgements", still fits a phone */
-.hero__lead { font-size: 20px; max-width: 34em; color: var(--muted); }
-.hero__lead a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
-.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 8px; }
+.hero__lead { font-family: var(--serif); font-size: clamp(22px, 2.4vw, 28px); line-height: 1.4; max-width: 30em; color: var(--ink); }
+.hero--short .hero__lead { font-family: var(--sans); font-size: 20px; line-height: 1.55; color: var(--muted); max-width: 34em; }
+.hero__lead a, .prose a, .section a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+.hero__lead a:hover, .prose a:hover, .section a:hover { text-decoration-color: var(--accent); }
 @media (max-width: 560px) { .hero { padding-top: 72px; padding-bottom: 72px; } }
 
-/* Puli's hero: the pitch on the left, the dog on the right; above the pitch on phones. */
-.hero--puli { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 56px; align-items: center; }
-.hero--puli .eyebrow { display: inline-block; margin-bottom: 18px; }
-.hero--puli .hero__lead { margin-top: 24px; }
-.hero--puli .hero__lead + .hero__lead { margin-top: 16px; }
-.hero--puli .hero__actions { margin-top: 32px; }
-.hero__subtitle {
-  font-family: var(--serif); font-size: clamp(28px, 4vw, 50.5px); line-height: 1.15; letter-spacing: -0.01em;  /* ends halfway between the title and the lede */
-  margin-top: 10px;
-}
-@media (min-width: 561px) { .hero--puli { padding-bottom: 128px; } }  /* 128 + 64 above What = the 192px between sections */
-@media (max-width: 860px) {
-  .hero--puli { grid-template-columns: minmax(0, 1fr); gap: 28px; }
-  .hero--puli .puli { order: -1; width: 240px; }
-}
+/* ---------- home page sections ---------- */
 
-/* ---------- sections ---------- */
+.section { border-top: 1px solid var(--line); }
+.section > .container { padding-top: 80px; padding-bottom: 80px; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 32px 64px; }
+.section__title { font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 3.6vw, 44px); line-height: 1.1; letter-spacing: -0.015em; }
+.section__body { display: flex; flex-direction: column; gap: 20px; max-width: 34em; }
+.section__body p { color: var(--muted); }
+.section__body .lede { font-family: var(--serif); font-size: 22px; line-height: 1.45; color: var(--ink); }
+.section__link { font-weight: 500; color: var(--accent) !important; text-decoration: none !important; }
+.section__link span { display: inline-block; transition: transform 150ms ease; }
+.section__link:hover span { transform: translateX(3px); }
+.promises { display: flex; flex-direction: column; gap: 24px; }
+.promises h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.25; }
+.promises p { margin-top: 6px; }
+@media (max-width: 800px) { .section > .container { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .section__link span { transition: none; } }
 
-.section > .container { padding-top: 96px; padding-bottom: 96px; display: flex; flex-direction: column; gap: 48px; }
-.section__title {
-  font-family: var(--serif); font-weight: 400; letter-spacing: -0.015em;
-  font-size: clamp(34px, 4.4vw, 52px); line-height: 1.12; max-width: 20ch;
-}
-.section__intro { display: flex; flex-direction: column; gap: 20px; }
-.section__intro p { font-size: 19px; max-width: 34em; color: var(--muted); }
-/* A light rule under each heading, except What's, which follows the hero, and the plain sections'. */
-.section:not(#what):not(.section--plain) .section__title { max-width: none; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
-
-code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.88em; color: var(--ink); }
-kbd { font-family: inherit; font-size: 0.92em; color: var(--ink); white-space: nowrap; }  /* keys, as the Mac writes them: ⌘N */
-
-/* ---------- what Puli does ---------- */
-
-/* Pulled up under the hero, so the fold shows the start of the list. */
-#what > .container { padding-top: 64px; }
-.jobs { display: grid; gap: 28px 40px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.job { border-top: 1px solid var(--line); padding-top: 20px; }
-.job h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
-.job p { color: var(--muted); text-wrap: pretty; }  /* no word left alone on a last line */
-.jobs--two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); }
-.jobs--four { grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
-
-/* ---------- questions: an accordion, one answer open at a time ---------- */
-
-.faq { display: flex; flex-direction: column; max-width: 46em; }
-.faq details { border-top: 1px solid var(--line); }
-.faq details:last-child { border-bottom: 1px solid var(--line); }
-.faq summary {
-  list-style: none; cursor: pointer; padding: 18px 36px 18px 0; position: relative;
-  font-size: 20px; font-weight: 600;
-}
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-weight: 400; font-size: 24px; color: var(--muted); }
-.faq details[open] summary::after { content: "\2212"; }
-.faq summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 4px; }
-.faq details p { color: var(--muted); padding: 0 36px 22px 0; text-wrap: pretty; }
-.faq__more { font-size: 19px; color: var(--muted); }
-.faq__more a, .faq details a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
-
-/* ---------- free and lessons ---------- */
-
-.tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 48px; }
-.tier { display: flex; flex-direction: column; gap: 16px; }
-
-.free-list { margin: 0; padding-left: 1.1em; }
-.free-list li { color: var(--muted); padding-bottom: 10px; text-wrap: pretty; }
-.free-list a { text-decoration: underline; text-underline-offset: 3px; }  /* in the list's own muted gray */
-
-/* ---------- founder note ---------- */
-
-.note { display: flex; flex-direction: column; gap: 20px; max-width: 34em; }
-.note p { font-family: var(--serif); font-size: 21px; line-height: 1.5; }
-.note__signature { display: flex; align-items: center; gap: 16px; }
-/* Signed like a letter: the signature, then the name and title beneath it. */
-.note__signed { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
-/* Alan's handwritten signature, drawn in the page's ink so it reads in light and dark. */
-.signature {
-  display: block; width: 84px; aspect-ratio: 943 / 736; margin-left: 6px;  /* indented a little, like a hand signing under the text */
-  background: var(--ink);
-  -webkit-mask: url("/assets/images/signature.svg") left center / contain no-repeat;
-  mask: url("/assets/images/signature.svg") left center / contain no-repeat;
-}
-.note .note__sign { font-family: var(--sans); font-size: 17px; font-weight: 600; line-height: 1.6; }
-
-/* ---------- prose pages ---------- */
+/* ---------- prose pages: Privacy, Legal, Acknowledgements ---------- */
 
 .prose { display: flex; flex-direction: column; gap: 14px; max-width: 34em; }
-.prose h2 { font-family: var(--serif); font-weight: 400; font-size: 30px; line-height: 1.15; letter-spacing: -0.01em; padding-top: 32px; }
+.prose h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.01em; padding-top: 40px; }
 .prose h2:first-child { padding-top: 8px; }
-.prose h3 { font-size: 20px; font-weight: 600; padding-top: 14px; }
+.prose h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.2; padding-top: 20px; }
 .prose p, .prose li { color: var(--muted); }
-.prose ul, .prose ol { margin: 0; }
-.prose a { text-decoration: underline; text-underline-offset: 3px; color: var(--ink); }
-/* Screenshots of Puli's window, taken without the shadow. The radius matches the window's own
-   corners (34px of a 2400 x 1560 capture), so the hairline follows them. */
-.shot { margin: 28px 0 8px; }
-/* Guide pages told topic by topic: the heading, then the text with its screenshot beside it, as a
-   thumbnail that opens full size. Narrower than that, the screenshot sits under the heading. */
-.prose--topics { max-width: none; gap: 0; }
-.topic { display: flex; flex-direction: column; gap: 14px; }
-.topic > h2, .topic > h3, .topic__text { max-width: 34em; }
-.topic__text { display: flex; flex-direction: column; gap: 14px; }
-.topic + .topic { margin-top: 14px; }
-.prose--topics .topic + .topic > h2 { padding-top: 32px; }
-.topic .shot { margin: 4px 0 6px; max-width: 34em; }  /* narrow: right under the heading, before the text */
-.shot figcaption { margin-top: 10px; font-size: 14px; line-height: 1.45; color: var(--muted); }
-@media (min-width: 1000px) {
-  /* The screenshot takes what's left beside the text, up to 250px, so the text leads. */
-  .topic { display: grid; grid-template-columns: minmax(0, 34em) minmax(0, 250px); column-gap: 48px; row-gap: 14px; align-items: start; }
-  .topic > h2, .topic > h3 { grid-column: 1; }
-  .topic__text { grid-column: 1; grid-row: 2; }
-  .topic .shot { grid-column: 2; grid-row: 2; margin: 5px 0 0; max-width: none; }  /* top level with the text's first line */
-}
-.shot a { display: block; cursor: zoom-in; border-radius: 1.42% / 2.18%; }
-.shot a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
-/* The welcome window is smaller than the journal's (834 x 592), with the same 17pt corners. */
-.shot.shot--sheet img, .shot.shot--sheet a { border-radius: 2.04% / 2.87%; }
-/* A screenshot opened full size: letterboxed on a dark backdrop, no bigger than the window really is. */
-.shot-view { width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 24px; border: 0; background: transparent; }
-.shot-view[open] { display: grid; place-items: center; }
-.shot-view::backdrop { background: rgb(12 12 14 / 0.88); }
-.shot-view img { display: block; cursor: zoom-out; }  /* sized and rounded by marks.js, to match the shot */
-.shot img { display: block; width: 100%; height: auto; border-radius: 1.42% / 2.18%; box-shadow: 0 0 0 1px var(--line); }
-/* Tasks written as you'd type them: the task's own hyphen is the bullet. */
-.prose .task-lines { list-style: none; padding-left: 1.5em; }
 
-/* Acknowledgements: each license folded away under its project, shown as written.
-   Wider than the prose, so licenses hard-wrapped at ~76 columns keep their lines. */
+/* Acknowledgements: each license folded away under its project, shown as written, with a chevron that turns down
+   when it's open. Wider than the prose, so licenses hard-wrapped at ~76 columns keep their lines. */
 .license { width: min(46em, calc(100vw - 2 * var(--pad))); }
-.license summary { padding: 10px 0; cursor: pointer; font-weight: 600; }
+.license summary { display: inline-flex; align-items: center; gap: 10px; padding: 6px 0; list-style: none; cursor: pointer; color: var(--muted); }
+.license summary::-webkit-details-marker { display: none; }
+.license summary::before { content: ""; width: 7px; height: 7px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(-45deg); transition: transform 0.15s ease; }
+.license[open] summary::before { transform: translateY(-2px) rotate(45deg); }
+.license summary:hover { color: var(--accent); }
 .license pre {
   margin: 4px 0 0; padding: 20px; background: var(--tint); border-radius: 8px;
   font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; line-height: 1.6;
   white-space: pre-wrap; overflow-wrap: anywhere; color: var(--muted);
 }
+@media (prefers-reduced-motion: reduce) { .license summary::before { transition: none; } }
 
-/* ---------- waitlist ---------- */
-
-.waitlist { background: var(--ink); color: var(--paper); scroll-margin-top: 0; }
-.waitlist__inner {
-  padding-top: 96px; padding-bottom: 96px;
-  display: grid; grid-template-columns: auto minmax(0, 28em); gap: 56px; align-items: end;
-  justify-content: center;  /* the dog and the pitch, together in the middle of the page */
-}
-/* The pitch over the form, beside the dog. */
-.waitlist__copy { display: flex; flex-direction: column; gap: 32px; min-width: 0; }
-@media (max-width: 860px) {
-  .waitlist__inner { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-  .waitlist .puli { width: 230px; }
-}
-.waitlist__intro { display: flex; flex-direction: column; gap: 14px; }
-.waitlist__intro p, .waitlist label { color: var(--inv-muted); }
-.waitlist__heading { font-family: var(--serif); font-weight: 400; font-size: clamp(36px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.015em; }
-.waitlist__form { display: flex; flex-direction: column; gap: 20px; min-width: 0; max-width: 400px; }  /* narrow, but the email field and button still fit side by side */
-.field { display: flex; flex-direction: column; gap: 8px; }
-.field label { font-size: 14px; }
-.field__row { display: flex; flex-wrap: wrap; gap: 10px; }
-.field__row input {
-  flex: 1 1 220px; min-width: 0; min-height: 48px;
-  padding: 0 18px; border-radius: 999px;
-  border: 1px solid var(--inv-muted); background: transparent; color: var(--paper);
-  font: inherit;
-}
-.field__row input::placeholder { color: var(--inv-muted); }
-.waitlist__note { font-size: 14px; color: var(--inv-muted); }
-.waitlist__note a { color: var(--paper); text-decoration: underline; text-underline-offset: 3px; }
-.waitlist :focus-visible { outline-color: var(--paper); }
+.button { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 8px; background: var(--ink); color: var(--paper); font-weight: 500; }
+.button:hover { background: var(--accent); }
 
 /* ---------- footer ---------- */
 
-/* The same rule as under the header, so short pages end before the footer starts.
-   After the waitlist's dark band, the band's edge does that job. */
 .site-footer { border-top: 1px solid var(--line); }
-main:has(> .waitlist:last-child) + .site-footer { border-top: 0; }
-
-.footer {
-  padding-top: 40px; padding-bottom: 48px;
-  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px 40px;
-  font-size: 14px; color: var(--muted);
-}
-/* The D, centered beside the name and tagline as a pair. */
-.footer__brand { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); }
-.footer__brand .mark {
-  width: 40px; height: 40px; flex: none;
-  box-shadow: 0 0 0 1px rgba(39, 40, 43, 0.22), 0 0 6px 1px rgba(39, 40, 43, 0.18);
-}
-.footer__lockup { display: flex; flex-direction: column; gap: 4px; }
-.footer__name { font-family: var(--serif); font-size: 20px; line-height: 1.1; letter-spacing: -0.01em; }
-.footer__tagline {
-  font-weight: 600; font-size: 10px; line-height: 1; letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--muted); padding-left: 1px;  /* the M's stem under the D's */
-}
+.footer { padding-top: 40px; padding-bottom: 48px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px 40px; font-size: 14px; color: var(--muted); }
 .footer__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-/* The copyright ends the main row; the trademarks run beneath it, from the left. */
-.footer__copyright { margin: 0; font-size: 12px; text-align: right; }
-.footer__trademarks { grid-column: 1 / -1; margin: 0; font-size: 11px; text-align: left; text-wrap: pretty; }
+.footer__links a:hover { color: var(--ink); }
+.footer__copyright { font-size: 12px; text-align: right; }
+.footer__trademarks { grid-column: 1 / -1; font-size: 11px; text-wrap: pretty; }
+.footer__trademarks a { text-decoration: underline; text-underline-offset: 2px; }
 @media (max-width: 720px) {
   .footer { grid-template-columns: minmax(0, 1fr); align-items: start; }
   .footer__links { justify-content: flex-start; }
   .footer__copyright { text-align: left; }
 }
-
-/* Trademark symbol: small and raised, without changing the line height. */
-.tm {
-  font-family: var(--sans); font-size: 0.32em; font-weight: 500; letter-spacing: 0;
-  position: relative; top: -1.35em; vertical-align: baseline; line-height: 0;
-  margin-left: 0.12em;
-}
-.brand .tm { font-size: 0.42em; top: -1.1em; }
