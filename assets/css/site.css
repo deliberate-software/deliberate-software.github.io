@@ -109,7 +109,7 @@ h1, h2, h3, p { margin: 0; }
 @media (max-width: 800px) { .section > .container { grid-template-columns: minmax(0, 1fr); } }
 @media (prefers-reduced-motion: reduce) { .section__link span { transition: none; } }
 
-/* ---------- prose pages: Privacy, Legal, Acknowledgements ---------- */
+/* ---------- prose pages: Privacy, Trademarks, Acknowledgements ---------- */
 
 .prose { display: flex; flex-direction: column; gap: 14px; max-width: 34em; }
 .prose h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.01em; padding-top: 40px; }

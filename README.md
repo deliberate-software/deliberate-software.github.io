@@ -1,6 +1,6 @@
 # deliberate.software
 
-The Deliberate Software website: a Jekyll site hosted on GitHub Pages. One page about the company, with a link to Puli at getpuli.com, plus Privacy, Legal, Acknowledgements, and a 404. Puli's own site is a separate repository (puli-site), at getpuli.com.
+The Deliberate Software website: a Jekyll site hosted on GitHub Pages. One page about the company, with a link to Puli at getpuli.com, plus Privacy, Trademarks, Acknowledgements, and a 404. Puli's own site is a separate repository (puli-site), at getpuli.com.
 
 ## Run it locally
 
@@ -18,9 +18,9 @@ Then open http://localhost:4000. The Gemfile uses Jekyll 3.10, the version GitHu
 | `index.html` | The home page: who we are, Puli, what we promise, and how to reach us. |
 | `_includes/lockup.html` | The logo: "Deliberate Software" over "Made on purpose", in Instrument Sans, as in getpuli.com's footer. Large at the head of the home page, small everywhere else. There is no mark. |
 | `_includes/nav.html` | The small lockup at the top of every page but the home page. |
-| `_includes/footer.html` | The lockup, links, copyright, and a trademark line pointing to Legal. |
+| `_includes/footer.html` | The lockup, links, copyright, and a trademark line pointing to Trademarks. |
 | `privacy.html` | The site's privacy policy. Update it, and its date, if the site ever collects anything. |
-| `legal.html` | Every trademark the site names. Add a name when a page starts using it. |
+| `trademarks.html` | Every trademark the site names. Add a name when a page starts using it. |
 | `acknowledgements.html` | The fonts' licenses, read from `assets/fonts/OFL-*.txt`. |
 | `assets/fonts/` | Self-hosted Newsreader and Instrument Sans (variable WOFF2, Latin and Latin Extended), with their OFL licenses. |
 | `assets/css/site.css` | All styles. Light and dark mode follow the visitor's system setting. |
